@@ -1,9 +1,11 @@
-# ClassifyUniversal
+# Classifications
+
+## Universal
 
 Types:
 
-- <code><a href="./src/resources/classify-universal.ts">ClassifyUniversalCreateResponse</a></code>
+- <code><a href="./src/resources/classifications/universal.ts">UniversalClassification</a></code>
 
 Methods:
 
-- <code title="post /classify/universal">client.classifyUniversal.<a href="./src/resources/classify-universal.ts">create</a>({ ...params }) -> ClassifyUniversalCreateResponse</code>
+- <code title="post /classifications/universal">client.classifications.universal.<a href="./src/resources/classifications/universal.ts">create</a>({ ...params }) -> UniversalClassification</code>

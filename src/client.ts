@@ -18,14 +18,10 @@ import { APIPromise } from './api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
-import {
-  ClassifyUniversal,
-  ClassifyUniversalCreateParams,
-  ClassifyUniversalCreateResponse,
-} from './resources/classify-universal';
 import { readEnv } from './internal/utils/env';
 import { logger } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
+import { Classifications } from './resources/classifications/classifications';
 
 const safeJSON = (text: string) => {
   try {
@@ -55,6 +51,11 @@ const isLogLevel = (key: string | undefined): key is LogLevel => {
 };
 
 export interface ClientOptions {
+  /**
+   * An Isaacus-issued API key passed as a bearer token via the `Authorization` header.
+   */
+  bearerToken?: string | undefined;
+
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
@@ -128,6 +129,8 @@ type FinalizedRequestInit = RequestInit & { headers: Headers };
  * API Client for interfacing with the Isaacus API.
  */
 export class Isaacus {
+  bearerToken: string;
+
   baseURL: string;
   maxRetries: number;
   timeout: number;
@@ -143,7 +146,8 @@ export class Isaacus {
   /**
    * API Client for interfacing with the Isaacus API.
    *
-   * @param {string} [opts.baseURL=process.env['ISAACUS_BASE_URL'] ?? /] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.bearerToken=process.env['ISAACUS_API_KEY'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['ISAACUS_BASE_URL'] ?? https://api.isaacus.com/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -151,10 +155,21 @@ export class Isaacus {
    * @param {HeadersLike} opts.defaultHeaders - Default headers to include with every request to the API.
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
-  constructor({ baseURL = readEnv('ISAACUS_BASE_URL'), ...opts }: ClientOptions = {}) {
+  constructor({
+    baseURL = readEnv('ISAACUS_BASE_URL'),
+    bearerToken = readEnv('ISAACUS_API_KEY'),
+    ...opts
+  }: ClientOptions = {}) {
+    if (bearerToken === undefined) {
+      throw new Errors.IsaacusError(
+        "The ISAACUS_API_KEY environment variable is missing or empty; either provide it, or instantiate the Isaacus client with an bearerToken option, like new Isaacus({ bearerToken: 'My Bearer Token' }).",
+      );
+    }
+
     const options: ClientOptions = {
+      bearerToken,
       ...opts,
-      baseURL: baseURL || `/`,
+      baseURL: baseURL || `https://api.isaacus.com/v1`,
     };
 
     this.baseURL = options.baseURL!;
@@ -174,6 +189,8 @@ export class Isaacus {
     this.#encoder = Opts.FallbackEncoder;
 
     this._options = options;
+
+    this.bearerToken = bearerToken;
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -182,6 +199,10 @@ export class Isaacus {
 
   protected validateHeaders({ values, nulls }: NullableHeaders) {
     return;
+  }
+
+  protected authHeaders(opts: FinalRequestOptions): Headers | undefined {
+    return new Headers({ Authorization: `Bearer ${this.bearerToken}` });
   }
 
   /**
@@ -528,6 +549,7 @@ export class Isaacus {
         ...(options.timeout ? { 'X-Stainless-Timeout': String(options.timeout) } : {}),
         ...getPlatformHeaders(),
       },
+      this.authHeaders(options),
       this._options.defaultHeaders,
       bodyHeaders,
       options.headers,
@@ -594,15 +616,11 @@ export class Isaacus {
 
   static toFile = Uploads.toFile;
 
-  classifyUniversal: API.ClassifyUniversal = new API.ClassifyUniversal(this);
+  classifications: API.Classifications = new API.Classifications(this);
 }
-Isaacus.ClassifyUniversal = ClassifyUniversal;
+Isaacus.Classifications = Classifications;
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
 
-  export {
-    ClassifyUniversal as ClassifyUniversal,
-    type ClassifyUniversalCreateResponse as ClassifyUniversalCreateResponse,
-    type ClassifyUniversalCreateParams as ClassifyUniversalCreateParams,
-  };
+  export { Classifications as Classifications };
 }

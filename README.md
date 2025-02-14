@@ -1,4 +1,4 @@
-# Isaacus TypeScript API Library
+# Isaacus Typescript API Library
 
 [![NPM version](https://img.shields.io/npm/v/isaacus.svg)](https://npmjs.org/package/isaacus) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/isaacus)
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:stainless-sdks/isaacus-typescript.git
+npm install git+ssh://git@github.com:isaacus-dev/isaacus-typescript.git
 ```
 
 > [!NOTE]
@@ -25,16 +25,18 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Isaacus from 'isaacus';
 
-const client = new Isaacus();
+const client = new Isaacus({
+  bearerToken: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
+});
 
 async function main() {
-  const classifyUniversal = await client.classifyUniversal.create({
-    model: 'model',
-    query: 'query',
-    text: 'text',
+  const universalClassification = await client.classifications.universal.create({
+    model: 'kanon-uniclassifier',
+    query: 'This is a confidentiality clause.',
+    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
   });
 
-  console.log(classifyUniversal.chunks);
+  console.log(universalClassification.chunks);
 }
 
 main();
@@ -48,13 +50,18 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Isaacus from 'isaacus';
 
-const client = new Isaacus();
+const client = new Isaacus({
+  bearerToken: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
+});
 
 async function main() {
-  const params: Isaacus.ClassifyUniversalCreateParams = { model: 'model', query: 'query', text: 'text' };
-  const classifyUniversal: Isaacus.ClassifyUniversalCreateResponse = await client.classifyUniversal.create(
-    params,
-  );
+  const params: Isaacus.Classifications.UniversalCreateParams = {
+    model: 'kanon-uniclassifier',
+    query: 'This is a confidentiality clause.',
+    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+  };
+  const universalClassification: Isaacus.Classifications.UniversalClassification =
+    await client.classifications.universal.create(params);
 }
 
 main();
@@ -71,8 +78,12 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const classifyUniversal = await client.classifyUniversal
-    .create({ model: 'model', query: 'query', text: 'text' })
+  const universalClassification = await client.classifications.universal
+    .create({
+      model: 'kanon-uniclassifier',
+      query: 'This is a confidentiality clause.',
+      text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+    })
     .catch(async (err) => {
       if (err instanceof Isaacus.APIError) {
         console.log(err.status); // 400
@@ -116,7 +127,7 @@ const client = new Isaacus({
 });
 
 // Or, configure per-request:
-await client.classifyUniversal.create({ model: 'model', query: 'query', text: 'text' }, {
+await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.' }, {
   maxRetries: 5,
 });
 ```
@@ -133,7 +144,7 @@ const client = new Isaacus({
 });
 
 // Override per-request:
-await client.classifyUniversal.create({ model: 'model', query: 'query', text: 'text' }, {
+await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -154,17 +165,25 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Isaacus();
 
-const response = await client.classifyUniversal
-  .create({ model: 'model', query: 'query', text: 'text' })
+const response = await client.classifications.universal
+  .create({
+    model: 'kanon-uniclassifier',
+    query: 'This is a confidentiality clause.',
+    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+  })
   .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: classifyUniversal, response: raw } = await client.classifyUniversal
-  .create({ model: 'model', query: 'query', text: 'text' })
+const { data: universalClassification, response: raw } = await client.classifications.universal
+  .create({
+    model: 'kanon-uniclassifier',
+    query: 'This is a confidentiality clause.',
+    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+  })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(classifyUniversal.chunks);
+console.log(universalClassification.chunks);
 ```
 
 ### Making custom/undocumented requests
@@ -323,7 +342,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/isaacus-typescript/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/isaacus-dev/isaacus-typescript/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
