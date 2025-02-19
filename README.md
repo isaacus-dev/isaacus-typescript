@@ -33,7 +33,7 @@ async function main() {
   const universalClassification = await client.classifications.universal.create({
     model: 'kanon-uniclassifier',
     query: 'This is a confidentiality clause.',
-    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+    text: 'I agree not to tell anyone about the document.',
   });
 
   console.log(universalClassification.chunks);
@@ -58,7 +58,7 @@ async function main() {
   const params: Isaacus.Classifications.UniversalCreateParams = {
     model: 'kanon-uniclassifier',
     query: 'This is a confidentiality clause.',
-    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+    text: 'I agree not to tell anyone about the document.',
   };
   const universalClassification: Isaacus.Classifications.UniversalClassification =
     await client.classifications.universal.create(params);
@@ -82,7 +82,7 @@ async function main() {
     .create({
       model: 'kanon-uniclassifier',
       query: 'This is a confidentiality clause.',
-      text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+      text: 'I agree not to tell anyone about the document.',
     })
     .catch(async (err) => {
       if (err instanceof Isaacus.APIError) {
@@ -127,7 +127,7 @@ const client = new Isaacus({
 });
 
 // Or, configure per-request:
-await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.' }, {
+await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
   maxRetries: 5,
 });
 ```
@@ -144,7 +144,7 @@ const client = new Isaacus({
 });
 
 // Override per-request:
-await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.' }, {
+await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -169,7 +169,7 @@ const response = await client.classifications.universal
   .create({
     model: 'kanon-uniclassifier',
     query: 'This is a confidentiality clause.',
-    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+    text: 'I agree not to tell anyone about the document.',
   })
   .asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -179,7 +179,7 @@ const { data: universalClassification, response: raw } = await client.classifica
   .create({
     model: 'kanon-uniclassifier',
     query: 'This is a confidentiality clause.',
-    text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+    text: 'I agree not to tell anyone about the document.',
   })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));

@@ -6,7 +6,8 @@ import { RequestOptions } from '../../internal/request-options';
 
 export class Universal extends APIResource {
   /**
-   * Universal classification
+   * Classify the relevance of a legal document to a query using an Isaacus universal
+   * legal AI classifier.
    */
   create(body: UniversalCreateParams, options?: RequestOptions): APIPromise<UniversalClassification> {
     return this._client.post('/classifications/universal', { body, ...options });
@@ -35,7 +36,7 @@ export interface UniversalClassification {
   score: number;
 
   /**
-   * Statistics about the usage of resources in the process of classifying a text.
+   * Statistics about the usage of resources in the process of classifying the text.
    */
   usage: UniversalClassification.Usage;
 }
@@ -72,7 +73,7 @@ export namespace UniversalClassification {
   }
 
   /**
-   * Statistics about the usage of resources in the process of classifying a text.
+   * Statistics about the usage of resources in the process of classifying the text.
    */
   export interface Usage {
     /**
@@ -91,11 +92,15 @@ export interface UniversalCreateParams {
   /**
    * The Isaacus Query Language (IQL) query or, if IQL is disabled, the statement, to
    * evaluate the text against.
+   *
+   * The query must contain at least one non-whitespace character.
    */
   query: string;
 
   /**
    * The text to classify.
+   *
+   * The text must contain at least one non-whitespace character.
    */
   text: string;
 
