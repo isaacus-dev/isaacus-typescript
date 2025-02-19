@@ -13,7 +13,7 @@ describe('resource universal', () => {
     const responsePromise = client.classifications.universal.create({
       model: 'kanon-uniclassifier',
       query: 'This is a confidentiality clause.',
-      text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+      text: 'I agree not to tell anyone about the document.',
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -29,7 +29,7 @@ describe('resource universal', () => {
     const response = await client.classifications.universal.create({
       model: 'kanon-uniclassifier',
       query: 'This is a confidentiality clause.',
-      text: 'The Supplier agrees not to disclose to any person, other than the Customer, any Confidential Information relating to the Contract or the Goods and/or Services, without prior written approval from the Customer.',
+      text: 'I agree not to tell anyone about the document.',
       chunking_options: { overlap_ratio: 0.1, overlap_tokens: 0, size: 512 },
       is_iql: true,
       scoring_method: 'auto',
