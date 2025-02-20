@@ -11,7 +11,7 @@ describe('resource universal', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: only required params', async () => {
     const responsePromise = client.classifications.universal.create({
-      model: 'kanon-uniclassifier',
+      model: 'kanon-universal-classifier',
       query: 'This is a confidentiality clause.',
       text: 'I agree not to tell anyone about the document.',
     });
@@ -27,7 +27,7 @@ describe('resource universal', () => {
   // skipped: tests are disabled for the time being
   test.skip('create: required and optional params', async () => {
     const response = await client.classifications.universal.create({
-      model: 'kanon-uniclassifier',
+      model: 'kanon-universal-classifier',
       query: 'This is a confidentiality clause.',
       text: 'I agree not to tell anyone about the document.',
       chunking_options: { overlap_ratio: 0.1, overlap_tokens: 0, size: 512 },

@@ -87,7 +87,7 @@ export interface UniversalCreateParams {
   /**
    * The ID of the model to use for universal classification.
    */
-  model: 'kanon-uniclassifier' | 'kanon-uniclassifier-mini';
+  model: 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
 
   /**
    * The Isaacus Query Language (IQL) query or, if IQL is disabled, the statement, to

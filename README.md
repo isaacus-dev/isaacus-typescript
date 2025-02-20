@@ -31,7 +31,7 @@ const client = new Isaacus({
 
 async function main() {
   const universalClassification = await client.classifications.universal.create({
-    model: 'kanon-uniclassifier',
+    model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
     text: 'I agree not to tell anyone about the document.',
   });
@@ -56,7 +56,7 @@ const client = new Isaacus({
 
 async function main() {
   const params: Isaacus.Classifications.UniversalCreateParams = {
-    model: 'kanon-uniclassifier',
+    model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
     text: 'I agree not to tell anyone about the document.',
   };
@@ -80,7 +80,7 @@ a subclass of `APIError` will be thrown:
 async function main() {
   const universalClassification = await client.classifications.universal
     .create({
-      model: 'kanon-uniclassifier',
+      model: 'kanon-universal-classifier',
       query: 'This is a confidentiality clause.',
       text: 'I agree not to tell anyone about the document.',
     })
@@ -127,7 +127,7 @@ const client = new Isaacus({
 });
 
 // Or, configure per-request:
-await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
+await client.classifications.universal.create({ model: 'kanon-universal-classifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
   maxRetries: 5,
 });
 ```
@@ -144,7 +144,7 @@ const client = new Isaacus({
 });
 
 // Override per-request:
-await client.classifications.universal.create({ model: 'kanon-uniclassifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
+await client.classifications.universal.create({ model: 'kanon-universal-classifier', query: 'This is a confidentiality clause.', text: 'I agree not to tell anyone about the document.' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -167,7 +167,7 @@ const client = new Isaacus();
 
 const response = await client.classifications.universal
   .create({
-    model: 'kanon-uniclassifier',
+    model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
     text: 'I agree not to tell anyone about the document.',
   })
@@ -177,7 +177,7 @@ console.log(response.statusText); // access the underlying Response object
 
 const { data: universalClassification, response: raw } = await client.classifications.universal
   .create({
-    model: 'kanon-uniclassifier',
+    model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
     text: 'I agree not to tell anyone about the document.',
   })
