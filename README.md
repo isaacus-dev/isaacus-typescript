@@ -26,7 +26,7 @@ The full API of this library can be found in [api.md](api.md).
 import Isaacus from 'isaacus';
 
 const client = new Isaacus({
-  bearerToken: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
@@ -51,7 +51,7 @@ This library includes TypeScript definitions for all request params and response
 import Isaacus from 'isaacus';
 
 const client = new Isaacus({
-  bearerToken: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
