@@ -20,7 +20,9 @@ export class Universal extends APIResource {
  */
 export interface UniversalClassification {
   /**
-   * The text broken into chunks, each with their own confidence score.
+   * The text as broken into chunks by
+   * [semchunk](https://github.com/isaacus-dev/semchunk), each chunk with its own
+   * confidence score.
    *
    * If no chunking occurred, this will be `null`.
    */
