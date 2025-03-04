@@ -1,6 +1,7 @@
 import fs from 'fs';
 import type { ResponseLike } from 'isaacus/internal/to-file';
 import { toFile } from 'isaacus/uploads';
+import { File } from 'node:buffer';
 
 class MyClass {
   name: string = 'foo';
