@@ -96,6 +96,9 @@ export interface UniversalCreateParams {
    * evaluate the text against.
    *
    * The query must contain at least one non-whitespace character.
+   *
+   * Unlike the text being classified, the query cannot be so long that it exceeds
+   * the maximum input length of the universal classifier.
    */
   query: string;
 
