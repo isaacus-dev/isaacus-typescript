@@ -1,0 +1,51 @@
+# Changelog
+
+## 0.1.0-alpha.1 (2025-03-14)
+
+Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([30bfcce](https://github.com/isaacus-dev/isaacus-typescript/commit/30bfcce435331fd6e11c5fa253c3c2decd0bb8af))
+* added latest OpenAPI specification ([94adc5f](https://github.com/isaacus-dev/isaacus-typescript/commit/94adc5f175ef1aaca55059dbfaef86efb0db787a))
+* added latest OpenAPI specification ([318efbd](https://github.com/isaacus-dev/isaacus-typescript/commit/318efbd6cb9b92987328e985b6508794ad59bb4e))
+* **api:** added latest OpenAPI specification ([b9e5fa3](https://github.com/isaacus-dev/isaacus-typescript/commit/b9e5fa3253f5c1aaed78379f2b7700aa514f35b1))
+* **api:** added latest OpenAPI specification ([1ab5ed9](https://github.com/isaacus-dev/isaacus-typescript/commit/1ab5ed994bf29f4ac884c48ef7f3efcb795fdbeb))
+* **api:** added latest OpenAPI specification ([8cc9ec8](https://github.com/isaacus-dev/isaacus-typescript/commit/8cc9ec83f852c7ebdb4d21e77c19905dc6f0dfa4))
+* **api:** added latest OpenAPI specification ([f7d8108](https://github.com/isaacus-dev/isaacus-typescript/commit/f7d8108c33e6cbd36ae59af0a3668967346fdf6a))
+* **api:** update via SDK Studio ([71f6b36](https://github.com/isaacus-dev/isaacus-typescript/commit/71f6b36c01544e91aa6c582f09b795ff2d8ef93d))
+* **client:** improve logging ([1d9586b](https://github.com/isaacus-dev/isaacus-typescript/commit/1d9586b39d9440742680f9cb532245afa4234526))
+
+
+### Bug Fixes
+
+* **client:** fix export map for index exports, accept BunFile ([395665b](https://github.com/isaacus-dev/isaacus-typescript/commit/395665b12b3a46917b2ba2e6425e792967889cf6))
+* **client:** fix TypeError with undefined File ([536b548](https://github.com/isaacus-dev/isaacus-typescript/commit/536b54835b9635766ca11640aefbc5491b4ad508))
+* **exports:** ensure resource imports don't require /index ([bd73256](https://github.com/isaacus-dev/isaacus-typescript/commit/bd7325678bb6df39f44ef643dcb3ddf4e4f31fe3))
+* **internal:** clean up undefined File test ([ba9b4e1](https://github.com/isaacus-dev/isaacus-typescript/commit/ba9b4e173616f24c8359385bcd6695d25af4d1ac))
+* **internal:** return in castToError instead of throwing ([fbd9466](https://github.com/isaacus-dev/isaacus-typescript/commit/fbd94661ad631e21f524e38a3e0d01e902323116))
+* **tests:** manually reset node:buffer File ([c8af76f](https://github.com/isaacus-dev/isaacus-typescript/commit/c8af76f16eb489c27ceba0a017ea8f1382bfad9f))
+
+
+### Chores
+
+* **client:** only accept standard types for file uploads ([7b12256](https://github.com/isaacus-dev/isaacus-typescript/commit/7b122567741f732865c506ef1aa38b0619378277))
+* **docs:** improve docs for withResponse/asResponse ([d7d7d78](https://github.com/isaacus-dev/isaacus-typescript/commit/d7d7d786d158464e62d27607bfd89081d38ed33b))
+* go live ([#1](https://github.com/isaacus-dev/isaacus-typescript/issues/1)) ([e85ceda](https://github.com/isaacus-dev/isaacus-typescript/commit/e85cedae33c69cc172671d79e8575f2e7c431f28))
+* **internal:** codegen related update ([e09cbce](https://github.com/isaacus-dev/isaacus-typescript/commit/e09cbce67248a6921e9fb9cd11a8d34f670ff8f0))
+* **internal:** constrain synckit dev dependency ([a93c3f7](https://github.com/isaacus-dev/isaacus-typescript/commit/a93c3f748a7283e5c01fe5c3f946ee0b53a4d99f))
+* **internal:** fix devcontainers setup ([4f6e575](https://github.com/isaacus-dev/isaacus-typescript/commit/4f6e57552f5b2052b9b8d2e91eca2cf558c055d4))
+* **internal:** fix tests failing on node v18 ([2e319fd](https://github.com/isaacus-dev/isaacus-typescript/commit/2e319fdfca3fc16ffcdffee2b1000472478fc35a))
+* **internal:** fix tests not always being type checked ([729dd2c](https://github.com/isaacus-dev/isaacus-typescript/commit/729dd2c9a3fecad828b8bf1f0f018d687c86eb32))
+* **internal:** migrate to eslint v9 ([98c68be](https://github.com/isaacus-dev/isaacus-typescript/commit/98c68be4ff004e39022507c90767660719ec9a62))
+* **internal:** remove extra empty newlines ([b6d9340](https://github.com/isaacus-dev/isaacus-typescript/commit/b6d9340d8b21362c340b43b5396c629d6b0a7115))
+* **internal:** remove unnecessary todo ([c9d6648](https://github.com/isaacus-dev/isaacus-typescript/commit/c9d66483dfae04e0be27513b00ff52aff8e24967))
+* **internal:** remove unused method ([be52835](https://github.com/isaacus-dev/isaacus-typescript/commit/be52835a7481f0ac5ac69bf7bdc95c6c2e85ec3b))
+* **internal:** update eslint config ([1edc67b](https://github.com/isaacus-dev/isaacus-typescript/commit/1edc67b2160cc72afbc2e3541a01ad16934de620))
+* **types:** improved go to definition on fetchOptions ([db40c27](https://github.com/isaacus-dev/isaacus-typescript/commit/db40c276961be861ab088ef681afc427fbb11ad6))
+* update SDK settings ([130248c](https://github.com/isaacus-dev/isaacus-typescript/commit/130248cd98f9e9f624c2fa7c8e2a75194650b8b6))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([4fc9f35](https://github.com/isaacus-dev/isaacus-typescript/commit/4fc9f35489912dca54f138c53f767091b6f6ab98))
