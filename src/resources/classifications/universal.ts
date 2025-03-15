@@ -44,10 +44,6 @@ export interface UniversalClassification {
 }
 
 export namespace UniversalClassification {
-  /**
-   * A chunk of a text that has been classified by an Isaacus universal legal AI
-   * classifier.
-   */
   export interface Chunk {
     /**
      * The end index of the chunk in the original text.
@@ -87,13 +83,14 @@ export namespace UniversalClassification {
 
 export interface UniversalCreateParams {
   /**
-   * The ID of the model to use for universal classification.
+   * The ID of the [model](https://docs.isaacus.com/models#universal-classification)
+   * to use for universal classification.
    */
   model: 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
 
   /**
-   * The Isaacus Query Language (IQL) query or, if IQL is disabled, the statement, to
-   * evaluate the text against.
+   * The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if
+   * IQL is disabled, the statement, to evaluate the text against.
    *
    * The query must contain at least one non-whitespace character.
    *
@@ -115,8 +112,8 @@ export interface UniversalCreateParams {
   chunking_options?: UniversalCreateParams.ChunkingOptions | null;
 
   /**
-   * Whether the query should be interpreted as an Isaacus Query Language (IQL) query
-   * or else as a statement.
+   * Whether the query should be interpreted as an
+   * [IQL](https://docs.isaacus.com/iql) query or else as a statement.
    */
   is_iql?: boolean;
 
