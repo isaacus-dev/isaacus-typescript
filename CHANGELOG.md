@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.2 (2025-03-15)
+
+Full Changelog: [v0.1.1...v0.1.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.1...v0.1.2)
+
+### Features
+
+* **api:** added latest OpenAPI specification ([#11](https://github.com/isaacus-dev/isaacus-typescript/issues/11)) ([5a5f98b](https://github.com/isaacus-dev/isaacus-typescript/commit/5a5f98b0fb569234dcba58ecd9ab721c3088220c))
+
+
+### Bug Fixes
+
+* **internal:** add mts file + crypto shim types ([#9](https://github.com/isaacus-dev/isaacus-typescript/issues/9)) ([6b4d879](https://github.com/isaacus-dev/isaacus-typescript/commit/6b4d879d20c22a93337773b885da836ed48bcdd9))
+
+
+### Documentation
+
+* **stainless:** renamed Isaacus TypeScript title ([#12](https://github.com/isaacus-dev/isaacus-typescript/issues/12)) ([f6d79cd](https://github.com/isaacus-dev/isaacus-typescript/commit/f6d79cd3fedca634d9ea9a85e597ad37e11abc9b))
+
 ## 0.1.1 (2025-03-15)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.0...v0.1.1)
