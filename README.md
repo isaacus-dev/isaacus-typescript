@@ -1,4 +1,4 @@
-# Isaacus Typescript API Library
+# Isaacus TypeScript API Library
 
 [![NPM version](https://img.shields.io/npm/v/isaacus.svg)](https://npmjs.org/package/isaacus) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/isaacus)
 
