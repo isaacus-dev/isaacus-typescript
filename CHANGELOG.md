@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0 (2025-03-15)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.0-alpha.1...v0.1.0)
+
+### Features
+
+* **api:** added latest OpenAPI specification ([#4](https://github.com/isaacus-dev/isaacus-typescript/issues/4)) ([b1d813a](https://github.com/isaacus-dev/isaacus-typescript/commit/b1d813adcd4fce5ecae91664603f2e967addac16))
+
 ## 0.1.0-alpha.1 (2025-03-14)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
