@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2025-03-15)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.0...v0.1.1)
+
+### Chores
+
+* update SDK settings ([#6](https://github.com/isaacus-dev/isaacus-typescript/issues/6)) ([6e73685](https://github.com/isaacus-dev/isaacus-typescript/commit/6e7368579afc676fa4d84f47d80496b2ee058321))
+
 ## 0.1.0 (2025-03-15)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.0-alpha.1...v0.1.0)
