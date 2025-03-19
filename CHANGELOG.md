@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.3 (2025-03-19)
+
+Full Changelog: [v0.1.2...v0.1.3](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.2...v0.1.3)
+
+### Bug Fixes
+
+* **stainless:** ensured SDKs are published ([#16](https://github.com/isaacus-dev/isaacus-typescript/issues/16)) ([08dbe2e](https://github.com/isaacus-dev/isaacus-typescript/commit/08dbe2ebce5eb6edc37f19a4b5139da989a4cd23))
+
+
+### Chores
+
+* **internal:** minor client file refactoring ([#14](https://github.com/isaacus-dev/isaacus-typescript/issues/14)) ([82d107f](https://github.com/isaacus-dev/isaacus-typescript/commit/82d107f338b5d43271d440e02da1673958e03ff1))
+
 ## 0.1.2 (2025-03-15)
 
 Full Changelog: [v0.1.1...v0.1.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.1...v0.1.2)
