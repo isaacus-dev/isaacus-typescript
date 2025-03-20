@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 (2025-03-20)
+
+Full Changelog: [v0.1.3...v0.1.4](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.3...v0.1.4)
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#18](https://github.com/isaacus-dev/isaacus-typescript/issues/18)) ([f749068](https://github.com/isaacus-dev/isaacus-typescript/commit/f749068b2aadf58799ec3ff76e67a22ee9d6f11e))
+* **exports:** stop using path fallbacks ([#20](https://github.com/isaacus-dev/isaacus-typescript/issues/20)) ([55aed60](https://github.com/isaacus-dev/isaacus-typescript/commit/55aed60f03e8ae9bdce3dec6e7e8d6e1a9c1265d))
+
 ## 0.1.3 (2025-03-19)
 
 Full Changelog: [v0.1.2...v0.1.3](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.2...v0.1.3)
