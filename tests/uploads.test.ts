@@ -1,6 +1,6 @@
 import fs from 'fs';
 import type { ResponseLike } from 'isaacus/internal/to-file';
-import { toFile } from 'isaacus/uploads';
+import { toFile } from 'isaacus/core/uploads';
 import { File } from 'node:buffer';
 
 class MyClass {
@@ -97,7 +97,7 @@ describe('missing File error message', () => {
   });
 
   test('is thrown', async () => {
-    const uploads = await import('isaacus/uploads');
+    const uploads = await import('isaacus/core/uploads');
     await expect(
       uploads.toFile(mockResponse({ url: 'https://example.com/my/audio.mp3' })),
     ).rejects.toMatchInlineSnapshot(

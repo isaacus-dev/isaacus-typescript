@@ -1,5 +1,5 @@
 import { multipartFormRequestOptions, createForm } from 'isaacus/internal/uploads';
-import { toFile } from 'isaacus/uploads';
+import { toFile } from 'isaacus/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
