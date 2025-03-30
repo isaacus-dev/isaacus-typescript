@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../resource';
-import { APIPromise } from '../../api-promise';
+import { APIResource } from '../../core/resource';
+import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
 export class Universal extends APIResource {
@@ -22,7 +22,7 @@ export interface UniversalClassification {
   /**
    * The text as broken into chunks by
    * [semchunk](https://github.com/isaacus-dev/semchunk), each chunk with its own
-   * confidence score.
+   * confidence score, ordered from highest to lowest score.
    *
    * If no chunking occurred, this will be `null`.
    */
@@ -49,6 +49,11 @@ export namespace UniversalClassification {
      * The end index of the chunk in the original text.
      */
     end: number;
+
+    /**
+     * The index of the chunk in the list of chunks.
+     */
+    index: number;
 
     /**
      * The model's score of the likelihood that the query expressed about the chunk is
