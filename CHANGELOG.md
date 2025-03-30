@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.0 (2025-03-30)
+
+Full Changelog: [v0.1.3...v0.2.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.3...v0.2.0)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** started sorting chunks by score and added `index` field ([#22](https://github.com/isaacus-dev/isaacus-typescript/issues/22))
+
+### Features
+
+* **api:** started sorting chunks by score and added `index` field ([#22](https://github.com/isaacus-dev/isaacus-typescript/issues/22)) ([852c457](https://github.com/isaacus-dev/isaacus-typescript/commit/852c457ca288e5a5cdd8d1a433edd2b766f28a57))
+
+
+### Chores
+
+* **client:** move misc public files to new `core/` directory, deprecate old paths ([#21](https://github.com/isaacus-dev/isaacus-typescript/issues/21)) ([1b58f5a](https://github.com/isaacus-dev/isaacus-typescript/commit/1b58f5a167928e49d4342f6a0f025a6e088d42b7))
+* **exports:** cleaner resource index imports ([#18](https://github.com/isaacus-dev/isaacus-typescript/issues/18)) ([f749068](https://github.com/isaacus-dev/isaacus-typescript/commit/f749068b2aadf58799ec3ff76e67a22ee9d6f11e))
+* **exports:** stop using path fallbacks ([#20](https://github.com/isaacus-dev/isaacus-typescript/issues/20)) ([55aed60](https://github.com/isaacus-dev/isaacus-typescript/commit/55aed60f03e8ae9bdce3dec6e7e8d6e1a9c1265d))
+
 ## 0.1.3 (2025-03-19)
 
 Full Changelog: [v0.1.2...v0.1.3](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.2...v0.1.3)
