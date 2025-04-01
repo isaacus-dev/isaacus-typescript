@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (2025-04-01)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **api:** added reranking endpoint ([#24](https://github.com/isaacus-dev/isaacus-typescript/issues/24)) ([1a1f686](https://github.com/isaacus-dev/isaacus-typescript/commit/1a1f68642dfcc337354ea880b8d3cdbd47de07a1))
+
 ## 0.2.0 (2025-03-30)
 
 Full Changelog: [v0.1.3...v0.2.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.1.3...v0.2.0)
