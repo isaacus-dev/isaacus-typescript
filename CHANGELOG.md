@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2025-04-01)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.3.0...v0.3.1)
+
+### Bug Fixes
+
+* **stainless:** added missing reranking endpoint to SDK API ([#27](https://github.com/isaacus-dev/isaacus-typescript/issues/27)) ([8ee7593](https://github.com/isaacus-dev/isaacus-typescript/commit/8ee7593b4e46b5dd8dc72b3a4880e30c3af5d60c))
+
 ## 0.3.0 (2025-04-01)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.2.0...v0.3.0)
