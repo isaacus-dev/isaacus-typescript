@@ -6,7 +6,7 @@ import { RequestOptions } from '../../internal/request-options';
 
 export class Universal extends APIResource {
   /**
-   * Classify the relevance of a legal document to a query using an Isaacus universal
+   * Classify the relevance of a legal document to a query with an Isaacus universal
    * legal AI classifier.
    */
   create(body: UniversalCreateParams, options?: RequestOptions): APIPromise<UniversalClassification> {
