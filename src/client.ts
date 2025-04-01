@@ -20,6 +20,7 @@ import { APIPromise } from './core/api-promise';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
+import { Reranking, RerankingCreateParams, Rerankings } from './resources/rerankings';
 import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
@@ -675,10 +676,18 @@ export class Isaacus {
   static toFile = Uploads.toFile;
 
   classifications: API.Classifications = new API.Classifications(this);
+  rerankings: API.Rerankings = new API.Rerankings(this);
 }
 Isaacus.Classifications = Classifications;
+Isaacus.Rerankings = Rerankings;
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
 
   export { Classifications as Classifications };
+
+  export {
+    Rerankings as Rerankings,
+    type Reranking as Reranking,
+    type RerankingCreateParams as RerankingCreateParams,
+  };
 }
