@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 (2025-04-01)
+
+Full Changelog: [v0.3.1...v0.4.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.3.1...v0.4.0)
+
+### Features
+
+* **sdk:** added npm MCP server ([#30](https://github.com/isaacus-dev/isaacus-typescript/issues/30)) ([efe94d9](https://github.com/isaacus-dev/isaacus-typescript/commit/efe94d984a395de1c3f78db9851937e22971b6aa))
+
 ## 0.3.1 (2025-04-01)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.3.0...v0.3.1)
