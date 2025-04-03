@@ -1,7 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../';
 import Isaacus from 'isaacus';
+
+export const metadata: Metadata = {
+  resource: 'rerankings',
+  operation: 'write',
+  tags: [],
+};
 
 export const tool: Tool = {
   name: 'create_rerankings',
@@ -77,4 +84,4 @@ export const handler = (client: Isaacus, args: any) => {
   return client.rerankings.create(body);
 };
 
-export default { tool, handler };
+export default { metadata, tool, handler };
