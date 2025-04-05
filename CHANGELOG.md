@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.5.0 (2025-04-05)
+
+Full Changelog: [v0.4.0...v0.5.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.4.0...v0.5.0)
+
+### Features
+
+* **mcp:** support end-user filtering of tools, resources, and tags ([#35](https://github.com/isaacus-dev/isaacus-typescript/issues/35)) ([c3c597f](https://github.com/isaacus-dev/isaacus-typescript/commit/c3c597f21cebbb6e14e9b87fa87d543697afeb7f))
+
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#37](https://github.com/isaacus-dev/isaacus-typescript/issues/37)) ([db9ceca](https://github.com/isaacus-dev/isaacus-typescript/commit/db9ceca29582d073446736def120d22a2d75a9c9))
+* **client:** send `X-Stainless-Timeout` in seconds ([#34](https://github.com/isaacus-dev/isaacus-typescript/issues/34)) ([979c453](https://github.com/isaacus-dev/isaacus-typescript/commit/979c453293006d0f841901df8f3383f5785b00a6))
+* **mcp:** remove debug logging ([#39](https://github.com/isaacus-dev/isaacus-typescript/issues/39)) ([91f4483](https://github.com/isaacus-dev/isaacus-typescript/commit/91f4483b3fef0e215ec59dfb10f557efce6fc3fe))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#36](https://github.com/isaacus-dev/isaacus-typescript/issues/36)) ([f2f08fa](https://github.com/isaacus-dev/isaacus-typescript/commit/f2f08fa2f6fcec5979d6c575dbd0347b8af77123))
+* **internal:** version bump ([#32](https://github.com/isaacus-dev/isaacus-typescript/issues/32)) ([e1992ce](https://github.com/isaacus-dev/isaacus-typescript/commit/e1992ce3ade04471fdd437d753af418ed80836f4))
+
+
+### Documentation
+
+* **mcp:** improve MCP readme docs ([#38](https://github.com/isaacus-dev/isaacus-typescript/issues/38)) ([2bb3f29](https://github.com/isaacus-dev/isaacus-typescript/commit/2bb3f29e9a41b834f17783cd26cce1bfb3e5c5ed))
+* **mcp:** update env vars in README ([#40](https://github.com/isaacus-dev/isaacus-typescript/issues/40)) ([5cc72f4](https://github.com/isaacus-dev/isaacus-typescript/commit/5cc72f48910c6721213b17eb569d075b4d584b14))
+
 ## 0.4.0 (2025-04-01)
 
 Full Changelog: [v0.3.1...v0.4.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.3.1...v0.4.0)
