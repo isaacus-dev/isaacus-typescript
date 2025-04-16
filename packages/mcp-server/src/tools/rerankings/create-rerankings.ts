@@ -33,7 +33,6 @@ export const tool: Tool = {
         items: {
           type: 'string',
           title: 'Non-blank string',
-          description: 'A string with at least one non-whitespace character.',
         },
       },
       chunking_options: {
