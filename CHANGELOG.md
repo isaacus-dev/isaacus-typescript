@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.5.1 (2025-04-16)
+
+Full Changelog: [v0.5.0...v0.5.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.5.0...v0.5.1)
+
+### Bug Fixes
+
+* **client:** send all configured auth headers ([50c37d7](https://github.com/isaacus-dev/isaacus-typescript/commit/50c37d755bb3c3380556ace406b56eab876afeb8))
+* **internal:** fix file uploads in node 18 jest ([c7b7e21](https://github.com/isaacus-dev/isaacus-typescript/commit/c7b7e216e58d1543021380438e1d30e15c396117))
+* **mcp:** fix readEnv type error ([8b4b190](https://github.com/isaacus-dev/isaacus-typescript/commit/8b4b19063b1a17a8a6c421428c6a6a82a9bd519c))
+* **mcp:** include all necessary env vars in client instantiation ([19a3c7b](https://github.com/isaacus-dev/isaacus-typescript/commit/19a3c7b4b100a1ca6613e1fb7013191b606a1902))
+
+
+### Chores
+
+* **client:** minor internal fixes ([1d498c9](https://github.com/isaacus-dev/isaacus-typescript/commit/1d498c94b272c1a7f7b18257a9c88f812d34b393))
+* **internal:** codegen related update ([2e3d74a](https://github.com/isaacus-dev/isaacus-typescript/commit/2e3d74a28bc40cf99a1398b1a4060584e0766504))
+* **internal:** improve node 18 shims ([fb9eac1](https://github.com/isaacus-dev/isaacus-typescript/commit/fb9eac171311ab834c0391fe9f516fc5c94d0128))
+* **internal:** reduce CI branch coverage ([08a7c8d](https://github.com/isaacus-dev/isaacus-typescript/commit/08a7c8ddddce2bb2c06f2aea2ec5c9eff99609b9))
+* **internal:** upload builds and expand CI branch coverage ([4f0428c](https://github.com/isaacus-dev/isaacus-typescript/commit/4f0428c3546e7520ff828319d49f7539907265f6))
+
+
+### Documentation
+
+* **api:** removed description of certain objects due to Mintlify bug ([17a6ea9](https://github.com/isaacus-dev/isaacus-typescript/commit/17a6ea975aeb53ffe496e7eea3ed7c1ac802a171))
+
 ## 0.5.0 (2025-04-05)
 
 Full Changelog: [v0.4.0...v0.5.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.4.0...v0.5.0)
