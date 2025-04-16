@@ -31,9 +31,6 @@ export interface Reranking {
 }
 
 export namespace Reranking {
-  /**
-   * The ranking of a text, by relevance to a query, out of an input array of texts.
-   */
   export interface Result {
     /**
      * The index of the text in the input array of texts, starting from `0` (and,
