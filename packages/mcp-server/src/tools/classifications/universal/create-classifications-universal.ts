@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_classifications_universal',
   description:
-    'Classify the relevance of a legal document to a query with an Isaacus universal legal AI classifier.',
+    'Classify the relevance of legal documents to a query with an Isaacus universal legal AI classifier.',
   inputSchema: {
     type: 'object',
     properties: {
@@ -26,11 +26,16 @@ export const tool: Tool = {
       query: {
         type: 'string',
         description:
-          'The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if IQL is disabled, the statement, to evaluate the text against.\n\nThe query must contain at least one non-whitespace character.\n\nUnlike the text being classified, the query cannot be so long that it exceeds the maximum input length of the universal classifier.',
+          'The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if IQL is disabled, the statement, to evaluate the texts against.\n\nThe query must contain at least one non-whitespace character.\n\nUnlike the texts being classified, the query cannot be so long that it exceeds the maximum input length of the universal classifier.',
       },
-      text: {
-        type: 'string',
-        description: 'The text to classify.\n\nThe text must contain at least one non-whitespace character.',
+      texts: {
+        type: 'array',
+        description:
+          'The texts to classify.\n\nThe texts must contain at least one non-whitespace character.',
+        items: {
+          type: 'string',
+          title: 'Non-blank string',
+        },
       },
       chunking_options: {
         type: 'object',
@@ -63,7 +68,7 @@ export const tool: Tool = {
       scoring_method: {
         type: 'string',
         description:
-          "The method to use for producing an overall confidence score.\n\n`auto` is the default scoring method and is recommended for most use cases. Currently, it is equivalent to `chunk_max`. In the future, it will automatically select the best method based on the model and input.\n\n`chunk_max` uses the highest confidence score of all of the text's chunks.\n\n`chunk_avg` averages the confidence scores of all of the text's chunks.\n\n`chunk_min` uses the lowest confidence score of all of the text's chunks.",
+          "The method to use for producing an overall confidence score.\n\n`auto` is the default scoring method and is recommended for most use cases. Currently, it is equivalent to `chunk_max`. In the future, it will automatically select the best method based on the model and inputs.\n\n`chunk_max` uses the highest confidence score of all of the texts' chunks.\n\n`chunk_avg` averages the confidence scores of all of the texts' chunks.\n\n`chunk_min` uses the lowest confidence score of all of the texts' chunks.",
         enum: ['auto', 'chunk_max', 'chunk_avg', 'chunk_min'],
       },
     },
