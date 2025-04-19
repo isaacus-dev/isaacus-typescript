@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.0 (2025-04-19)
+
+Full Changelog: [v0.5.1...v0.6.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.5.1...v0.6.0)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** made universal classification endpoint multi-input only
+
+### Features
+
+* **api:** made universal classification endpoint multi-input only ([af242f4](https://github.com/isaacus-dev/isaacus-typescript/commit/af242f49a223c9521b713ff6f35343913a3d804f))
+
 ## 0.5.1 (2025-04-16)
 
 Full Changelog: [v0.5.0...v0.5.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.5.0...v0.5.1)

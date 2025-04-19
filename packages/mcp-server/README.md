@@ -93,7 +93,7 @@ The following tools are available in this MCP server.
 
 ### Resource `classifications.universal`:
 
-- `create_classifications_universal` (`write`): Classify the relevance of a legal document to a query with an Isaacus universal legal AI classifier.
+- `create_classifications_universal` (`write`): Classify the relevance of legal documents to a query with an Isaacus universal legal AI classifier.
 
 ### Resource `rerankings`:
 
