@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.0 (2025-04-19)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.6.0...v0.7.0)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** changed how end offsets are computed
+
+### Features
+
+* **api:** changed how end offsets are computed ([c1d9246](https://github.com/isaacus-dev/isaacus-typescript/commit/c1d924631a251f5a91b47eeb9f56a33aa105be5e))
+
 ## 0.6.0 (2025-04-19)
 
 Full Changelog: [v0.5.1...v0.6.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.5.1...v0.6.0)
