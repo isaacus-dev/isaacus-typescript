@@ -61,8 +61,9 @@ export namespace UniversalClassification {
   export namespace Classification {
     export interface Chunk {
       /**
-       * The index of the character in the original text where the chunk ends, beginning
-       * from `0` (such that, in Python, the chunk is equivalent to `text[start:end+1]`).
+       * The index of the character immediately after the last character of the chunk in
+       * the original text, beginning from `0` (such that, in Python, the chunk is
+       * equivalent to `text[start:end]`).
        */
       end: number;
 
