@@ -78,7 +78,7 @@ export interface RerankingCreateParams {
    *
    * There must be at least one text.
    *
-   * The texts must contain at least one non-whitespace character.
+   * Each text must contain at least one non-whitespace character.
    */
   texts: Array<string>;
 

@@ -150,3 +150,7 @@ The following tools are available in this MCP server.
 ### Resource `rerankings`:
 
 - `create_rerankings` (`write`): Rerank legal documents by their relevance to a query with an Isaacus legal AI reranker.
+
+### Resource `extractions.qa`:
+
+- `create_extractions_qa` (`write`): Extract answers to questions from legal documents with an Isaacus legal AI answer extractor.
