@@ -20,7 +20,8 @@ export class Qa extends APIResource {
 export interface AnswerExtraction {
   /**
    * The results of extracting answers from the texts, ordered from highest to lowest
-   * inextractability score.
+   * answer confidence score (or else lowest to highest inextractability score if
+   * there are no answers for a text).
    */
   extractions: Array<AnswerExtraction.Extraction>;
 
