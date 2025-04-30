@@ -25,6 +25,7 @@ import { readEnv } from './internal/utils/env';
 import { formatRequestDetails, loggerFor } from './internal/utils/log';
 import { isEmptyObj } from './internal/utils/values';
 import { Classifications } from './resources/classifications/classifications';
+import { Extractions } from './resources/extractions/extractions';
 
 export interface ClientOptions {
   /**
@@ -470,12 +471,12 @@ export class Isaacus {
       fetchOptions.method = method.toUpperCase();
     }
 
-    return (
+    try {
       // use undefined this binding; fetch errors if bound to something else in browser/cloudflare
-      this.fetch.call(undefined, url, fetchOptions).finally(() => {
-        clearTimeout(timeout);
-      })
-    );
+      return await this.fetch.call(undefined, url, fetchOptions);
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
   private shouldRetry(response: Response): boolean {
@@ -677,9 +678,11 @@ export class Isaacus {
 
   classifications: API.Classifications = new API.Classifications(this);
   rerankings: API.Rerankings = new API.Rerankings(this);
+  extractions: API.Extractions = new API.Extractions(this);
 }
 Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
+Isaacus.Extractions = Extractions;
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
 
@@ -690,4 +693,6 @@ export declare namespace Isaacus {
     type Reranking as Reranking,
     type RerankingCreateParams as RerankingCreateParams,
   };
+
+  export { Extractions as Extractions };
 }

@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.8.0 (2025-04-30)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* more gracefully handle $refs and work around schema limitations ([9f4e65c](https://github.com/isaacus-dev/isaacus-typescript/commit/9f4e65cf5e6d35239ba3fea7beaa73e25492c13c))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([61c6004](https://github.com/isaacus-dev/isaacus-typescript/commit/61c600488944a696c6a5895c0f95d78f9c5738b6))
+* **ci:** only use depot for staging repos ([afd5100](https://github.com/isaacus-dev/isaacus-typescript/commit/afd51000ca1f48413b7cd79ef2f3f63a831b8f89))
+* **internal:** codegen related update ([bc21b09](https://github.com/isaacus-dev/isaacus-typescript/commit/bc21b09f139eadebd6e6fa1aa724cd116483e41b))
+* **internal:** refactor utils ([777d66c](https://github.com/isaacus-dev/isaacus-typescript/commit/777d66c9dbd6ee13c20ef62c165a44c96f6aa7ca))
+* **perf:** faster base64 decoding ([893c735](https://github.com/isaacus-dev/isaacus-typescript/commit/893c73501b1aef055e1a079a4e0ac8b474b1c46a))
+
 ## 0.7.0 (2025-04-19)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.6.0...v0.7.0)

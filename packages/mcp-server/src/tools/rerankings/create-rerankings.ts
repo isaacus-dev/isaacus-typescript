@@ -29,7 +29,7 @@ export const tool: Tool = {
       texts: {
         type: 'array',
         description:
-          'The texts to rerank.\n\nThere must be at least one text.\n\nThe texts must contain at least one non-whitespace character.',
+          'The texts to rerank.\n\nThere must be at least one text.\n\nEach text must contain at least one non-whitespace character.',
         items: {
           type: 'string',
           title: 'Non-blank string',
@@ -78,8 +78,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: Isaacus, args: any) => {
-  const { ...body } = args;
+export const handler = (client: Isaacus, args: Record<string, unknown> | undefined) => {
+  const body = args as any;
   return client.rerankings.create(body);
 };
 

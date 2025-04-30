@@ -5,33 +5,32 @@ import type { Metadata } from '../../';
 import Isaacus from 'isaacus';
 
 export const metadata: Metadata = {
-  resource: 'classifications.universal',
+  resource: 'extractions.qa',
   operation: 'write',
   tags: [],
 };
 
 export const tool: Tool = {
-  name: 'create_classifications_universal',
-  description:
-    'Classify the relevance of legal documents to a query with an Isaacus universal legal AI classifier.',
+  name: 'create_extractions_qa',
+  description: 'Extract answers to questions from legal documents with an Isaacus legal AI answer extractor.',
   inputSchema: {
     type: 'object',
     properties: {
       model: {
         type: 'string',
         description:
-          'The ID of the [model](https://docs.isaacus.com/models#universal-classification) to use for universal classification.',
-        enum: ['kanon-universal-classifier', 'kanon-universal-classifier-mini'],
+          'The ID of the [model](https://docs.isaacus.com/models#extractive-qa) to use for extractive question answering.',
+        enum: ['kanon-answer-extractor', 'kanon-answer-extractor-mini'],
       },
       query: {
         type: 'string',
         description:
-          'The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if IQL is disabled, the statement, to evaluate the texts against.\n\nThe query must contain at least one non-whitespace character.\n\nUnlike the texts being classified, the query cannot be so long that it exceeds the maximum input length of the universal classifier.',
+          'The query to extract the answer to.\n\nThe query must contain at least one non-whitespace character.\n\nUnlike the texts from which the answer will be extracted, the query cannot be so long that it exceeds the maximum input length of the model.',
       },
       texts: {
         type: 'array',
         description:
-          'The texts to classify.\n\nEach text must contain at least one non-whitespace character.',
+          'The texts to search for the answer in and extract the answer from.\n\nThere must be at least one text.\n\nEach text must contain at least one non-whitespace character.',
         items: {
           type: 'string',
           title: 'Non-blank string',
@@ -60,16 +59,15 @@ export const tool: Tool = {
         },
         required: [],
       },
-      is_iql: {
+      ignore_inextractability: {
         type: 'boolean',
         description:
-          'Whether the query should be interpreted as an [IQL](https://docs.isaacus.com/iql) query or else as a statement.',
+          "Whether to, if the model's score of the likelihood that an answer can not be extracted from a text is greater than the highest score of all possible answers, still return the highest scoring answers for that text.\n\nIf you have already determined that the texts answer the query, for example, by using one of our classification or reranker models, then you should set this to `true`.",
       },
-      scoring_method: {
-        type: 'string',
+      top_k: {
+        type: 'integer',
         description:
-          "The method to use for producing an overall confidence score.\n\n`auto` is the default scoring method and is recommended for most use cases. Currently, it is equivalent to `chunk_max`. In the future, it will automatically select the best method based on the model and inputs.\n\n`chunk_max` uses the highest confidence score of all of the texts' chunks.\n\n`chunk_avg` averages the confidence scores of all of the texts' chunks.\n\n`chunk_min` uses the lowest confidence score of all of the texts' chunks.",
-        enum: ['auto', 'chunk_max', 'chunk_avg', 'chunk_min'],
+          'The number of highest scoring answers to return.\n\nIf `null`, which is the default, all answers will be returned.',
       },
     },
   },
@@ -77,7 +75,7 @@ export const tool: Tool = {
 
 export const handler = (client: Isaacus, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.classifications.universal.create(body);
+  return client.extractions.qa.create(body);
 };
 
 export default { metadata, tool, handler };

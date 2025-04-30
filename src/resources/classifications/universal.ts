@@ -128,7 +128,7 @@ export interface UniversalCreateParams {
   /**
    * The texts to classify.
    *
-   * The texts must contain at least one non-whitespace character.
+   * Each text must contain at least one non-whitespace character.
    */
   texts: Array<string>;
 
