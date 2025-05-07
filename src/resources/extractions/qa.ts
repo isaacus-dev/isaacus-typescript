@@ -8,6 +8,19 @@ export class Qa extends APIResource {
   /**
    * Extract answers to questions from legal documents with an Isaacus legal AI
    * answer extractor.
+   *
+   * @example
+   * ```ts
+   * const answerExtraction = await client.extractions.qa.create(
+   *   {
+   *     model: 'kanon-answer-extractor',
+   *     query: 'What is the punishment for murder in Victoria?',
+   *     texts: [
+   *       'The standard sentence for murder in the State of Victoria is 30 years if the person murdered was a police officer and 25 years in any other case.',
+   *     ],
+   *   },
+   * );
+   * ```
    */
   create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtraction> {
     return this._client.post('/extractions/qa', { body, ...options });

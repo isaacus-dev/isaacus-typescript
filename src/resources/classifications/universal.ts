@@ -8,6 +8,18 @@ export class Universal extends APIResource {
   /**
    * Classify the relevance of legal documents to a query with an Isaacus universal
    * legal AI classifier.
+   *
+   * @example
+   * ```ts
+   * const universalClassification =
+   *   await client.classifications.universal.create({
+   *     model: 'kanon-universal-classifier',
+   *     query: 'This is a confidentiality clause.',
+   *     texts: [
+   *       'I agree not to tell anyone about the document.',
+   *     ],
+   *   });
+   * ```
    */
   create(body: UniversalCreateParams, options?: RequestOptions): APIPromise<UniversalClassification> {
     return this._client.post('/classifications/universal', { body, ...options });
