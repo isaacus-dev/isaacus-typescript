@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.9.0 (2025-05-10)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **client:** add withOptions helper ([919b90f](https://github.com/isaacus-dev/isaacus-typescript/commit/919b90f26306e822205199eaa61be8e17d4a29d6))
+* **mcp:** support dynamically discovering and invoking tools for APIs with many endpoints ([db63f9c](https://github.com/isaacus-dev/isaacus-typescript/commit/db63f9cfe164f071f4e4e2acb505195759e7d843))
+
+
+### Bug Fixes
+
+* **client:** always overwrite when merging headers ([ff81f8a](https://github.com/isaacus-dev/isaacus-typescript/commit/ff81f8af0867acacb1076017e6144da123c4d53c))
+* **mcp:** remove ajv dependency so MCP servers are more compatible with Cloudflare Workers ([e0eebca](https://github.com/isaacus-dev/isaacus-typescript/commit/e0eebcafa6eebe5ac19f69ed1e00e8b021fd7526))
+
+
+### Chores
+
+* **build:** automatically build subpackages if present ([5068236](https://github.com/isaacus-dev/isaacus-typescript/commit/506823620cadfebe43735612bd75419dd112eaab))
+* **client:** drop support for EOL node versions ([127940d](https://github.com/isaacus-dev/isaacus-typescript/commit/127940d53826bc75c61718d18b5b97499dc5a3d0))
+* **internal:** codegen related update ([11b21d1](https://github.com/isaacus-dev/isaacus-typescript/commit/11b21d1d07582840d98683985bb7cbc13aef4cce))
+* **internal:** share typescript helpers ([20f0218](https://github.com/isaacus-dev/isaacus-typescript/commit/20f0218a0b9b6612a2e8e67a91e8ee3eacf8a985))
+
+
+### Documentation
+
+* add examples to tsdocs ([f2f1be3](https://github.com/isaacus-dev/isaacus-typescript/commit/f2f1be3f21ef192e4a6701d6842a9174b60dc267))
+* **api:** fixed incorrect description of how extraction results are ordered ([06a702a](https://github.com/isaacus-dev/isaacus-typescript/commit/06a702afa25153578c20161112918930738a3713))
+* **readme:** fix typo ([d70d071](https://github.com/isaacus-dev/isaacus-typescript/commit/d70d0711bcccf134c3513ebf0a4c5d2e20c178ba))
+
 ## 0.8.0 (2025-04-30)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.7.0...v0.8.0)
