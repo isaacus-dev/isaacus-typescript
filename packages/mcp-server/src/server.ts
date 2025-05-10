@@ -19,7 +19,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'isaacus_api',
-    version: '0.8.0',
+    version: '0.9.0',
   },
   {
     capabilities: {
