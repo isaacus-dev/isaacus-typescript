@@ -8,6 +8,22 @@ export class Rerankings extends APIResource {
   /**
    * Rerank legal documents by their relevance to a query with an Isaacus legal AI
    * reranker.
+   *
+   * @example
+   * ```ts
+   * const reranking = await client.rerankings.create({
+   *   model: 'kanon-universal-classifier',
+   *   query:
+   *     'What are the essential elements required to establish a negligence claim?',
+   *   texts: [
+   *     'To form a contract, there must be an offer, acceptance, consideration, and mutual intent to be bound.',
+   *     'Criminal cases involve a completely different standard, requiring proof beyond a reasonable doubt.',
+   *     'In a negligence claim, the plaintiff must prove duty, breach, causation, and damages.',
+   *     'Negligence in tort law requires establishing a duty of care that the defendant owed to the plaintiff.',
+   *     'The concept of negligence is central to tort law, with courts assessing whether a breach of duty caused harm.',
+   *   ],
+   * });
+   * ```
    */
   create(body: RerankingCreateParams, options?: RequestOptions): APIPromise<Reranking> {
     return this._client.post('/rerankings', { body, ...options });

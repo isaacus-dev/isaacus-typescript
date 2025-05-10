@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
@@ -40,13 +40,13 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
 
       - name: Check build
-        run: ./scripts/build-all
+        run: ./scripts/build
 
       - name: Get GitHub OIDC Token
         if: github.repository == 'stainless-sdks/isaacus-typescript'
@@ -72,7 +72,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Bootstrap
         run: ./scripts/bootstrap
