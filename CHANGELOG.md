@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.9.1 (2025-05-13)
+
+Full Changelog: [v0.9.0...v0.9.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.9.0...v0.9.1)
+
+### Bug Fixes
+
+* **mcp:** explicitly include zod and zod-to-json-schema in package.json ([9b8a13c](https://github.com/isaacus-dev/isaacus-typescript/commit/9b8a13c9cafb7b9590401f5d1b888997b9429124))
+
+
+### Chores
+
+* **internal:** codegen related update ([508b4e2](https://github.com/isaacus-dev/isaacus-typescript/commit/508b4e26db593f0adb0e9c68ba0fcf53b99ec4e8))
+* **package:** remove engines ([fef8941](https://github.com/isaacus-dev/isaacus-typescript/commit/fef894183b0faaf70d61c5e5fbaa52f917bff672))
+* **tests:** use node 22 for CI tests ([81831b6](https://github.com/isaacus-dev/isaacus-typescript/commit/81831b67684f9671baec64156495ce03a0980185))
+
 ## 0.9.0 (2025-05-10)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.8.0...v0.9.0)
