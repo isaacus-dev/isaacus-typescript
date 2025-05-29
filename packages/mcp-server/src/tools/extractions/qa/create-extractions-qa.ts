@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'extractions.qa',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/extractions/qa',
+  operationId: 'CreateAnswerExtractions',
 };
 
 export const tool: Tool = {
