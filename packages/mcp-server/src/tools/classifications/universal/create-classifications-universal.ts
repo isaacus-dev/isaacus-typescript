@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'classifications.universal',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/classifications/universal',
+  operationId: 'CreateUniversalClassifications',
 };
 
 export const tool: Tool = {
