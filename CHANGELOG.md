@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.10.0 (2025-06-03)
+
+Full Changelog: [v0.9.0...v0.10.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.9.0...v0.10.0)
+
+### Features
+
+* **mcp:** include http information in tools ([114738a](https://github.com/isaacus-dev/isaacus-typescript/commit/114738ab45277fd2ac0c0eb26af526d8a51879df))
+
+
+### Bug Fixes
+
+* compat with more runtimes ([e7b9a29](https://github.com/isaacus-dev/isaacus-typescript/commit/e7b9a294e97a919cc12bf8f39c8de9d91ae43c76))
+* **mcp:** explicitly include zod and zod-to-json-schema in package.json ([9b8a13c](https://github.com/isaacus-dev/isaacus-typescript/commit/9b8a13c9cafb7b9590401f5d1b888997b9429124))
+* **mcp:** fix cursor schema transformation issue with recursive references ([d0f747b](https://github.com/isaacus-dev/isaacus-typescript/commit/d0f747bfd026e1a69cc9e9ed5b0396b16a7d55e8))
+* **mcp:** include description in dynamic tool search ([0e535ea](https://github.com/isaacus-dev/isaacus-typescript/commit/0e535eaec29b502e1067d238623d05c06d22d226))
+
+
+### Chores
+
+* adjust eslint.config.mjs ignore pattern ([9baefa0](https://github.com/isaacus-dev/isaacus-typescript/commit/9baefa0106cd8626c9e620d7f5591e6d3d824293))
+* **deps:** bump eslint-plugin-prettier ([d2bf531](https://github.com/isaacus-dev/isaacus-typescript/commit/d2bf5319cf2a6edfb25a7c56241f1e4efb3f641e))
+* **docs:** grammar improvements ([27ece95](https://github.com/isaacus-dev/isaacus-typescript/commit/27ece95b02af61a7a0c24e7acb0b68142e504b1c))
+* improve publish-npm script --latest tag logic ([e84f18e](https://github.com/isaacus-dev/isaacus-typescript/commit/e84f18e80a28898c9880290c78e7b1fbbe260bf7))
+* **internal:** codegen related update ([5dd627d](https://github.com/isaacus-dev/isaacus-typescript/commit/5dd627dfc72d274077bdedbd67f0ae15f7dcb86f))
+* **internal:** codegen related update ([508b4e2](https://github.com/isaacus-dev/isaacus-typescript/commit/508b4e26db593f0adb0e9c68ba0fcf53b99ec4e8))
+* **internal:** update jest config ([ac7899d](https://github.com/isaacus-dev/isaacus-typescript/commit/ac7899d70574e47c30407980ba4aa6934ab1e169))
+* **mcp:** remove duplicate assignment ([a9a5105](https://github.com/isaacus-dev/isaacus-typescript/commit/a9a51059795e99f45dc5aea920b3edf4a9349dbf))
+* **package:** remove engines ([fef8941](https://github.com/isaacus-dev/isaacus-typescript/commit/fef894183b0faaf70d61c5e5fbaa52f917bff672))
+* **tests:** use node 22 for CI tests ([81831b6](https://github.com/isaacus-dev/isaacus-typescript/commit/81831b67684f9671baec64156495ce03a0980185))
+
 ## 0.9.0 (2025-05-10)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.8.0...v0.9.0)
