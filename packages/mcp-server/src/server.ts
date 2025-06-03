@@ -19,7 +19,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'isaacus_api',
-    version: '0.9.0',
+    version: '0.10.0',
   },
   {
     capabilities: {
@@ -97,7 +97,7 @@ export async function executeHandler(
 ) {
   const options = { ...defaultClientCapabilities, ...compatibilityOptions };
   if (options.validJson && args) {
-    args = args = parseEmbeddedJSON(args, tool.inputSchema);
+    args = parseEmbeddedJSON(args, tool.inputSchema);
   }
   const result = await handler(client, args || {});
   return {
