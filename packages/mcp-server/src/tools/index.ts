@@ -1,29 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Isaacus from 'isaacus';
-import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import { Metadata, Endpoint, HandlerFunction } from './types';
+
+export { Metadata, Endpoint, HandlerFunction };
 
 import create_classifications_universal from './classifications/universal/create-classifications-universal';
 import create_rerankings from './rerankings/create-rerankings';
 import create_extractions_qa from './extractions/qa/create-extractions-qa';
-
-export type HandlerFunction = (client: Isaacus, args: Record<string, unknown> | undefined) => Promise<any>;
-
-export type Metadata = {
-  resource: string;
-  operation: 'read' | 'write';
-  tags: string[];
-
-  httpMethod?: string;
-  httpPath?: string;
-  operationId?: string;
-};
-
-export type Endpoint = {
-  metadata: Metadata;
-  tool: Tool;
-  handler: HandlerFunction;
-};
 
 export const endpoints: Endpoint[] = [];
 
