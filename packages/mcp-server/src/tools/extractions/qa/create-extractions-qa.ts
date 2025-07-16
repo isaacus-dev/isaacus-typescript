@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'isaacus-mcp/filtering';
-import { asTextContentResult } from 'isaacus-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'isaacus-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../';
 import Isaacus from 'isaacus';
 
 export const metadata: Metadata = {
