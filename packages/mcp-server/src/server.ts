@@ -28,11 +28,7 @@ export const server = new McpServer(
     name: 'isaacus_api',
     version: '0.10.0',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
