@@ -1,5 +1,48 @@
 # Changelog
 
+## 0.11.0 (2025-07-24)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **client:** add support for endpoint-specific base URLs ([5f69f71](https://github.com/isaacus-dev/isaacus-typescript/commit/5f69f71f60b25ce1559a244ab666042b944533b0))
+* **mcp:** implement support for binary responses ([bec8bea](https://github.com/isaacus-dev/isaacus-typescript/commit/bec8beac1c9e9187aa3cbeb6ba49764763530277))
+* **mcp:** set X-Stainless-MCP header ([db4bb4f](https://github.com/isaacus-dev/isaacus-typescript/commit/db4bb4f568df5883c148250104123900466b2f05))
+* **mcp:** support filtering tool results by a jq expression ([8d0556f](https://github.com/isaacus-dev/isaacus-typescript/commit/8d0556f619b94473c24c362e72cbc4eaba644374))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([02f5170](https://github.com/isaacus-dev/isaacus-typescript/commit/02f5170723293eda6ae0995673136e3528c39f8c))
+* **client:** explicitly copy fetch in withOptions ([0112989](https://github.com/isaacus-dev/isaacus-typescript/commit/01129895de3a6d135186e75817f75c8512084985))
+* **client:** get fetchOptions type more reliably ([d2e9558](https://github.com/isaacus-dev/isaacus-typescript/commit/d2e9558832362fff02e3ffd5f5a950b609bdbd0c))
+* **mcp:** include required section for top-level properties and support naming transformations ([d7e791b](https://github.com/isaacus-dev/isaacus-typescript/commit/d7e791bb7a3afbe7d8bf6a2c48a010fd091ada8d))
+* **mcp:** relax input type for asTextContextResult ([1627904](https://github.com/isaacus-dev/isaacus-typescript/commit/1627904fcb3474757ba2a29f940b5a4ce067b053))
+* **mcp:** support jq filtering on cloudflare workers ([391d825](https://github.com/isaacus-dev/isaacus-typescript/commit/391d8252818ab34f67f7ca02119a6660cdbe5520))
+* publish script — handle NPM errors correctly ([6805e78](https://github.com/isaacus-dev/isaacus-typescript/commit/6805e78dc985503dd1f84a8de227aedd5dddf99d))
+
+
+### Chores
+
+* add docs to RequestOptions type ([16b7822](https://github.com/isaacus-dev/isaacus-typescript/commit/16b7822028f977b12a1c262e6b0a6602fb1ce8dd))
+* avoid type error in certain environments ([8a16797](https://github.com/isaacus-dev/isaacus-typescript/commit/8a167970c0102371267194262318788f07dafc1d))
+* **ci:** enable for pull requests ([840289e](https://github.com/isaacus-dev/isaacus-typescript/commit/840289ede6ef0e034cf1b72a4d3a324d467cf43e))
+* **ci:** only run for pushes and fork pull requests ([cf544d1](https://github.com/isaacus-dev/isaacus-typescript/commit/cf544d1ae1cc37bb2cfd13189652bb2b0a2ab92e))
+* **client:** improve path param validation ([0c8d6f0](https://github.com/isaacus-dev/isaacus-typescript/commit/0c8d6f0123f808d8bc950936c45fbf7dfbe7ce07))
+* **client:** refactor imports ([301c341](https://github.com/isaacus-dev/isaacus-typescript/commit/301c34137a10f732d62218fedf0614a068acd997))
+* **docs:** use top-level-await in example snippets ([63d8953](https://github.com/isaacus-dev/isaacus-typescript/commit/63d895384acdadbeee292f951d524df90508c9b2))
+* **internal:** add pure annotations, make base APIResource abstract ([03358ec](https://github.com/isaacus-dev/isaacus-typescript/commit/03358ec382f8c487656f80e5679a73aa54e8a867))
+* **internal:** codegen related update ([bda7719](https://github.com/isaacus-dev/isaacus-typescript/commit/bda771936be7dd0db83239b898a9fb8e8fd4a6ce))
+* **internal:** fix readablestream types in node 20 ([604d380](https://github.com/isaacus-dev/isaacus-typescript/commit/604d380c9062489e279a76750b8cbf3707f16ecd))
+* make some internal functions async ([d763165](https://github.com/isaacus-dev/isaacus-typescript/commit/d76316597b31c533754260474bee660e515fbffc))
+* **mcp:** formatting ([62ef41e](https://github.com/isaacus-dev/isaacus-typescript/commit/62ef41ef9a61df100c684bb7cc694c299a84daf9))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([43d4446](https://github.com/isaacus-dev/isaacus-typescript/commit/43d44461cf592c7a93277cc6b939ffaf23da2342))
+* **mcp:** rework imports in tools ([6d55f27](https://github.com/isaacus-dev/isaacus-typescript/commit/6d55f27f2157499c3ba7e5e137f821909269d5df))
+* **readme:** update badges ([2413a0e](https://github.com/isaacus-dev/isaacus-typescript/commit/2413a0e5a09e1aff4490aef3f27eff77fb1e5c0b))
+* **readme:** use better example snippet for undocumented params ([35f22a6](https://github.com/isaacus-dev/isaacus-typescript/commit/35f22a6f4288fe6736ea39e20870b59adfc91e58))
+* **ts:** reorder package.json imports ([d0b6815](https://github.com/isaacus-dev/isaacus-typescript/commit/d0b6815a17366c5f67372cd44c4e43a4977cc3dc))
+
 ## 0.10.0 (2025-06-03)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.9.0...v0.10.0)
