@@ -88,6 +88,7 @@ export const tool: Tool = {
     },
     required: ['model', 'query', 'texts'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Isaacus, args: Record<string, unknown> | undefined) => {
