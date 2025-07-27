@@ -1,7 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'isaacus-mcp/filtering';
+import { Metadata, asTextContentResult } from 'isaacus-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Isaacus from 'isaacus';
 
 export const metadata: Metadata = {
@@ -15,7 +17,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'create_rerankings',
-  description: 'Rerank legal documents by their relevance to a query with an Isaacus legal AI reranker.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRerank legal documents by their relevance to a query with an Isaacus legal AI reranker.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/reranking',\n  $defs: {\n    reranking: {\n      type: 'object',\n      title: 'Reranking response',\n      description: 'The reranking of texts, by relevance to a query, out of an input array of texts.',\n      properties: {\n        results: {\n          type: 'array',\n          description: 'The rerankings of the texts, by relevance to the query, in order from highest to lowest relevance score.',\n          items: {\n            type: 'object',\n            title: 'Reranking result',\n            properties: {\n              index: {\n                type: 'integer',\n                description: 'The index of the text in the input array of texts, starting from `0` (and, therefore, ending at the number of texts minus `1`).'\n              },\n              score: {\n                type: 'number',\n                description: 'A score between `0` and `1`, inclusive, representing the relevance of the text to the query.'\n              }\n            },\n            required: [              'index',\n              'score'\n            ]\n          }\n        },\n        usage: {\n          type: 'object',\n          title: 'Reranking usage',\n          description: 'Statistics about the usage of resources in the process of reranking the texts.',\n          properties: {\n            input_tokens: {\n              type: 'integer',\n              description: 'The number of tokens inputted to the model.'\n            }\n          },\n          required: [            'input_tokens'\n          ]\n        }\n      },\n      required: [        'results',\n        'usage'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -59,7 +62,6 @@ export const tool: Tool = {
             description: 'A whole number greater than or equal to 1.',
           },
         },
-        required: [],
       },
       is_iql: {
         type: 'boolean',
@@ -77,13 +79,21 @@ export const tool: Tool = {
         title: 'Positive integer',
         description: 'A whole number greater than or equal to 1.',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
+    required: ['model', 'query', 'texts'],
   },
+  annotations: {},
 };
 
-export const handler = (client: Isaacus, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: Isaacus, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.rerankings.create(body);
+  return asTextContentResult(await maybeFilter(args, await client.rerankings.create(body)));
 };
 
 export default { metadata, tool, handler };
