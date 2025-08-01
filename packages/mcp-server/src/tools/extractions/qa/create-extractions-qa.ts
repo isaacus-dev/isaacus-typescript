@@ -87,8 +87,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Isaacus, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.extractions.qa.create(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.extractions.qa.create(body)));
 };
 
 export default { metadata, tool, handler };
