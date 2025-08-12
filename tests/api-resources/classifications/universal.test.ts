@@ -8,7 +8,7 @@ const client = new Isaacus({
 });
 
 describe('resource universal', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.classifications.universal.create({
       model: 'kanon-universal-classifier',
@@ -24,7 +24,7 @@ describe('resource universal', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.classifications.universal.create({
       model: 'kanon-universal-classifier',
