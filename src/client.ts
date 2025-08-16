@@ -720,9 +720,11 @@ export class Isaacus {
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
 }
+
 Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
+
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
 
