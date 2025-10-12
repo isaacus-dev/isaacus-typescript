@@ -172,7 +172,7 @@ http://localhost:3000?client=cursor&capability=tool-name-length%3D40
 import { server, endpoints, init } from "isaacus-mcp/server";
 
 // import a specific tool
-import createClassificationsUniversal from "isaacus-mcp/tools/classifications/universal/create-classifications-universal";
+import createEmbeddings from "isaacus-mcp/tools/embeddings/create-embeddings";
 
 // initialize the server and all endpoints
 init({ server, endpoints });
@@ -197,12 +197,16 @@ const myCustomEndpoint = {
 };
 
 // initialize the server with your custom endpoints
-init({ server: myServer, endpoints: [createClassificationsUniversal, myCustomEndpoint] });
+init({ server: myServer, endpoints: [createEmbeddings, myCustomEndpoint] });
 ```
 
 ## Available Tools
 
 The following tools are available in this MCP server.
+
+### Resource `embeddings`:
+
+- `create_embeddings` (`write`): Embed legal texts with an Isaacus legal AI embedder.
 
 ### Resource `classifications.universal`:
 
