@@ -2,11 +2,11 @@
 
 Types:
 
-- <code><a href="./src/resources/embeddings.ts">EmbeddingCreateResponse</a></code>
+- <code><a href="./src/resources/embeddings.ts">Embedding</a></code>
 
 Methods:
 
-- <code title="post /embeddings">client.embeddings.<a href="./src/resources/embeddings.ts">create</a>({ ...params }) -> EmbeddingCreateResponse</code>
+- <code title="post /embeddings">client.embeddings.<a href="./src/resources/embeddings.ts">create</a>({ ...params }) -> Embedding</code>
 
 # Classifications
 
