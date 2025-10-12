@@ -16,7 +16,7 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { EmbeddingCreateParams, EmbeddingCreateResponse, Embeddings } from './resources/embeddings';
+import { Embedding, EmbeddingCreateParams, Embeddings } from './resources/embeddings';
 import { Reranking, RerankingCreateParams, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -733,7 +733,7 @@ export declare namespace Isaacus {
 
   export {
     Embeddings as Embeddings,
-    type EmbeddingCreateResponse as EmbeddingCreateResponse,
+    type Embedding as Embedding,
     type EmbeddingCreateParams as EmbeddingCreateParams,
   };
 

@@ -19,7 +19,7 @@ export class Embeddings extends APIResource {
    * });
    * ```
    */
-  create(body: EmbeddingCreateParams, options?: RequestOptions): APIPromise<EmbeddingCreateResponse> {
+  create(body: EmbeddingCreateParams, options?: RequestOptions): APIPromise<Embedding> {
     return this._client.post('/embeddings', { body, ...options });
   }
 }
@@ -27,19 +27,19 @@ export class Embeddings extends APIResource {
 /**
  * Embeddings of legal texts produced by an Isaacus legal AI embedder.
  */
-export interface EmbeddingCreateResponse {
+export interface Embedding {
   /**
    * The embeddings of the inputs.
    */
-  embeddings: Array<EmbeddingCreateResponse.Embedding>;
+  embeddings: Array<Embedding.Embedding>;
 
   /**
    * Statistics about the usage of resources in the process of embedding the inputs.
    */
-  usage: EmbeddingCreateResponse.Usage;
+  usage: Embedding.Usage;
 }
 
-export namespace EmbeddingCreateResponse {
+export namespace Embedding {
   export interface Embedding {
     /**
      * The embedding of the content represented as an array of floating point numbers.
@@ -66,7 +66,7 @@ export namespace EmbeddingCreateResponse {
 
 export interface EmbeddingCreateParams {
   /**
-   * The ID of the [model](https://docs.isaacus.com/models#embeddings) to use for
+   * The ID of the [model](https://docs.isaacus.com/models#embedding) to use for
    * embedding.
    */
   model: 'kanon-2-embedder';
@@ -109,8 +109,5 @@ export interface EmbeddingCreateParams {
 }
 
 export declare namespace Embeddings {
-  export {
-    type EmbeddingCreateResponse as EmbeddingCreateResponse,
-    type EmbeddingCreateParams as EmbeddingCreateParams,
-  };
+  export { type Embedding as Embedding, type EmbeddingCreateParams as EmbeddingCreateParams };
 }
