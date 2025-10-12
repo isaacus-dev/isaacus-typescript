@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "isaacus-mcp/*": ["src/*"],
-      "isaacus-mcp": ["src/index.ts"]
+      "isaacus-mcp/*": ["./src/*"],
+      "isaacus-mcp": ["./src/index.ts"]
     },
     "noEmit": true,
 

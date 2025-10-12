@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "isaacus/*": ["dist/src/*"],
-      "isaacus": ["dist/src/index.ts"]
+      "isaacus/*": ["./dist/src/*"],
+      "isaacus": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
