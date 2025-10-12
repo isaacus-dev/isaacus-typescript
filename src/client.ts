@@ -16,7 +16,6 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { Embedding, EmbeddingCreateParams, Embeddings } from './resources/embeddings';
 import { Reranking, RerankingCreateParams, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -717,25 +716,17 @@ export class Isaacus {
 
   static toFile = Uploads.toFile;
 
-  embeddings: API.Embeddings = new API.Embeddings(this);
   classifications: API.Classifications = new API.Classifications(this);
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
 }
 
-Isaacus.Embeddings = Embeddings;
 Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
 
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
-
-  export {
-    Embeddings as Embeddings,
-    type Embedding as Embedding,
-    type EmbeddingCreateParams as EmbeddingCreateParams,
-  };
 
   export { Classifications as Classifications };
 
