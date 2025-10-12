@@ -1,3 +1,13 @@
+# Embeddings
+
+Types:
+
+- <code><a href="./src/resources/embeddings.ts">Embedding</a></code>
+
+Methods:
+
+- <code title="post /embeddings">client.embeddings.<a href="./src/resources/embeddings.ts">create</a>({ ...params }) -> Embedding</code>
+
 # Classifications
 
 ## Universal
