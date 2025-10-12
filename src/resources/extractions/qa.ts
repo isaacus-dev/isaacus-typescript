@@ -11,18 +11,17 @@ export class Qa extends APIResource {
    *
    * @example
    * ```ts
-   * const answerExtraction = await client.extractions.qa.create(
-   *   {
+   * const answerExtractionResponse =
+   *   await client.extractions.qa.create({
    *     model: 'kanon-answer-extractor',
    *     query: 'What is the punishment for murder in Victoria?',
    *     texts: [
    *       'The standard sentence for murder in the State of Victoria is 30 years if the person murdered was a police officer and 25 years in any other case.',
    *     ],
-   *   },
-   * );
+   *   });
    * ```
    */
-  create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtraction> {
+  create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
     return this._client.post('/extractions/qa', { body, ...options });
   }
 }
@@ -30,22 +29,22 @@ export class Qa extends APIResource {
 /**
  * The results of extracting answers from texts.
  */
-export interface AnswerExtraction {
+export interface AnswerExtractionResponse {
   /**
    * The results of extracting answers from the texts, ordered from highest to lowest
    * answer confidence score (or else lowest to highest inextractability score if
    * there are no answers for a text).
    */
-  extractions: Array<AnswerExtraction.Extraction>;
+  extractions: Array<AnswerExtractionResponse.Extraction>;
 
   /**
    * Statistics about the usage of resources in the process of extracting answers
    * from the texts.
    */
-  usage: AnswerExtraction.Usage;
+  usage: AnswerExtractionResponse.Usage;
 }
 
-export namespace AnswerExtraction {
+export namespace AnswerExtractionResponse {
   /**
    * The result of extracting answers from a text.
    */
@@ -188,5 +187,5 @@ export namespace QaCreateParams {
 }
 
 export declare namespace Qa {
-  export { type AnswerExtraction as AnswerExtraction, type QaCreateParams as QaCreateParams };
+  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QaCreateParams as QaCreateParams };
 }

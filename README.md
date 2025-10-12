@@ -26,13 +26,13 @@ const client = new Isaacus({
   apiKey: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
 });
 
-const universalClassification = await client.classifications.universal.create({
+const universalClassificationResponse = await client.classifications.universal.create({
   model: 'kanon-universal-classifier',
   query: 'This is a confidentiality clause.',
   texts: ['I agree not to tell anyone about the document.'],
 });
 
-console.log(universalClassification.classifications);
+console.log(universalClassificationResponse.classifications);
 ```
 
 ### Request & Response types
@@ -52,7 +52,7 @@ const params: Isaacus.Classifications.UniversalCreateParams = {
   query: 'This is a confidentiality clause.',
   texts: ['I agree not to tell anyone about the document.'],
 };
-const universalClassification: Isaacus.Classifications.UniversalClassification =
+const universalClassificationResponse: Isaacus.Classifications.UniversalClassificationResponse =
   await client.classifications.universal.create(params);
 ```
 
@@ -66,7 +66,7 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const universalClassification = await client.classifications.universal
+const universalClassificationResponse = await client.classifications.universal
   .create({
     model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
@@ -162,7 +162,7 @@ const response = await client.classifications.universal
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: universalClassification, response: raw } = await client.classifications.universal
+const { data: universalClassificationResponse, response: raw } = await client.classifications.universal
   .create({
     model: 'kanon-universal-classifier',
     query: 'This is a confidentiality clause.',
@@ -170,7 +170,7 @@ const { data: universalClassification, response: raw } = await client.classifica
   })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(universalClassification.classifications);
+console.log(universalClassificationResponse.classifications);
 ```
 
 ### Logging

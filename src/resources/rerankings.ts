@@ -11,7 +11,7 @@ export class Rerankings extends APIResource {
    *
    * @example
    * ```ts
-   * const reranking = await client.rerankings.create({
+   * const rerankingResponse = await client.rerankings.create({
    *   model: 'kanon-universal-classifier',
    *   query:
    *     'What are the essential elements required to establish a negligence claim?',
@@ -25,7 +25,7 @@ export class Rerankings extends APIResource {
    * });
    * ```
    */
-  create(body: RerankingCreateParams, options?: RequestOptions): APIPromise<Reranking> {
+  create(body: RerankingCreateParams, options?: RequestOptions): APIPromise<RerankingResponse> {
     return this._client.post('/rerankings', { body, ...options });
   }
 }
@@ -33,20 +33,20 @@ export class Rerankings extends APIResource {
 /**
  * The reranking of texts, by relevance to a query, out of an input array of texts.
  */
-export interface Reranking {
+export interface RerankingResponse {
   /**
    * The rerankings of the texts, by relevance to the query, in order from highest to
    * lowest relevance score.
    */
-  results: Array<Reranking.Result>;
+  results: Array<RerankingResponse.Result>;
 
   /**
    * Statistics about the usage of resources in the process of reranking the texts.
    */
-  usage: Reranking.Usage;
+  usage: RerankingResponse.Usage;
 }
 
-export namespace Reranking {
+export namespace RerankingResponse {
   export interface Result {
     /**
      * The index of the text in the input array of texts, starting from `0` (and,
@@ -158,5 +158,5 @@ export namespace RerankingCreateParams {
 }
 
 export declare namespace Rerankings {
-  export { type Reranking as Reranking, type RerankingCreateParams as RerankingCreateParams };
+  export { type RerankingResponse as RerankingResponse, type RerankingCreateParams as RerankingCreateParams };
 }
