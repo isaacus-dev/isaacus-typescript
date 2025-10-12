@@ -16,8 +16,8 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { Embedding, EmbeddingCreateParams, Embeddings } from './resources/embeddings';
-import { Reranking, RerankingCreateParams, Rerankings } from './resources/rerankings';
+import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
+import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
 import { type Fetch } from './internal/builtin-types';
@@ -733,7 +733,7 @@ export declare namespace Isaacus {
 
   export {
     Embeddings as Embeddings,
-    type Embedding as Embedding,
+    type EmbeddingResponse as EmbeddingResponse,
     type EmbeddingCreateParams as EmbeddingCreateParams,
   };
 
@@ -741,7 +741,7 @@ export declare namespace Isaacus {
 
   export {
     Rerankings as Rerankings,
-    type Reranking as Reranking,
+    type RerankingResponse as RerankingResponse,
     type RerankingCreateParams as RerankingCreateParams,
   };
 

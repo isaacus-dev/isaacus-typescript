@@ -11,7 +11,7 @@ export class Universal extends APIResource {
    *
    * @example
    * ```ts
-   * const universalClassification =
+   * const universalClassificationResponse =
    *   await client.classifications.universal.create({
    *     model: 'kanon-universal-classifier',
    *     query: 'This is a confidentiality clause.',
@@ -21,7 +21,7 @@ export class Universal extends APIResource {
    *   });
    * ```
    */
-  create(body: UniversalCreateParams, options?: RequestOptions): APIPromise<UniversalClassification> {
+  create(body: UniversalCreateParams, options?: RequestOptions): APIPromise<UniversalClassificationResponse> {
     return this._client.post('/classifications/universal', { body, ...options });
   }
 }
@@ -30,20 +30,20 @@ export class Universal extends APIResource {
  * Classifications of the relevance of legal documents to a query produced by an
  * Isaacus universal legal AI classifier.
  */
-export interface UniversalClassification {
+export interface UniversalClassificationResponse {
   /**
    * The classifications of the texts, by relevance to the query, in order from
    * highest to lowest relevance score.
    */
-  classifications: Array<UniversalClassification.Classification>;
+  classifications: Array<UniversalClassificationResponse.Classification>;
 
   /**
    * Statistics about the usage of resources in the process of classifying the text.
    */
-  usage: UniversalClassification.Usage;
+  usage: UniversalClassificationResponse.Usage;
 }
 
-export namespace UniversalClassification {
+export namespace UniversalClassificationResponse {
   export interface Classification {
     /**
      * The text as broken into chunks by
@@ -195,7 +195,7 @@ export namespace UniversalCreateParams {
 
 export declare namespace Universal {
   export {
-    type UniversalClassification as UniversalClassification,
+    type UniversalClassificationResponse as UniversalClassificationResponse,
     type UniversalCreateParams as UniversalCreateParams,
   };
 }

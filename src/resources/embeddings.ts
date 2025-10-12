@@ -10,7 +10,7 @@ export class Embeddings extends APIResource {
    *
    * @example
    * ```ts
-   * const embedding = await client.embeddings.create({
+   * const embeddingResponse = await client.embeddings.create({
    *   model: 'kanon-2-embedder',
    *   texts: [
    *     'Are restraints of trade enforceable under English law?',
@@ -19,7 +19,7 @@ export class Embeddings extends APIResource {
    * });
    * ```
    */
-  create(body: EmbeddingCreateParams, options?: RequestOptions): APIPromise<Embedding> {
+  create(body: EmbeddingCreateParams, options?: RequestOptions): APIPromise<EmbeddingResponse> {
     return this._client.post('/embeddings', { body, ...options });
   }
 }
@@ -27,19 +27,19 @@ export class Embeddings extends APIResource {
 /**
  * Embeddings of legal texts produced by an Isaacus legal AI embedder.
  */
-export interface Embedding {
+export interface EmbeddingResponse {
   /**
    * The embeddings of the inputs.
    */
-  embeddings: Array<Embedding.Embedding>;
+  embeddings: Array<EmbeddingResponse.Embedding>;
 
   /**
    * Statistics about the usage of resources in the process of embedding the inputs.
    */
-  usage: Embedding.Usage;
+  usage: EmbeddingResponse.Usage;
 }
 
-export namespace Embedding {
+export namespace EmbeddingResponse {
   export interface Embedding {
     /**
      * The embedding of the content represented as an array of floating point numbers.
@@ -109,5 +109,5 @@ export interface EmbeddingCreateParams {
 }
 
 export declare namespace Embeddings {
-  export { type Embedding as Embedding, type EmbeddingCreateParams as EmbeddingCreateParams };
+  export { type EmbeddingResponse as EmbeddingResponse, type EmbeddingCreateParams as EmbeddingCreateParams };
 }
