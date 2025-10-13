@@ -76,7 +76,7 @@ export interface EmbeddingCreateParams {
    *
    * Each text must contain at least one non-whitespace character.
    *
-   * No more than 1,000 texts can be embedded in a single request.
+   * No more than 128 texts can be embedded in a single request.
    */
   texts: Array<string> | string;
 
