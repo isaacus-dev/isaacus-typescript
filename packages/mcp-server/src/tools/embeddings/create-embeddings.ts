@@ -42,7 +42,7 @@ export const tool: Tool = {
           },
         ],
         description:
-          'The text or array of texts to embed.\n\nEach text must contain at least one non-whitespace character.\n\nNo more than 1,000 texts can be embedded in a single request.',
+          'The text or array of texts to embed.\n\nEach text must contain at least one non-whitespace character.\n\nNo more than 128 texts can be embedded in a single request.',
       },
       dimensions: {
         type: 'integer',
