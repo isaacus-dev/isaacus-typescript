@@ -4,6 +4,7 @@ import { Metadata, Endpoint, HandlerFunction } from './types';
 
 export { Metadata, Endpoint, HandlerFunction };
 
+import create_embeddings from './embeddings/create-embeddings';
 import create_classifications_universal from './classifications/universal/create-classifications-universal';
 import create_rerankings from './rerankings/create-rerankings';
 import create_extractions_qa from './extractions/qa/create-extractions-qa';
@@ -14,6 +15,7 @@ function addEndpoint(endpoint: Endpoint) {
   endpoints.push(endpoint);
 }
 
+addEndpoint(create_embeddings);
 addEndpoint(create_classifications_universal);
 addEndpoint(create_rerankings);
 addEndpoint(create_extractions_qa);

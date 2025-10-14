@@ -8,7 +8,7 @@ const client = new Isaacus({
 });
 
 describe('resource qa', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.extractions.qa.create({
       model: 'kanon-answer-extractor',
@@ -26,7 +26,7 @@ describe('resource qa', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.extractions.qa.create({
       model: 'kanon-answer-extractor',
@@ -34,7 +34,7 @@ describe('resource qa', () => {
       texts: [
         'The standard sentence for murder in the State of Victoria is 30 years if the person murdered was a police officer and 25 years in any other case.',
       ],
-      chunking_options: { overlap_ratio: 0.1, overlap_tokens: 0, size: 512 },
+      chunking_options: { overlap_ratio: 0.1, overlap_tokens: 10, size: 512 },
       ignore_inextractability: false,
       top_k: 1,
     });

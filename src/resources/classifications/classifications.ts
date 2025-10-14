@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as UniversalAPI from './universal';
-import { Universal, UniversalClassification, UniversalCreateParams } from './universal';
+import { Universal, UniversalClassificationResponse, UniversalCreateParams } from './universal';
 
 export class Classifications extends APIResource {
   universal: UniversalAPI.Universal = new UniversalAPI.Universal(this._client);
@@ -13,7 +13,7 @@ Classifications.Universal = Universal;
 export declare namespace Classifications {
   export {
     Universal as Universal,
-    type UniversalClassification as UniversalClassification,
+    type UniversalClassificationResponse as UniversalClassificationResponse,
     type UniversalCreateParams as UniversalCreateParams,
   };
 }

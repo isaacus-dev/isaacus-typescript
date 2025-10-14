@@ -7,13 +7,12 @@ const client = new Isaacus({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource universal', () => {
+describe('resource embeddings', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
-    const responsePromise = client.classifications.universal.create({
-      model: 'kanon-universal-classifier',
-      query: 'This is a confidentiality clause.',
-      texts: ['I agree not to tell anyone about the document.'],
+    const responsePromise = client.embeddings.create({
+      model: 'kanon-2-embedder',
+      texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -26,13 +25,12 @@ describe('resource universal', () => {
 
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
-    const response = await client.classifications.universal.create({
-      model: 'kanon-universal-classifier',
-      query: 'This is a confidentiality clause.',
-      texts: ['I agree not to tell anyone about the document.'],
-      chunking_options: { overlap_ratio: 0.1, overlap_tokens: 10, size: 512 },
-      is_iql: true,
-      scoring_method: 'auto',
+    const response = await client.embeddings.create({
+      model: 'kanon-2-embedder',
+      texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+      dimensions: 1,
+      overflow_strategy: 'drop_end',
+      task: 'retrieval/query',
     });
   });
 });

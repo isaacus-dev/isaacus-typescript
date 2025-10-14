@@ -26,13 +26,12 @@ const client = new Isaacus({
   apiKey: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
 });
 
-const universalClassification = await client.classifications.universal.create({
-  model: 'kanon-universal-classifier',
-  query: 'This is a confidentiality clause.',
-  texts: ['I agree not to tell anyone about the document.'],
+const embeddingResponse = await client.embeddings.create({
+  model: 'kanon-2-embedder',
+  texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
 });
 
-console.log(universalClassification.classifications);
+console.log(embeddingResponse.embeddings);
 ```
 
 ### Request & Response types
@@ -47,13 +46,11 @@ const client = new Isaacus({
   apiKey: process.env['ISAACUS_API_KEY'], // This is the default and can be omitted
 });
 
-const params: Isaacus.Classifications.UniversalCreateParams = {
-  model: 'kanon-universal-classifier',
-  query: 'This is a confidentiality clause.',
-  texts: ['I agree not to tell anyone about the document.'],
+const params: Isaacus.EmbeddingCreateParams = {
+  model: 'kanon-2-embedder',
+  texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
 };
-const universalClassification: Isaacus.Classifications.UniversalClassification =
-  await client.classifications.universal.create(params);
+const embeddingResponse: Isaacus.EmbeddingResponse = await client.embeddings.create(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -66,11 +63,10 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-const universalClassification = await client.classifications.universal
+const embeddingResponse = await client.embeddings
   .create({
-    model: 'kanon-universal-classifier',
-    query: 'This is a confidentiality clause.',
-    texts: ['I agree not to tell anyone about the document.'],
+    model: 'kanon-2-embedder',
+    texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
   })
   .catch(async (err) => {
     if (err instanceof Isaacus.APIError) {
@@ -112,7 +108,7 @@ const client = new Isaacus({
 });
 
 // Or, configure per-request:
-await client.classifications.universal.create({ model: 'kanon-universal-classifier', query: 'This is a confidentiality clause.', texts: ['I agree not to tell anyone about the document.'] }, {
+await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'] }, {
   maxRetries: 5,
 });
 ```
@@ -129,7 +125,7 @@ const client = new Isaacus({
 });
 
 // Override per-request:
-await client.classifications.universal.create({ model: 'kanon-universal-classifier', query: 'This is a confidentiality clause.', texts: ['I agree not to tell anyone about the document.'] }, {
+await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'] }, {
   timeout: 5 * 1000,
 });
 ```
@@ -152,25 +148,23 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Isaacus();
 
-const response = await client.classifications.universal
+const response = await client.embeddings
   .create({
-    model: 'kanon-universal-classifier',
-    query: 'This is a confidentiality clause.',
-    texts: ['I agree not to tell anyone about the document.'],
+    model: 'kanon-2-embedder',
+    texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
   })
   .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: universalClassification, response: raw } = await client.classifications.universal
+const { data: embeddingResponse, response: raw } = await client.embeddings
   .create({
-    model: 'kanon-universal-classifier',
-    query: 'This is a confidentiality clause.',
-    texts: ['I agree not to tell anyone about the document.'],
+    model: 'kanon-2-embedder',
+    texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
   })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(universalClassification.classifications);
+console.log(embeddingResponse.embeddings);
 ```
 
 ### Logging
@@ -250,7 +244,7 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.classifications.universal.create({
+client.embeddings.create({
   // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',

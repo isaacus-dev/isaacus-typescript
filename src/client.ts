@@ -16,7 +16,8 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
-import { Reranking, RerankingCreateParams, Rerankings } from './resources/rerankings';
+import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
+import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
 import { type Fetch } from './internal/builtin-types';
@@ -370,7 +371,7 @@ export class Isaacus {
     const response = await this.fetchWithTimeout(url, req, timeout, controller).catch(castToError);
     const headersTime = Date.now();
 
-    if (response instanceof Error) {
+    if (response instanceof globalThis.Error) {
       const retryMessage = `retrying, ${retriesRemaining} attempts remaining`;
       if (options.signal?.aborted) {
         throw new Errors.APIUserAbortError();
@@ -677,7 +678,7 @@ export class Isaacus {
         // Preserve legacy string encoding behavior for now
         headers.values.has('content-type')) ||
       // `Blob` is superset of `File`
-      body instanceof Blob ||
+      ((globalThis as any).Blob && body instanceof (globalThis as any).Blob) ||
       // `FormData` -> `multipart/form-data`
       body instanceof FormData ||
       // `URLSearchParams` -> `application/x-www-form-urlencoded`
@@ -716,21 +717,31 @@ export class Isaacus {
 
   static toFile = Uploads.toFile;
 
+  embeddings: API.Embeddings = new API.Embeddings(this);
   classifications: API.Classifications = new API.Classifications(this);
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
 }
+
+Isaacus.Embeddings = Embeddings;
 Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
+
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
+
+  export {
+    Embeddings as Embeddings,
+    type EmbeddingResponse as EmbeddingResponse,
+    type EmbeddingCreateParams as EmbeddingCreateParams,
+  };
 
   export { Classifications as Classifications };
 
   export {
     Rerankings as Rerankings,
-    type Reranking as Reranking,
+    type RerankingResponse as RerankingResponse,
     type RerankingCreateParams as RerankingCreateParams,
   };
 

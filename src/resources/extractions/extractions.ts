@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 import * as QaAPI from './qa';
-import { AnswerExtraction, Qa, QaCreateParams } from './qa';
+import { AnswerExtractionResponse, Qa, QaCreateParams } from './qa';
 
 export class Extractions extends APIResource {
   qa: QaAPI.Qa = new QaAPI.Qa(this._client);
@@ -11,5 +11,9 @@ export class Extractions extends APIResource {
 Extractions.Qa = Qa;
 
 export declare namespace Extractions {
-  export { Qa as Qa, type AnswerExtraction as AnswerExtraction, type QaCreateParams as QaCreateParams };
+  export {
+    Qa as Qa,
+    type AnswerExtractionResponse as AnswerExtractionResponse,
+    type QaCreateParams as QaCreateParams,
+  };
 }
