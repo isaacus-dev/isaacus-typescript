@@ -1,5 +1,89 @@
 # Changelog
 
+## 0.11.1 (2025-10-14)
+
+Full Changelog: [v0.11.0...v0.11.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.11.0...v0.11.1)
+
+### ⚠ BREAKING CHANGES
+
+* **api:** reduce max length of embeddings input
+* **sdk:** add `_response` to response models to finally fix duplicated names
+
+### Features
+
+* **api:** added embedding endpoint ([0d8d83a](https://github.com/isaacus-dev/isaacus-typescript/commit/0d8d83a611df5252c68050071d06d3fb4685d534))
+* **api:** reduce max length of embeddings input ([8dfea48](https://github.com/isaacus-dev/isaacus-typescript/commit/8dfea484dd6333868978b30e74666a8dbb85b669))
+* **api:** rename embedding -&gt; embeddings ([b0f92ff](https://github.com/isaacus-dev/isaacus-typescript/commit/b0f92ff7ed78d27692e3fe380d4756074eb54d84))
+* **api:** revert embedding -&gt; embeddings ([8255684](https://github.com/isaacus-dev/isaacus-typescript/commit/82556847327ac00dac205e1876b6482099fb1c31))
+* **mcp:** add code execution tool ([a1cbb00](https://github.com/isaacus-dev/isaacus-typescript/commit/a1cbb008f3d7addd94730652490c4b157bd554f2))
+* **mcp:** add docs search tool ([879786d](https://github.com/isaacus-dev/isaacus-typescript/commit/879786deb453dc2211105151425e5a767e8a52da))
+* **mcp:** add logging when environment variable is set ([782e9fa](https://github.com/isaacus-dev/isaacus-typescript/commit/782e9fae8939787ac7f362712395d1ddc988f9db))
+* **mcp:** add option for including docs tools ([d75738d](https://github.com/isaacus-dev/isaacus-typescript/commit/d75738ddec8b9f1527a3ec985e7937267c81194a))
+* **mcp:** add option to infer mcp client ([5e57506](https://github.com/isaacus-dev/isaacus-typescript/commit/5e5750630aeff57d48479c8ceef76df5f9682120))
+* **mcp:** add unix socket option for remote MCP ([29456e4](https://github.com/isaacus-dev/isaacus-typescript/commit/29456e482b1a330cdbf2b3bc9d8a736cde34dd39))
+* **mcp:** allow setting logging level ([7c287d1](https://github.com/isaacus-dev/isaacus-typescript/commit/7c287d1650b60ee197658475558ff98c9b3ba253))
+* **mcp:** enable experimental docs search tool ([0077ea5](https://github.com/isaacus-dev/isaacus-typescript/commit/0077ea5876adea43d1a9026545fda774c0ef0c02))
+* **mcp:** expose client options in `streamableHTTPApp` ([e757029](https://github.com/isaacus-dev/isaacus-typescript/commit/e7570299b08070cfd932e0cf2310bd3178037377))
+* **mcp:** parse query string as mcp client options in mcp server ([d57ad3c](https://github.com/isaacus-dev/isaacus-typescript/commit/d57ad3c5a57de9c28c16929e41fad2f3a68c5068))
+* **mcp:** remote server with passthru auth ([98e619a](https://github.com/isaacus-dev/isaacus-typescript/commit/98e619a1edbc4adb4c30fbb7dddcd111a05893aa))
+* **sdk:** add embeddings endpoint ([402f641](https://github.com/isaacus-dev/isaacus-typescript/commit/402f641b04680e4ebd24242a57a7098ca5433fef))
+* **sdk:** toggle to force regen ([9c9ef78](https://github.com/isaacus-dev/isaacus-typescript/commit/9c9ef78f125a67ddb2a016d4eb57517e5b97c015))
+* **sdk:** untoggle to force regen ([c4755bc](https://github.com/isaacus-dev/isaacus-typescript/commit/c4755bc35f60f6094ba6a124b42f269e273794de))
+
+
+### Bug Fixes
+
+* **api:** avoid stainless SDK `NameError` ([865bc85](https://github.com/isaacus-dev/isaacus-typescript/commit/865bc856ef06c536332b9af0de7fd50592f4f237))
+* **api:** typo ([eab8690](https://github.com/isaacus-dev/isaacus-typescript/commit/eab869049c7e8f04023ece405445604de31a2985))
+* **ci:** set permissions for DXT publish action ([ce5e62e](https://github.com/isaacus-dev/isaacus-typescript/commit/ce5e62ee9c698a85d3eeb6a2e998ee896f497473))
+* coerce nullable values to undefined ([4afa2c2](https://github.com/isaacus-dev/isaacus-typescript/commit/4afa2c265b899d29b60c823d27d00c08d23afdc9))
+* **mcp:** avoid sending `jq_filter` to base API ([850f0f6](https://github.com/isaacus-dev/isaacus-typescript/commit/850f0f6f5e4c1fb13a7159ccc6d357854992cf5f))
+* **mcp:** fix bug in header handling ([27f12ba](https://github.com/isaacus-dev/isaacus-typescript/commit/27f12baeae30bf127d54f43b580291108422b555))
+* **mcp:** fix query options parsing ([0ec3eb3](https://github.com/isaacus-dev/isaacus-typescript/commit/0ec3eb32004668ab9dd3d29f74ad01d546c6a323))
+* **mcp:** fix uploading dxt release assets ([8c3db47](https://github.com/isaacus-dev/isaacus-typescript/commit/8c3db47ddf574faa5f2ca7b3dacb18530c75012c))
+* **mcp:** reverse validJson capability option and limit scope ([6d04008](https://github.com/isaacus-dev/isaacus-typescript/commit/6d040082ad4456a697ef550d9c176cad753afb7a))
+* **sdk:** add `_response` to response models to finally fix duplicated names ([14a9df4](https://github.com/isaacus-dev/isaacus-typescript/commit/14a9df456e70d8bdd152e3ff9710e519f870e463))
+
+
+### Chores
+
+* add package to package.json ([c4984c4](https://github.com/isaacus-dev/isaacus-typescript/commit/c4984c444562500d2f2f36e0090c1f415600f0a1))
+* **client:** qualify global Blob ([07703e2](https://github.com/isaacus-dev/isaacus-typescript/commit/07703e2299ade5e7987c7058a90fae4b39e66038))
+* **codegen:** internal codegen update ([5712a83](https://github.com/isaacus-dev/isaacus-typescript/commit/5712a833b930d92c94d2d3f0c5e426100786ddf0))
+* **deps:** update dependency @types/node to v20.17.58 ([7e69826](https://github.com/isaacus-dev/isaacus-typescript/commit/7e698263849b5a53b1098792a5cdc1e27fa76c70))
+* do not install brew dependencies in ./scripts/bootstrap by default ([39b5c60](https://github.com/isaacus-dev/isaacus-typescript/commit/39b5c60b0837ff81d984341f52f9a5399d83e029))
+* improve example values ([14a1d22](https://github.com/isaacus-dev/isaacus-typescript/commit/14a1d226a5494f3ad876361b78de554f223c6554))
+* **internal:** codegen related update ([eb7fa2d](https://github.com/isaacus-dev/isaacus-typescript/commit/eb7fa2dc18f0189867748891dee527dcd2d5d9f1))
+* **internal:** codegen related update ([dd992b1](https://github.com/isaacus-dev/isaacus-typescript/commit/dd992b122975393f2d3350b9a7371e1a29f0c329))
+* **internal:** codegen related update ([00165b1](https://github.com/isaacus-dev/isaacus-typescript/commit/00165b13517d9af29d038d9c9c1ad0e358732c91))
+* **internal:** codegen related update ([d77461b](https://github.com/isaacus-dev/isaacus-typescript/commit/d77461b18e5fca06485b3fa4f02ff832f16faf14))
+* **internal:** codegen related update ([7cd4ae0](https://github.com/isaacus-dev/isaacus-typescript/commit/7cd4ae0a330c4703cc543ad4e5cf211816cbbc4d))
+* **internal:** codegen related update ([91d9f96](https://github.com/isaacus-dev/isaacus-typescript/commit/91d9f969277f809196b0e76bf69d3e2b1e734ad5))
+* **internal:** formatting change ([5f7ef32](https://github.com/isaacus-dev/isaacus-typescript/commit/5f7ef32bae84995296074c99eca4e9c557b54431))
+* **internal:** gitignore .mcpb files ([e541193](https://github.com/isaacus-dev/isaacus-typescript/commit/e5411936faad14e1b9417c2c6ba10f663ddb3694))
+* **internal:** make mcp-server publishing public by defaut ([117c3f6](https://github.com/isaacus-dev/isaacus-typescript/commit/117c3f67f3cc2b038d8e08626ecdcd76d309788f))
+* **internal:** move publish config ([3f2772e](https://github.com/isaacus-dev/isaacus-typescript/commit/3f2772efe40aa46f0d6c2fc7157d5aef4c4087f1))
+* **internal:** refactor array check ([3fc9cc8](https://github.com/isaacus-dev/isaacus-typescript/commit/3fc9cc8aaecea7abe226c9dc9bdc00d971cc2732))
+* **internal:** remove redundant imports config ([b44ad38](https://github.com/isaacus-dev/isaacus-typescript/commit/b44ad387603fbbc6d04af5e43788342798e28c73))
+* **internal:** update comment in script ([c5c42a4](https://github.com/isaacus-dev/isaacus-typescript/commit/c5c42a4ab8d47a0d4de42df8ccacd87d88c83f0b))
+* **internal:** update global Error reference ([fe4dddb](https://github.com/isaacus-dev/isaacus-typescript/commit/fe4dddb7ff5d44bf609edd23d1b97a8d10f6b33a))
+* **mcp:** add cors to oauth metadata route ([736876e](https://github.com/isaacus-dev/isaacus-typescript/commit/736876e0b49b6d3c42130b161bd52ba16bd05f7b))
+* **mcp:** document remote server in README.md ([fbbcc43](https://github.com/isaacus-dev/isaacus-typescript/commit/fbbcc43335cb6562ba7609bd29206ebcd35ade80))
+* **mcp:** minor cleanup of types and package.json ([b2a894d](https://github.com/isaacus-dev/isaacus-typescript/commit/b2a894dc78fca32896b7f0beb29656f681c75923))
+* **mcp:** refactor streamable http transport ([16e027e](https://github.com/isaacus-dev/isaacus-typescript/commit/16e027eb2536ed2d452173df0cf22686bd78c75b))
+* **mcp:** rename dxt to mcpb ([2859f3c](https://github.com/isaacus-dev/isaacus-typescript/commit/2859f3c4473df3e0df28ac91df1dc393510f70a2))
+* **mcp:** update package.json ([9f2e9e3](https://github.com/isaacus-dev/isaacus-typescript/commit/9f2e9e31fe589d24fce942348053c3fd3c0c239d))
+* **mcp:** update README ([4eb94b3](https://github.com/isaacus-dev/isaacus-typescript/commit/4eb94b3367ad0c1071edb1c4fe215446dbe19aa9))
+* **mcp:** update types ([12563a9](https://github.com/isaacus-dev/isaacus-typescript/commit/12563a9b5596bea758f319118b43748a121d4f65))
+* **mcp:** upload dxt as release asset ([9ccb2af](https://github.com/isaacus-dev/isaacus-typescript/commit/9ccb2af27350bf9eca2c27045af6161bc5168cc6))
+* update @stainless-api/prism-cli to v5.15.0 ([cd4e751](https://github.com/isaacus-dev/isaacus-typescript/commit/cd4e7513d64584f424ed25bd156218993acaf6b2))
+* update CI script ([1674d7e](https://github.com/isaacus-dev/isaacus-typescript/commit/1674d7efca5a5e4137f9fddfa5b00ae03e7b9d86))
+
+
+### Documentation
+
+* **sdk:** make embeddings example first ([3f1e94b](https://github.com/isaacus-dev/isaacus-typescript/commit/3f1e94bef779f5b0d45eba325fdc2947c0f10728))
+
 ## 0.11.0 (2025-07-24)
 
 Full Changelog: [v0.10.0...v0.11.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.10.0...v0.11.0)
