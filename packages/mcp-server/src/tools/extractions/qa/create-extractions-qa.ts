@@ -25,7 +25,7 @@ export const tool: Tool = {
       model: {
         type: 'string',
         description:
-          'The ID of the [model](https://docs.isaacus.com/models#extractive-qa) to use for extractive question answering.',
+          'The ID of the [model](https://docs.isaacus.com/models#extractive-question-answering) to use for extractive question answering.',
         enum: ['kanon-answer-extractor', 'kanon-answer-extractor-mini'],
       },
       query: {
