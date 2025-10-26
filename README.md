@@ -29,6 +29,7 @@ const client = new Isaacus({
 const embeddingResponse = await client.embeddings.create({
   model: 'kanon-2-embedder',
   texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+  task: 'retrieval/query',
 });
 
 console.log(embeddingResponse.embeddings);
@@ -49,6 +50,7 @@ const client = new Isaacus({
 const params: Isaacus.EmbeddingCreateParams = {
   model: 'kanon-2-embedder',
   texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+  task: 'retrieval/query',
 };
 const embeddingResponse: Isaacus.EmbeddingResponse = await client.embeddings.create(params);
 ```
@@ -67,6 +69,7 @@ const embeddingResponse = await client.embeddings
   .create({
     model: 'kanon-2-embedder',
     texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+    task: 'retrieval/query',
   })
   .catch(async (err) => {
     if (err instanceof Isaacus.APIError) {
@@ -108,7 +111,7 @@ const client = new Isaacus({
 });
 
 // Or, configure per-request:
-await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'] }, {
+await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'], task: 'retrieval/query' }, {
   maxRetries: 5,
 });
 ```
@@ -125,7 +128,7 @@ const client = new Isaacus({
 });
 
 // Override per-request:
-await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'] }, {
+await client.embeddings.create({ model: 'kanon-2-embedder', texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'], task: 'retrieval/query' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -152,6 +155,7 @@ const response = await client.embeddings
   .create({
     model: 'kanon-2-embedder',
     texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+    task: 'retrieval/query',
   })
   .asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -161,6 +165,7 @@ const { data: embeddingResponse, response: raw } = await client.embeddings
   .create({
     model: 'kanon-2-embedder',
     texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
+    task: 'retrieval/query',
   })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
