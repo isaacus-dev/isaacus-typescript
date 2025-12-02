@@ -94,7 +94,7 @@ export const handler = async (client: Isaacus, args: Record<string, unknown> | u
       await maybeFilter(jq_filter, await client.classifications.universal.create(body)),
     );
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Isaacus.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;

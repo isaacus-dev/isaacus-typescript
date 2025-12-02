@@ -96,7 +96,7 @@ export const handler = async (client: Isaacus, args: Record<string, unknown> | u
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.rerankings.create(body)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Isaacus.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
