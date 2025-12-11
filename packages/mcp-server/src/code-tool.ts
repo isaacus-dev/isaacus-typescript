@@ -39,6 +39,7 @@ export async function codeTool() {
       },
       body: JSON.stringify({
         project_name: 'isaacus',
+        client_opts: {},
         code,
       }),
     });
