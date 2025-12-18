@@ -35,7 +35,10 @@ export async function codeTool() {
       headers: {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
-        client_envs: JSON.stringify({ ISAACUS_API_KEY: readEnv('ISAACUS_API_KEY') }),
+        client_envs: JSON.stringify({
+          ISAACUS_API_KEY: readEnv('ISAACUS_API_KEY'),
+          ISAACUS_BASE_URL: readEnv('ISAACUS_BASE_URL'),
+        }),
       },
       body: JSON.stringify({
         project_name: 'isaacus',
