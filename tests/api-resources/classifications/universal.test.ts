@@ -30,7 +30,11 @@ describe('resource universal', () => {
       model: 'kanon-universal-classifier',
       query: 'This is a confidentiality clause.',
       texts: ['I agree not to tell anyone about the document.'],
-      chunking_options: { overlap_ratio: 0.1, overlap_tokens: 10, size: 512 },
+      chunking_options: {
+        overlap_ratio: 0.1,
+        overlap_tokens: 10,
+        size: 512,
+      },
       is_iql: true,
       scoring_method: 'auto',
     });
