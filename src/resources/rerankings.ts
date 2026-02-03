@@ -6,7 +6,7 @@ import { RequestOptions } from '../internal/request-options';
 
 export class Rerankings extends APIResource {
   /**
-   * Rerank legal documents by their relevance to a query with an Isaacus legal AI
+   * Rank legal documents by their relevance to a query with an Isaacus legal AI
    * reranker.
    *
    * @example
@@ -30,9 +30,6 @@ export class Rerankings extends APIResource {
   }
 }
 
-/**
- * The reranking of texts, by relevance to a query, out of an input array of texts.
- */
 export interface RerankingResponse {
   /**
    * The rerankings of the texts, by relevance to the query, in order from highest to
@@ -146,7 +143,7 @@ export namespace RerankingCreateParams {
     overlap_ratio?: number | null;
 
     /**
-     * A whole number greater than -1.
+     * A whole number greater than or equal to 0.
      */
     overlap_tokens?: number | null;
 

@@ -17,7 +17,7 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
-import { Enrichments } from './resources/enrichments';
+import { EnrichmentCreateParams, EnrichmentResponse, Enrichments } from './resources/enrichments';
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -751,5 +751,9 @@ export declare namespace Isaacus {
 
   export { Extractions as Extractions };
 
-  export { Enrichments as Enrichments };
+  export {
+    Enrichments as Enrichments,
+    type EnrichmentResponse as EnrichmentResponse,
+    type EnrichmentCreateParams as EnrichmentCreateParams,
+  };
 }
