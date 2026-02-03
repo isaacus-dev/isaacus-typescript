@@ -17,6 +17,7 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
+import { Enrichments } from './resources/enrichments';
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -492,9 +493,10 @@ export class Isaacus {
     controller: AbortController,
   ): Promise<Response> {
     const { signal, method, ...options } = init || {};
-    if (signal) signal.addEventListener('abort', () => controller.abort());
+    const abort = controller.abort.bind(controller);
+    if (signal) signal.addEventListener('abort', abort, { once: true });
 
-    const timeout = setTimeout(() => controller.abort(), ms);
+    const timeout = setTimeout(abort, ms);
 
     const isReadableBody =
       ((globalThis as any).ReadableStream && options.body instanceof (globalThis as any).ReadableStream) ||
@@ -721,12 +723,14 @@ export class Isaacus {
   classifications: API.Classifications = new API.Classifications(this);
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
+  enrichments: API.Enrichments = new API.Enrichments(this);
 }
 
 Isaacus.Embeddings = Embeddings;
 Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
+Isaacus.Enrichments = Enrichments;
 
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
@@ -746,4 +750,6 @@ export declare namespace Isaacus {
   };
 
   export { Extractions as Extractions };
+
+  export { Enrichments as Enrichments };
 }
