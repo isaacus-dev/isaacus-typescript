@@ -111,7 +111,7 @@ export namespace EnrichmentResponse {
       /**
        * An array of spans within the document's text constituting headings.
        */
-      headings: Array<Array<unknown>>;
+      headings: Array<Array<number | number>>;
 
       /**
        * An array of identification numbers identified in the document belonging to legal
@@ -127,7 +127,7 @@ export namespace EnrichmentResponse {
        * non-substantive 'junk' content such as headers, footers, page numbers, and OCR
        * artifacts.
        */
-      junk: Array<Array<unknown>>;
+      junk: Array<Array<number | number>>;
 
       /**
        * A jurisdiction code representing a country (via an initial country code) and,
@@ -189,7 +189,7 @@ export namespace EnrichmentResponse {
        * need to be translated accordingly (for example, JavaScript slices into UTF-16
        * code units instead of Unicode code points).
        */
-      subtitle: Array<unknown> | null;
+      subtitle: Array<number | number> | null;
 
       /**
        * An array of terms assigned definite meanings within the document.
@@ -212,7 +212,7 @@ export namespace EnrichmentResponse {
        * need to be translated accordingly (for example, JavaScript slices into UTF-16
        * code units instead of Unicode code points).
        */
-      title: Array<unknown> | null;
+      title: Array<number | number> | null;
 
       /**
        * The type of the document, being one of `statute`, `regulation`, `decision`,
@@ -283,7 +283,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the date is
          * mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * A unique identifier for a legal person in the format `per:{index}` where
@@ -360,7 +360,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the email address
          * is mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * The unique identifier of the person that this email address belongs to.
@@ -397,7 +397,7 @@ export namespace EnrichmentResponse {
          * document is mentioned by name, for example, 'the US Constitution' in 'the Second
          * Amendment to the US Constitution protects freedom of speech'.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * A span within the document's text representing the 'most proper' name of the
@@ -417,7 +417,7 @@ export namespace EnrichmentResponse {
          * external document are referenced, for example, 'Section 2' in 'as defined in
          * Section 2 of the US Constitution'.
          */
-        pinpoints: Array<Array<unknown>>;
+        pinpoints: Array<Array<number | number>>;
 
         /**
          * The sentiment of the document towards the external document, being one of
@@ -469,7 +469,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the
          * identification number is mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * The identification number.
@@ -496,7 +496,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the location is
          * mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * A span within the document's text representing the 'most proper' name of the
@@ -536,7 +536,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the person is
          * mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * A span within the document's text representing the 'most proper' name of the
@@ -715,7 +715,7 @@ export namespace EnrichmentResponse {
          * An array of one or more spans within the document's text where the phone number
          * is mentioned.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * The normalized phone number in E.123 international notation conforming with
@@ -812,7 +812,7 @@ export namespace EnrichmentResponse {
          * need to be translated accordingly (for example, JavaScript slices into UTF-16
          * code units instead of Unicode code points).
          */
-        code: Array<unknown> | null;
+        code: Array<number | number> | null;
 
         /**
          * The structural 'kind' of the segment, being one of `container`, `unit`, `item`,
@@ -863,7 +863,7 @@ export namespace EnrichmentResponse {
          * need to be translated accordingly (for example, JavaScript slices into UTF-16
          * code units instead of Unicode code points).
          */
-        title: Array<unknown> | null;
+        title: Array<number | number> | null;
 
         /**
          * The addressable 'type' of the segment within the document's referential scheme
@@ -949,7 +949,7 @@ export namespace EnrichmentResponse {
          * need to be translated accordingly (for example, JavaScript slices into UTF-16
          * code units instead of Unicode code points).
          */
-        type_name: Array<unknown> | null;
+        type_name: Array<number | number> | null;
       }
 
       /**
@@ -977,7 +977,7 @@ export namespace EnrichmentResponse {
          * It is possible for the term to have no mentions if, outside of its definition,
          * it is never referred to in the document.
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * The span within the document's text defining the term's name. For example, in
@@ -1002,7 +1002,7 @@ export namespace EnrichmentResponse {
          * mentioned (including paths and slugs which are not part of the website's
          * normalized URL).
          */
-        mentions: Array<Array<unknown>>;
+        mentions: Array<Array<number | number>>;
 
         /**
          * The unique identifier of the person that this website belongs to.
