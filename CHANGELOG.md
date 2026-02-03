@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.1 (2026-02-03)
+
+Full Changelog: [v0.12.0...v0.12.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.12.0...v0.12.1)
+
+### Documentation
+
+* **api:** added examples to 200 response codes ([0b08eb6](https://github.com/isaacus-dev/isaacus-typescript/commit/0b08eb6911cf22602cc5164d2146b654d127230f))
+
 ## 0.12.0 (2026-02-03)
 
 Full Changelog: [v0.11.1...v0.12.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.11.1...v0.12.0)
