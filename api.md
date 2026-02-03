@@ -32,7 +32,7 @@ Methods:
 
 # Extractions
 
-## Qa
+## QA
 
 Types:
 

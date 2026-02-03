@@ -4,7 +4,7 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
-export class Qa extends APIResource {
+export class QA extends APIResource {
   /**
    * Extract answers to questions from legal documents with an Isaacus legal AI
    * answer extractor.
@@ -21,7 +21,7 @@ export class Qa extends APIResource {
    *   });
    * ```
    */
-  create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
+  create(body: QACreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
     return this._client.post('/extractions/qa', { body, ...options });
   }
 }
@@ -111,7 +111,7 @@ export namespace AnswerExtractionResponse {
   }
 }
 
-export interface QaCreateParams {
+export interface QACreateParams {
   /**
    * The ID of the
    * [model](https://docs.isaacus.com/models#extractive-question-answering) to use
@@ -141,7 +141,7 @@ export interface QaCreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
-  chunking_options?: QaCreateParams.ChunkingOptions | null;
+  chunking_options?: QACreateParams.ChunkingOptions | null;
 
   /**
    * Whether to, if the model's score of the likelihood that an answer can not be
@@ -162,7 +162,7 @@ export interface QaCreateParams {
   top_k?: number;
 }
 
-export namespace QaCreateParams {
+export namespace QACreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
@@ -184,6 +184,6 @@ export namespace QaCreateParams {
   }
 }
 
-export declare namespace Qa {
-  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QaCreateParams as QaCreateParams };
+export declare namespace QA {
+  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QACreateParams as QACreateParams };
 }
