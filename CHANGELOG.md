@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.14.0 (2026-02-03)
+
+Full Changelog: [v0.13.0...v0.14.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.13.0...v0.14.0)
+
+### Features
+
+* **sdk:** add `qa` as an initialism ([e79b334](https://github.com/isaacus-dev/isaacus-typescript/commit/e79b3346a1e9516dc3bce6a1c5a6fe0dec4ce5f6))
+* **sdk:** force ilgs v1 prefix on models ([e492a91](https://github.com/isaacus-dev/isaacus-typescript/commit/e492a9173f6943f56e8f3e2e0f29f3f207dd4d2a))
+* **sdk:** modify how ILGSv1 models are cased ([5a8effe](https://github.com/isaacus-dev/isaacus-typescript/commit/5a8effedf98366d4c93f5dcfb9be1b14c72372dc))
+* **sdk:** order properties as in spec ([b0706f2](https://github.com/isaacus-dev/isaacus-typescript/commit/b0706f235650a2df605ccfc886d3a6ad04201866))
+
+
+### Bug Fixes
+
+* **api:** merge duplicate components, reorder required fields ([6578eba](https://github.com/isaacus-dev/isaacus-typescript/commit/6578ebaaf302ddd0d5529a883deeb4f3022df859))
+
 ## 0.13.0 (2026-02-03)
 
 Full Changelog: [v0.12.1...v0.13.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.12.1...v0.13.0)
