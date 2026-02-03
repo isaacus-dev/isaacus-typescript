@@ -11,7 +11,7 @@ export class Enrichments extends APIResource {
    * @example
    * ```ts
    * const enrichmentResponse = await client.enrichments.create({
-   *   model: 'kanon-2-enricher-preview',
+   *   model: 'kanon-2-enricher',
    *   texts: [
    *     '1.5 You (the "User") agree to be bound by these Terms.',
    *   ],
@@ -1654,7 +1654,7 @@ export interface EnrichmentCreateParams {
    * The ID of the [model](https://docs.isaacus.com/models#enrichment) to use for
    * enrichment.
    */
-  model: 'kanon-2-enricher-preview';
+  model: 'kanon-2-enricher';
 
   /**
    * A text or array of texts to be enriched, each containing at least one
