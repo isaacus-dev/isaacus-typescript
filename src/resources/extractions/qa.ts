@@ -26,9 +26,6 @@ export class Qa extends APIResource {
   }
 }
 
-/**
- * The results of extracting answers from texts.
- */
 export interface AnswerExtractionResponse {
   /**
    * The results of extracting answers from the texts, ordered from highest to lowest
@@ -176,7 +173,7 @@ export namespace QaCreateParams {
     overlap_ratio?: number | null;
 
     /**
-     * A whole number greater than -1.
+     * A whole number greater than or equal to 0.
      */
     overlap_tokens?: number | null;
 

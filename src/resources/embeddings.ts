@@ -24,9 +24,6 @@ export class Embeddings extends APIResource {
   }
 }
 
-/**
- * Embeddings of legal texts produced by an Isaacus legal AI embedder.
- */
 export interface EmbeddingResponse {
   /**
    * The embeddings of the inputs.

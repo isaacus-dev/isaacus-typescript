@@ -41,3 +41,13 @@ Types:
 Methods:
 
 - <code title="post /extractions/qa">client.extractions.qa.<a href="./src/resources/extractions/qa.ts">create</a>({ ...params }) -> AnswerExtractionResponse</code>
+
+# Enrichments
+
+Types:
+
+- <code><a href="./src/resources/enrichments.ts">EnrichmentResponse</a></code>
+
+Methods:
+
+- <code title="post /enrichments">client.enrichments.<a href="./src/resources/enrichments.ts">create</a>({ ...params }) -> EnrichmentResponse</code>

@@ -42,7 +42,11 @@ describe('resource rerankings', () => {
         'Negligence in tort law requires establishing a duty of care that the defendant owed to the plaintiff.',
         'The concept of negligence is central to tort law, with courts assessing whether a breach of duty caused harm.',
       ],
-      chunking_options: { overlap_ratio: 0.1, overlap_tokens: 10, size: 512 },
+      chunking_options: {
+        overlap_ratio: 0.1,
+        overlap_tokens: 10,
+        size: 512,
+      },
       is_iql: false,
       scoring_method: 'auto',
       top_n: 1,

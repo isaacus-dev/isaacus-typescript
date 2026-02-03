@@ -26,10 +26,6 @@ export class Universal extends APIResource {
   }
 }
 
-/**
- * Classifications of the relevance of legal documents to a query produced by an
- * Isaacus universal legal AI classifier.
- */
 export interface UniversalClassificationResponse {
   /**
    * The classifications of the texts, by relevance to the query, in order from
@@ -182,7 +178,7 @@ export namespace UniversalCreateParams {
     overlap_ratio?: number | null;
 
     /**
-     * A whole number greater than -1.
+     * A whole number greater than or equal to 0.
      */
     overlap_tokens?: number | null;
 

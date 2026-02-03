@@ -1,5 +1,57 @@
 # Changelog
 
+## 0.12.0 (2026-02-03)
+
+Full Changelog: [v0.11.1...v0.12.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.11.1...v0.12.0)
+
+### Features
+
+* **api:** add min max ([477c28a](https://github.com/isaacus-dev/isaacus-typescript/commit/477c28a14a411ec668b3d4acd7a3d4707bedebe4))
+* **api:** switch to span objects for enrichment, note closed beta ([29af767](https://github.com/isaacus-dev/isaacus-typescript/commit/29af7672debf93bf5fcc497f5e6a2392da26028c))
+* **mcp:** add detail field to docs search tool ([a4a3478](https://github.com/isaacus-dev/isaacus-typescript/commit/a4a3478307e75a7147f2bc3137677327abbeae35))
+* **mcp:** add typescript check to code execution tool ([a1f8c27](https://github.com/isaacus-dev/isaacus-typescript/commit/a1f8c27ca5ec894e9d852867ea999557dfd58cd0))
+* **mcp:** enable optional code execution tool on http mcp servers ([579b63d](https://github.com/isaacus-dev/isaacus-typescript/commit/579b63d0d5a3cde717ac41654d6e708673d0191c))
+* **mcp:** handle code mode calls in the Stainless API ([cfe91ae](https://github.com/isaacus-dev/isaacus-typescript/commit/cfe91aef141da4f9a5696e3e7e898e05dd8f68a7))
+* **mcp:** return logs on code tool errors ([f8cc9b0](https://github.com/isaacus-dev/isaacus-typescript/commit/f8cc9b0afc5365abe559f07c85883895ee2f4900))
+* **sdk:** add enrichments ([2d6f927](https://github.com/isaacus-dev/isaacus-typescript/commit/2d6f9272da2993aaa9b43fcb0a0a9de7586df1a8))
+
+
+### Bug Fixes
+
+* **mcp:** add client instantiation options to code tool ([6f67d9d](https://github.com/isaacus-dev/isaacus-typescript/commit/6f67d9d53fee08dcfd5489ad5f4e963a7383ee03))
+* **mcpb:** pin @anthropic-ai/mcpb version ([fc022b2](https://github.com/isaacus-dev/isaacus-typescript/commit/fc022b2a940c8c3161082faa8c4e5457bdd53957))
+* **mcp:** correct code tool API endpoint ([aa8dd51](https://github.com/isaacus-dev/isaacus-typescript/commit/aa8dd51788d22ebccf5e913b83e1196d4eca63b5))
+* **mcp:** return correct lines on typescript errors ([e7a6e10](https://github.com/isaacus-dev/isaacus-typescript/commit/e7a6e105f071dcded1d162a8ac68988ef3734ccf))
+* **mcp:** return tool execution error on api error ([5ae2a33](https://github.com/isaacus-dev/isaacus-typescript/commit/5ae2a33f2dfe5e3f1437e48045c15be34ee9c4e5))
+* **mcp:** return tool execution error on jq failure ([719a2bc](https://github.com/isaacus-dev/isaacus-typescript/commit/719a2bcb3ae336919ed9f63c04c06bf1eb5ad1fd))
+
+
+### Chores
+
+* **client:** fix logger property type ([73a6ad5](https://github.com/isaacus-dev/isaacus-typescript/commit/73a6ad5b2c1a9cd42c061401c47abc51db8510d4))
+* **internal:** codegen related update ([f108ad6](https://github.com/isaacus-dev/isaacus-typescript/commit/f108ad6f4b01288158c41fd84b6c61967cbd3af8))
+* **internal:** codegen related update ([4c0c9be](https://github.com/isaacus-dev/isaacus-typescript/commit/4c0c9be63e08a49d57a7d960fb7869d3530de99e))
+* **internal:** codegen related update ([3203eec](https://github.com/isaacus-dev/isaacus-typescript/commit/3203eecee9d218db1190580d4f440a629b093e72))
+* **internal:** codegen related update ([d58f59b](https://github.com/isaacus-dev/isaacus-typescript/commit/d58f59bc6ac418f586698a45d535a68998454cbe))
+* **internal:** codegen related update ([47ef370](https://github.com/isaacus-dev/isaacus-typescript/commit/47ef37027fcc8731651c47ec72db684ae0662e54))
+* **internal:** grammar fix (it's -&gt; its) ([cbeea36](https://github.com/isaacus-dev/isaacus-typescript/commit/cbeea365a8107e894cdeff0d0f7ed6ecfb1e2f2f))
+* **internal:** upgrade eslint ([629c219](https://github.com/isaacus-dev/isaacus-typescript/commit/629c219de870d7d5c4ddeef0b194f86c5e116438))
+* mcp code tool explicit error message when missing a run function ([45f0ec4](https://github.com/isaacus-dev/isaacus-typescript/commit/45f0ec4f7cd466097f623a9dde1a0b8e084f9fdc))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([08e1eac](https://github.com/isaacus-dev/isaacus-typescript/commit/08e1eac13c3581f7c09150de36e8948e8ee94b6e))
+* **mcp:** add line numbers to code tool errors ([51fc353](https://github.com/isaacus-dev/isaacus-typescript/commit/51fc353019df5583769e087b93153d398019a639))
+* **mcp:** clarify http auth error ([39fab03](https://github.com/isaacus-dev/isaacus-typescript/commit/39fab03e07a9d600b627d2146fbe231377a78577))
+* **mcp:** update lockfile ([c5bfec5](https://github.com/isaacus-dev/isaacus-typescript/commit/c5bfec54da295f5d338113d35286cbaab1fde6d8))
+* **mcp:** upgrade jq-web ([5f375e8](https://github.com/isaacus-dev/isaacus-typescript/commit/5f375e8eb4353218198c5edd82404e00066a1fff))
+* use latest @modelcontextprotocol/sdk ([21d7cbb](https://github.com/isaacus-dev/isaacus-typescript/commit/21d7cbbc42ecd0557fbe1996eeec58bc1ee12907))
+* use structured error when code execution tool errors ([bb4ba8a](https://github.com/isaacus-dev/isaacus-typescript/commit/bb4ba8a1485229cfc60ba38361520b2a9f65b7de))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([afbeeb5](https://github.com/isaacus-dev/isaacus-typescript/commit/afbeeb5b7b662f3144ef2571b7f33b1225daf5df))
+* **mcp:** add a README link to add server to VS Code or Claude Code ([6042a69](https://github.com/isaacus-dev/isaacus-typescript/commit/6042a69bb085d6a0d21b982d448e540fccc6036f))
+* **sdk:** specify example params ([00ec4d8](https://github.com/isaacus-dev/isaacus-typescript/commit/00ec4d8e97a35bc2de73666db6eede82bd618236))
+
 ## 0.11.1 (2025-10-14)
 
 Full Changelog: [v0.11.0...v0.11.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.11.0...v0.11.1)
