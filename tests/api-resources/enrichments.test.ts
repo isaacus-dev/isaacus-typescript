@@ -11,7 +11,7 @@ describe('resource enrichments', () => {
   // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.enrichments.create({
-      model: 'kanon-2-enricher-preview',
+      model: 'kanon-2-enricher',
       texts: ['1.5 You (the "User") agree to be bound by these Terms.'],
     });
     const rawResponse = await responsePromise.asResponse();
@@ -26,7 +26,7 @@ describe('resource enrichments', () => {
   // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.enrichments.create({
-      model: 'kanon-2-enricher-preview',
+      model: 'kanon-2-enricher',
       texts: ['1.5 You (the "User") agree to be bound by these Terms.'],
       overflow_strategy: null,
     });
