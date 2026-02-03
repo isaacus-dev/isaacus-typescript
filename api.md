@@ -47,6 +47,20 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/enrichments.ts">EnrichmentResponse</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Crossreference</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Date</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Document</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Email</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1ExternalDocument</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1IDNumber</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Location</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Person</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1PhoneNumber</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Quote</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Segment</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Span</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Term</a></code>
+- <code><a href="./src/resources/enrichments.ts">IlgsV1Website</a></code>
 
 Methods:
 
