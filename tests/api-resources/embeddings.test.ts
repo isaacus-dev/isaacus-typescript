@@ -28,9 +28,9 @@ describe('resource embeddings', () => {
     const response = await client.embeddings.create({
       model: 'kanon-2-embedder',
       texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
-      dimensions: 1,
-      overflow_strategy: 'drop_end',
       task: 'retrieval/query',
+      overflow_strategy: 'drop_end',
+      dimensions: 1,
     });
   });
 });
