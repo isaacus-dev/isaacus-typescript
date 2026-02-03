@@ -39,15 +39,15 @@ export interface EmbeddingResponse {
 export namespace EmbeddingResponse {
   export interface Embedding {
     /**
-     * The embedding of the content represented as an array of floating point numbers.
-     */
-    embedding: Array<number>;
-
-    /**
      * The position of the content in the input array of contents, starting from `0`
      * (and, therefore, ending at the number of contents minus `1`).
      */
     index: number;
+
+    /**
+     * The embedding of the content represented as an array of floating point numbers.
+     */
+    embedding: Array<number>;
   }
 
   /**
@@ -78,9 +78,15 @@ export interface EmbeddingCreateParams {
   texts: Array<string> | string;
 
   /**
-   * A whole number greater than or equal to 1.
+   * The task the embeddings will be used for.
+   *
+   * `retrieval/query` is meant for queries and statements, and `retrieval/document`
+   * is meant for anything to be retrieved using query embeddings.
+   *
+   * If `null`, which is the default setting, embeddings will not be optimized for
+   * any particular task.
    */
-  dimensions?: number | null;
+  task?: 'retrieval/query' | 'retrieval/document' | null;
 
   /**
    * The strategy to employ when content exceeds the model's maximum input length.
@@ -94,15 +100,9 @@ export interface EmbeddingCreateParams {
   overflow_strategy?: 'drop_end' | null;
 
   /**
-   * The task the embeddings will be used for.
-   *
-   * `retrieval/query` is meant for queries and statements, and `retrieval/document`
-   * is meant for anything to be retrieved using query embeddings.
-   *
-   * If `null`, which is the default setting, embeddings will not be optimized for
-   * any particular task.
+   * A whole number greater than or equal to 1.
    */
-  task?: 'retrieval/query' | 'retrieval/document' | null;
+  dimensions?: number | null;
 }
 
 export declare namespace Embeddings {

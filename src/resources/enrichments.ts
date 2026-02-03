@@ -64,15 +64,15 @@ export namespace EnrichmentResponse {
    */
   export interface Result {
     /**
-     * The enriched document.
-     */
-    document: EnrichmentsAPI.ILGSv1Document;
-
-    /**
      * The index of this document in the input array of texts, starting at `0` (and,
      * therefore, ending at the number of inputs minus `1`).
      */
     index: number;
+
+    /**
+     * The enriched document.
+     */
+    document: EnrichmentsAPI.ILGSv1Document;
   }
 
   /**
@@ -90,6 +90,14 @@ export namespace EnrichmentResponse {
  * A cross-reference within the document pointing to one or more segments.
  */
 export interface ILGSv1Crossreference {
+  /**
+   * The unique identifier of the earliest segment in the span of segments being
+   * cross-referenced with ties broken in favor of the least-nested (i.e., largest)
+   * segment. If the cross-reference points to a single segment, `start` and `end`
+   * will be identical.
+   */
+  start: string;
+
   /**
    * The unique identifier of the latest segment in the span of segments being
    * cross-referenced with ties broken in favor of the least-nested (i.e., largest)
@@ -114,14 +122,6 @@ export interface ILGSv1Crossreference {
    * code units instead of Unicode code points).
    */
   span: ILGSv1Span;
-
-  /**
-   * The unique identifier of the earliest segment in the span of segments being
-   * cross-referenced with ties broken in favor of the least-nested (i.e., largest)
-   * segment. If the cross-reference points to a single segment, `start` and `end`
-   * will be identical.
-   */
-  start: string;
 }
 
 /**
@@ -134,16 +134,9 @@ export interface ILGSv1Crossreference {
  */
 export interface ILGSv1Date {
   /**
-   * An array of one or more spans within the document's text where the date is
-   * mentioned.
+   * The date in ISO 8601 format (YYYY-MM-DD).
    */
-  mentions: Array<ILGSv1Span>;
-
-  /**
-   * A unique identifier for a legal person in the format `per:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
-   */
-  person: string | null;
+  value: string;
 
   /**
    * The type of the date, being one of `creation`, `signature`, `effective`,
@@ -193,9 +186,16 @@ export interface ILGSv1Date {
     | 'death';
 
   /**
-   * The date in ISO 8601 format (YYYY-MM-DD).
+   * A unique identifier for a legal person in the format `per:{index}` where
+   * `{index}` is a non-negative incrementing integer starting from zero.
    */
-  value: string;
+  person: string | null;
+
+  /**
+   * An array of one or more spans within the document's text where the date is
+   * mentioned.
+   */
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -203,99 +203,21 @@ export interface ILGSv1Date {
  */
 export interface ILGSv1Document {
   /**
-   * An array of cross-references within the document pointing to a single segment or
-   * a span of segments.
-   */
-  crossreferences: Array<ILGSv1Crossreference>;
-
-  /**
-   * An array of dates identified in the document belonging to one of the following
-   * types: `creation`, `signature`, `effective`, `expiry`, `delivery`, `renewal`,
-   * `payment`, `birth`, or `death`.
+   * A zero-based, half-open span into the Unicode code point space of input text.
    *
-   * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
-   * one of the supported date types are extractable.
-   */
-  dates: Array<ILGSv1Date>;
-
-  /**
-   * An array of email addresses identified in the document belonging to legal
-   * persons.
+   * All spans are globally laminar and well-nested similar to XML—it is impossible
+   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+   * wholly nested. Spans of the exact same type (e.g., segments) will never be
+   * duplicated.
    *
-   * Email addresses mentioned in the document that are not attributable to legal
-   * persons will not be extracted.
-   */
-  emails: Array<ILGSv1Email>;
-
-  /**
-   * An array of documents identified within the document.
-   */
-  external_documents: Array<ILGSv1ExternalDocument>;
-
-  /**
-   * An array of spans within the document's text constituting headings.
-   */
-  headings: Array<ILGSv1Span>;
-
-  /**
-   * An array of identification numbers identified in the document belonging to legal
-   * persons.
+   * A span cannot be empty and will never start or end at whitespace.
    *
-   * Identification numbers mentioned in the document that are not attributable to
-   * legal persons will not be extracted.
+   * Note that, when using programming languages other than Python (which uses
+   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+   * need to be translated accordingly (for example, JavaScript slices into UTF-16
+   * code units instead of Unicode code points).
    */
-  id_numbers: Array<ILGSv1IDNumber>;
-
-  /**
-   * An array of spans within the document's text constituting non-operative,
-   * non-substantive 'junk' content such as headers, footers, page numbers, and OCR
-   * artifacts.
-   */
-  junk: Array<ILGSv1Span>;
-
-  /**
-   * A jurisdiction code representing a country (via an initial country code) and,
-   * optionally, a subdivision within that country (via a subsequent subdivision code
-   * prefixed by a hyphen).
-   *
-   * All 249 ISO 3166-1 alpha-2 country codes are representable in addition to
-   * special `INT` and `EU` codes for international and European Union law,
-   * respectively.
-   *
-   * All 5,046 ISO 3166-2 codes are also representable in addition to a special `FED`
-   * code for federal law.
-   */
-  jurisdiction: string | null;
-
-  /**
-   * An array of locations identified in the document.
-   */
-  locations: Array<ILGSv1Location>;
-
-  /**
-   * An array of legal persons identified in the document.
-   */
-  persons: Array<ILGSv1Person>;
-
-  /**
-   * An array of valid phone numbers identified in the document belonging to legal
-   * persons.
-   *
-   * Phone numbers mentioned in the document that are not valid, possible, or
-   * attributable to legal persons will not be extracted.
-   */
-  phone_numbers: Array<ILGSv1PhoneNumber>;
-
-  /**
-   * An array of quotations within the document.
-   */
-  quotes: Array<ILGSv1Quote>;
-
-  /**
-   * An array of segments within the document representing structurally distinct
-   * portions of its content.
-   */
-  segments: Array<ILGSv1Segment>;
+  title: ILGSv1Span | null;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -315,28 +237,6 @@ export interface ILGSv1Document {
   subtitle: ILGSv1Span | null;
 
   /**
-   * An array of terms assigned definite meanings within the document.
-   */
-  terms: Array<ILGSv1Term>;
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  title: ILGSv1Span | null;
-
-  /**
    * The type of the document, being one of `statute`, `regulation`, `decision`,
    * `contract`, or `other`.
    *
@@ -354,51 +254,6 @@ export interface ILGSv1Document {
    */
   type: 'statute' | 'regulation' | 'decision' | 'contract' | 'other';
 
-  version: 'ilgs@1';
-
-  /**
-   * An array of websites identified in the document belonging to legal persons.
-   *
-   * Websites mentioned in the document that are not attributable to legal persons
-   * will not be extracted.
-   */
-  websites: Array<ILGSv1Website>;
-}
-
-/**
- * An email address identified in a document belonging to a legal person.
- *
- * If an email address was mentioned in the document but is not attributable to a
- * legal person, it will not be extracted.
- */
-export interface ILGSv1Email {
-  /**
-   * The normalized email address.
-   */
-  address: string;
-
-  /**
-   * An array of one or more spans within the document's text where the email address
-   * is mentioned.
-   */
-  mentions: Array<ILGSv1Span>;
-
-  /**
-   * The unique identifier of the person that this email address belongs to.
-   */
-  person: string;
-}
-
-/**
- * A document identified within another document.
- */
-export interface ILGSv1ExternalDocument {
-  /**
-   * The unique identifier of the external document in the format `exd:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
-   */
-  id: string;
-
   /**
    * A jurisdiction code representing a country (via an initial country code) and,
    * optionally, a subdivision within that country (via a subsequent subdivision code
@@ -414,11 +269,135 @@ export interface ILGSv1ExternalDocument {
   jurisdiction: string | null;
 
   /**
-   * An array of one or more spans within the document's text where the external
-   * document is mentioned by name, for example, 'the US Constitution' in 'the Second
-   * Amendment to the US Constitution protects freedom of speech'.
+   * An array of segments within the document representing structurally distinct
+   * portions of its content.
+   */
+  segments: Array<ILGSv1Segment>;
+
+  /**
+   * An array of cross-references within the document pointing to a single segment or
+   * a span of segments.
+   */
+  crossreferences: Array<ILGSv1Crossreference>;
+
+  /**
+   * An array of locations identified in the document.
+   */
+  locations: Array<ILGSv1Location>;
+
+  /**
+   * An array of legal persons identified in the document.
+   */
+  persons: Array<ILGSv1Person>;
+
+  /**
+   * An array of email addresses identified in the document belonging to legal
+   * persons.
+   *
+   * Email addresses mentioned in the document that are not attributable to legal
+   * persons will not be extracted.
+   */
+  emails: Array<ILGSv1Email>;
+
+  /**
+   * An array of websites identified in the document belonging to legal persons.
+   *
+   * Websites mentioned in the document that are not attributable to legal persons
+   * will not be extracted.
+   */
+  websites: Array<ILGSv1Website>;
+
+  /**
+   * An array of valid phone numbers identified in the document belonging to legal
+   * persons.
+   *
+   * Phone numbers mentioned in the document that are not valid, possible, or
+   * attributable to legal persons will not be extracted.
+   */
+  phone_numbers: Array<ILGSv1PhoneNumber>;
+
+  /**
+   * An array of identification numbers identified in the document belonging to legal
+   * persons.
+   *
+   * Identification numbers mentioned in the document that are not attributable to
+   * legal persons will not be extracted.
+   */
+  id_numbers: Array<ILGSv1IDNumber>;
+
+  /**
+   * An array of terms assigned definite meanings within the document.
+   */
+  terms: Array<ILGSv1Term>;
+
+  /**
+   * An array of documents identified within the document.
+   */
+  external_documents: Array<ILGSv1ExternalDocument>;
+
+  /**
+   * An array of quotations within the document.
+   */
+  quotes: Array<ILGSv1Quote>;
+
+  /**
+   * An array of dates identified in the document belonging to one of the following
+   * types: `creation`, `signature`, `effective`, `expiry`, `delivery`, `renewal`,
+   * `payment`, `birth`, or `death`.
+   *
+   * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
+   * one of the supported date types are extractable.
+   */
+  dates: Array<ILGSv1Date>;
+
+  /**
+   * An array of spans within the document's text constituting headings.
+   */
+  headings: Array<ILGSv1Span>;
+
+  /**
+   * An array of spans within the document's text constituting non-operative,
+   * non-substantive 'junk' content such as headers, footers, page numbers, and OCR
+   * artifacts.
+   */
+  junk: Array<ILGSv1Span>;
+
+  version: 'ilgs@1';
+}
+
+/**
+ * An email address identified in a document belonging to a legal person.
+ *
+ * If an email address was mentioned in the document but is not attributable to a
+ * legal person, it will not be extracted.
+ */
+export interface ILGSv1Email {
+  /**
+   * The normalized email address.
+   */
+  address: string;
+
+  /**
+   * The unique identifier of the person that this email address belongs to.
+   */
+  person: string;
+
+  /**
+   * An array of one or more spans within the document's text where the email address
+   * is mentioned.
    */
   mentions: Array<ILGSv1Span>;
+}
+
+/**
+ * A document identified within another document.
+ */
+export interface ILGSv1ExternalDocument {
+  /**
+   * The unique identifier of the external document in the format `exd:{index}` where
+   * `{index}` is a non-negative incrementing integer starting from zero.
+   */
+  id: string;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -438,11 +417,36 @@ export interface ILGSv1ExternalDocument {
   name: ILGSv1Span;
 
   /**
-   * An array of spans within the document's text where specific parts of the
-   * external document are referenced, for example, 'Section 2' in 'as defined in
-   * Section 2 of the US Constitution'.
+   * The type of the external document, being one of `statute`, `regulation`,
+   * `decision`, `contract`, or `other`.
+   *
+   * `statute` denotes primary legislation such as acts, bills, codes, and
+   * constitutions.
+   *
+   * `regulation` denotes secondary legislation such as rules, statutory instruments,
+   * and ordinances.
+   *
+   * `decision` denotes judicial or quasi-judicial decisions such as court judgments,
+   * judicial opinions, and tribunal rulings.
+   *
+   * `other` is used for all other types of legal documents that do not fit into any
+   * of the predefined types.
    */
-  pinpoints: Array<ILGSv1Span>;
+  type: 'statute' | 'regulation' | 'decision' | 'contract' | 'other';
+
+  /**
+   * A jurisdiction code representing a country (via an initial country code) and,
+   * optionally, a subdivision within that country (via a subsequent subdivision code
+   * prefixed by a hyphen).
+   *
+   * All 249 ISO 3166-1 alpha-2 country codes are representable in addition to
+   * special `INT` and `EU` codes for international and European Union law,
+   * respectively.
+   *
+   * All 5,046 ISO 3166-2 codes are also representable in addition to a special `FED`
+   * code for federal law.
+   */
+  jurisdiction: string | null;
 
   /**
    * The sentiment of the document towards the external document, being one of
@@ -465,22 +469,18 @@ export interface ILGSv1ExternalDocument {
   reception: 'positive' | 'mixed' | 'negative' | 'neutral';
 
   /**
-   * The type of the external document, being one of `statute`, `regulation`,
-   * `decision`, `contract`, or `other`.
-   *
-   * `statute` denotes primary legislation such as acts, bills, codes, and
-   * constitutions.
-   *
-   * `regulation` denotes secondary legislation such as rules, statutory instruments,
-   * and ordinances.
-   *
-   * `decision` denotes judicial or quasi-judicial decisions such as court judgments,
-   * judicial opinions, and tribunal rulings.
-   *
-   * `other` is used for all other types of legal documents that do not fit into any
-   * of the predefined types.
+   * An array of one or more spans within the document's text where the external
+   * document is mentioned by name, for example, 'the US Constitution' in 'the Second
+   * Amendment to the US Constitution protects freedom of speech'.
    */
-  type: 'statute' | 'regulation' | 'decision' | 'contract' | 'other';
+  mentions: Array<ILGSv1Span>;
+
+  /**
+   * An array of spans within the document's text where specific parts of the
+   * external document are referenced, for example, 'Section 2' in 'as defined in
+   * Section 2 of the US Constitution'.
+   */
+  pinpoints: Array<ILGSv1Span>;
 }
 
 /**
@@ -491,12 +491,6 @@ export interface ILGSv1ExternalDocument {
  */
 export interface ILGSv1IDNumber {
   /**
-   * An array of one or more spans within the document's text where the
-   * identification number is mentioned.
-   */
-  mentions: Array<ILGSv1Span>;
-
-  /**
    * The identification number.
    */
   number: string;
@@ -505,6 +499,12 @@ export interface ILGSv1IDNumber {
    * The unique identifier of the person that this identification number belongs to.
    */
   person: string;
+
+  /**
+   * An array of one or more spans within the document's text where the
+   * identification number is mentioned.
+   */
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -518,12 +518,6 @@ export interface ILGSv1Location {
   id: string;
 
   /**
-   * An array of one or more spans within the document's text where the location is
-   * mentioned.
-   */
-  mentions: Array<ILGSv1Span>;
-
-  /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
    * All spans are globally laminar and well-nested similar to XML—it is impossible
@@ -541,16 +535,22 @@ export interface ILGSv1Location {
   name: ILGSv1Span;
 
   /**
+   * The type of the location, being one of `country`, `state`, `city`, `address`, or
+   * `other`.
+   */
+  type: 'country' | 'state' | 'city' | 'address' | 'other';
+
+  /**
    * A unique identifier for a location in the format `loc:{index}` where `{index}`
    * is a non-negative incrementing integer starting from zero.
    */
   parent: string | null;
 
   /**
-   * The type of the location, being one of `country`, `state`, `city`, `address`, or
-   * `other`.
+   * An array of one or more spans within the document's text where the location is
+   * mentioned.
    */
-  type: 'country' | 'state' | 'city' | 'address' | 'other';
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -564,12 +564,6 @@ export interface ILGSv1Person {
   id: string;
 
   /**
-   * An array of one or more spans within the document's text where the person is
-   * mentioned.
-   */
-  mentions: Array<ILGSv1Span>;
-
-  /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
    * All spans are globally laminar and well-nested similar to XML—it is impossible
@@ -587,16 +581,20 @@ export interface ILGSv1Person {
   name: ILGSv1Span;
 
   /**
-   * A unique identifier for a legal person in the format `per:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * The legal entity type of the person, being one of `natural`, `corporate`, or
+   * `politic`.
+   *
+   * `natural` denotes a human being in their capacity as a natural legal person,
+   * including when representing unincorporated entities such as partnerships and
+   * trusts.
+   *
+   * `corporate` denotes a body corporate such as a company, incorporated
+   * partnership, or statutory corporation.
+   *
+   * `politic` denotes a body politic such as a court, state, government, or
+   * intergovernmental organization.
    */
-  parent: string | null;
-
-  /**
-   * A unique identifier for a location in the format `loc:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
-   */
-  residence: string | null;
+  type: 'natural' | 'corporate' | 'politic';
 
   /**
    * The role of the person in relation to the subject of the document.
@@ -725,20 +723,22 @@ export interface ILGSv1Person {
     | 'non_party';
 
   /**
-   * The legal entity type of the person, being one of `natural`, `corporate`, or
-   * `politic`.
-   *
-   * `natural` denotes a human being in their capacity as a natural legal person,
-   * including when representing unincorporated entities such as partnerships and
-   * trusts.
-   *
-   * `corporate` denotes a body corporate such as a company, incorporated
-   * partnership, or statutory corporation.
-   *
-   * `politic` denotes a body politic such as a court, state, government, or
-   * intergovernmental organization.
+   * A unique identifier for a legal person in the format `per:{index}` where
+   * `{index}` is a non-negative incrementing integer starting from zero.
    */
-  type: 'natural' | 'corporate' | 'politic';
+  parent: string | null;
+
+  /**
+   * A unique identifier for a location in the format `loc:{index}` where `{index}`
+   * is a non-negative incrementing integer starting from zero.
+   */
+  residence: string | null;
+
+  /**
+   * An array of one or more spans within the document's text where the person is
+   * mentioned.
+   */
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -749,12 +749,6 @@ export interface ILGSv1Person {
  */
 export interface ILGSv1PhoneNumber {
   /**
-   * An array of one or more spans within the document's text where the phone number
-   * is mentioned.
-   */
-  mentions: Array<ILGSv1Span>;
-
-  /**
    * The normalized phone number in E.123 international notation conforming with
    * local conventions on the use of spaces and hyphens as separators.
    */
@@ -764,6 +758,12 @@ export interface ILGSv1PhoneNumber {
    * The unique identifier of the person that this phone number belongs to.
    */
   person: string;
+
+  /**
+   * An array of one or more spans within the document's text where the phone number
+   * is mentioned.
+   */
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -771,10 +771,10 @@ export interface ILGSv1PhoneNumber {
  */
 export interface ILGSv1Quote {
   /**
-   * Whether the quote is being used to amend or modify content, typically in other
-   * documents.
+   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
+   * a non-negative incrementing integer starting from zero.
    */
-  amending: boolean;
+  source_segment: string | null;
 
   /**
    * A unique identifier for an external document in the format `exd:{index}` where
@@ -789,10 +789,10 @@ export interface ILGSv1Quote {
   source_person: string | null;
 
   /**
-   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
-   * a non-negative incrementing integer starting from zero.
+   * Whether the quote is being used to amend or modify content, typically in other
+   * documents.
    */
-  source_segment: string | null;
+  amending: boolean;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -824,45 +824,6 @@ export interface ILGSv1Segment {
   id: string;
 
   /**
-   * The functional 'category' of the segment within the document, being one of
-   * `front_matter`, `scope`, `main`, `annotation`, `back_matter`, or `other`.
-   *
-   * `front_matter` denotes non-operative contextualizing content occurring at the
-   * start of a document such as a preamble or recitals.
-   *
-   * `scope` denotes operative content defining the application or interpretation of
-   * a document such as definition sections and governing law clauses.
-   *
-   * `main` denotes operative, non-scopal content.
-   *
-   * `annotation` denotes non-operative annotative content providing explanatory or
-   * referential information such as commentary, footnotes, and endnotes.
-   *
-   * `back_matter` denotes non-operative contextualizing content occurring at the end
-   * of a document such as authority statements.
-   *
-   * `other` denotes content that does not fit into any of the other categories.
-   */
-  category: 'front_matter' | 'scope' | 'main' | 'annotation' | 'back_matter' | 'other';
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  code: ILGSv1Span | null;
-
-  /**
    * The structural 'kind' of the segment, being one of `container`, `unit`, `item`,
    * or `figure`.
    *
@@ -883,46 +844,6 @@ export interface ILGSv1Segment {
    * diagram, equation, or table. It cannot contain segments.
    */
   kind: 'container' | 'unit' | 'item' | 'figure';
-
-  /**
-   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
-   * a non-negative incrementing integer starting from zero.
-   */
-  parent: string | null;
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  span: ILGSv1Span;
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  title: ILGSv1Span | null;
 
   /**
    * The addressable 'type' of the segment within the document's referential scheme
@@ -993,6 +914,28 @@ export interface ILGSv1Segment {
     | null;
 
   /**
+   * The functional 'category' of the segment within the document, being one of
+   * `front_matter`, `scope`, `main`, `annotation`, `back_matter`, or `other`.
+   *
+   * `front_matter` denotes non-operative contextualizing content occurring at the
+   * start of a document such as a preamble or recitals.
+   *
+   * `scope` denotes operative content defining the application or interpretation of
+   * a document such as definition sections and governing law clauses.
+   *
+   * `main` denotes operative, non-scopal content.
+   *
+   * `annotation` denotes non-operative annotative content providing explanatory or
+   * referential information such as commentary, footnotes, and endnotes.
+   *
+   * `back_matter` denotes non-operative contextualizing content occurring at the end
+   * of a document such as authority statements.
+   *
+   * `other` denotes content that does not fit into any of the other categories.
+   */
+  category: 'front_matter' | 'scope' | 'main' | 'annotation' | 'back_matter' | 'other';
+
+  /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
    * All spans are globally laminar and well-nested similar to XML—it is impossible
@@ -1008,6 +951,63 @@ export interface ILGSv1Segment {
    * code units instead of Unicode code points).
    */
   type_name: ILGSv1Span | null;
+
+  /**
+   * A zero-based, half-open span into the Unicode code point space of input text.
+   *
+   * All spans are globally laminar and well-nested similar to XML—it is impossible
+   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+   * wholly nested. Spans of the exact same type (e.g., segments) will never be
+   * duplicated.
+   *
+   * A span cannot be empty and will never start or end at whitespace.
+   *
+   * Note that, when using programming languages other than Python (which uses
+   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+   * need to be translated accordingly (for example, JavaScript slices into UTF-16
+   * code units instead of Unicode code points).
+   */
+  code: ILGSv1Span | null;
+
+  /**
+   * A zero-based, half-open span into the Unicode code point space of input text.
+   *
+   * All spans are globally laminar and well-nested similar to XML—it is impossible
+   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+   * wholly nested. Spans of the exact same type (e.g., segments) will never be
+   * duplicated.
+   *
+   * A span cannot be empty and will never start or end at whitespace.
+   *
+   * Note that, when using programming languages other than Python (which uses
+   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+   * need to be translated accordingly (for example, JavaScript slices into UTF-16
+   * code units instead of Unicode code points).
+   */
+  title: ILGSv1Span | null;
+
+  /**
+   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
+   * a non-negative incrementing integer starting from zero.
+   */
+  parent: string | null;
+
+  /**
+   * A zero-based, half-open span into the Unicode code point space of input text.
+   *
+   * All spans are globally laminar and well-nested similar to XML—it is impossible
+   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+   * wholly nested. Spans of the exact same type (e.g., segments) will never be
+   * duplicated.
+   *
+   * A span cannot be empty and will never start or end at whitespace.
+   *
+   * Note that, when using programming languages other than Python (which uses
+   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+   * need to be translated accordingly (for example, JavaScript slices into UTF-16
+   * code units instead of Unicode code points).
+   */
+  span: ILGSv1Span;
 }
 
 /**
@@ -1027,16 +1027,16 @@ export interface ILGSv1Segment {
  */
 export interface ILGSv1Span {
   /**
-   * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-   * Unicode code points in the input text.
-   */
-  end: number;
-
-  /**
    * The zero-based start index of the half-open span of Unicode code points in the
    * input text.
    */
   start: number;
+
+  /**
+   * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+   * Unicode code points in the input text.
+   */
+  end: number;
 }
 
 /**
@@ -1064,16 +1064,7 @@ export interface ILGSv1Term {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  meaning: ILGSv1Span;
-
-  /**
-   * An array of spans within the document's text where the term is mentioned outside
-   * of its definition.
-   *
-   * It is possible for the term to have no mentions if, outside of its definition,
-   * it is never referred to in the document.
-   */
-  mentions: Array<ILGSv1Span>;
+  name: ILGSv1Span;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -1090,7 +1081,16 @@ export interface ILGSv1Term {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  name: ILGSv1Span;
+  meaning: ILGSv1Span;
+
+  /**
+   * An array of spans within the document's text where the term is mentioned outside
+   * of its definition.
+   *
+   * It is possible for the term to have no mentions if, outside of its definition,
+   * it is never referred to in the document.
+   */
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -1101,11 +1101,9 @@ export interface ILGSv1Term {
  */
 export interface ILGSv1Website {
   /**
-   * An array of one or more spans within the document's text where the website is
-   * mentioned (including paths and slugs which are not part of the website's
-   * normalized URL).
+   * The normalized URL of the website in the form `https://{host}/`.
    */
-  mentions: Array<ILGSv1Span>;
+  url: string;
 
   /**
    * The unique identifier of the person that this website belongs to.
@@ -1113,9 +1111,11 @@ export interface ILGSv1Website {
   person: string;
 
   /**
-   * The normalized URL of the website in the form `https://{host}/`.
+   * An array of one or more spans within the document's text where the website is
+   * mentioned (including paths and slugs which are not part of the website's
+   * normalized URL).
    */
-  url: string;
+  mentions: Array<ILGSv1Span>;
 }
 
 export interface EnrichmentCreateParams {
