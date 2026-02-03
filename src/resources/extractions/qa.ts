@@ -4,7 +4,7 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
-export class Qa extends APIResource {
+export class QA extends APIResource {
   /**
    * Extract answers to questions from legal documents with an Isaacus legal AI
    * answer extractor.
@@ -21,7 +21,7 @@ export class Qa extends APIResource {
    *   });
    * ```
    */
-  create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
+  create(body: QACreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
     return this._client.post('/extractions/qa', { body, ...options });
   }
 }
@@ -47,15 +47,15 @@ export namespace AnswerExtractionResponse {
    */
   export interface Extraction {
     /**
-     * Answers extracted from the text, ordered from highest to lowest score.
-     */
-    answers: Array<Extraction.Answer>;
-
-    /**
      * The index of the text in the input array of texts that this result represents,
      * starting from `0` (and, therefore, ending at the number of texts minus `1`).
      */
     index: number;
+
+    /**
+     * Answers extracted from the text, ordered from highest to lowest score.
+     */
+    answers: Array<Extraction.Answer>;
 
     /**
      * A score between `0` and `1`, inclusive, representing the likelihood that an
@@ -75,6 +75,17 @@ export namespace AnswerExtractionResponse {
      */
     export interface Answer {
       /**
+       * The text of the answer.
+       */
+      text: string;
+
+      /**
+       * The index of the first character of the answer in the text, starting from `0`
+       * (and, therefore, ending at the number of characters in the text minus `1`).
+       */
+      start: number;
+
+      /**
        * The index of the character immediately after the last character of the answer in
        * the text, starting from `0` (such that, in Python, the answer is equivalent to
        * `text[start:end]`).
@@ -85,17 +96,6 @@ export namespace AnswerExtractionResponse {
        * A score between `0` and `1`, inclusive, representing the strength of the answer.
        */
       score: number;
-
-      /**
-       * The index of the first character of the answer in the text, starting from `0`
-       * (and, therefore, ending at the number of characters in the text minus `1`).
-       */
-      start: number;
-
-      /**
-       * The text of the answer.
-       */
-      text: string;
     }
   }
 
@@ -111,7 +111,7 @@ export namespace AnswerExtractionResponse {
   }
 }
 
-export interface QaCreateParams {
+export interface QACreateParams {
   /**
    * The ID of the
    * [model](https://docs.isaacus.com/models#extractive-question-answering) to use
@@ -139,11 +139,6 @@ export interface QaCreateParams {
   texts: Array<string>;
 
   /**
-   * Options for how to split text into smaller chunks.
-   */
-  chunking_options?: QaCreateParams.ChunkingOptions | null;
-
-  /**
    * Whether to, if the model's score of the likelihood that an answer can not be
    * extracted from a text is greater than the highest score of all possible answers,
    * still return the highest scoring answers for that text.
@@ -160,13 +155,23 @@ export interface QaCreateParams {
    * If `null`, which is the default, all answers will be returned.
    */
   top_k?: number;
+
+  /**
+   * Options for how to split text into smaller chunks.
+   */
+  chunking_options?: QACreateParams.ChunkingOptions | null;
 }
 
-export namespace QaCreateParams {
+export namespace QACreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
   export interface ChunkingOptions {
+    /**
+     * A whole number greater than or equal to 1.
+     */
+    size?: number | null;
+
     /**
      * A number greater than or equal to 0 and less than 1.
      */
@@ -176,14 +181,9 @@ export namespace QaCreateParams {
      * A whole number greater than or equal to 0.
      */
     overlap_tokens?: number | null;
-
-    /**
-     * A whole number greater than or equal to 1.
-     */
-    size?: number | null;
   }
 }
 
-export declare namespace Qa {
-  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QaCreateParams as QaCreateParams };
+export declare namespace QA {
+  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QACreateParams as QACreateParams };
 }

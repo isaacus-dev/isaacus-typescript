@@ -96,9 +96,9 @@ export interface RerankingCreateParams {
   texts: Array<string>;
 
   /**
-   * Options for how to split text into smaller chunks.
+   * A whole number greater than or equal to 1.
    */
-  chunking_options?: RerankingCreateParams.ChunkingOptions | null;
+  top_n?: number | null;
 
   /**
    * Whether the query should be interpreted as an
@@ -127,9 +127,9 @@ export interface RerankingCreateParams {
   scoring_method?: 'auto' | 'chunk_max' | 'chunk_avg' | 'chunk_min';
 
   /**
-   * A whole number greater than or equal to 1.
+   * Options for how to split text into smaller chunks.
    */
-  top_n?: number | null;
+  chunking_options?: RerankingCreateParams.ChunkingOptions | null;
 }
 
 export namespace RerankingCreateParams {
@@ -137,6 +137,11 @@ export namespace RerankingCreateParams {
    * Options for how to split text into smaller chunks.
    */
   export interface ChunkingOptions {
+    /**
+     * A whole number greater than or equal to 1.
+     */
+    size?: number | null;
+
     /**
      * A number greater than or equal to 0 and less than 1.
      */
@@ -146,11 +151,6 @@ export namespace RerankingCreateParams {
      * A whole number greater than or equal to 0.
      */
     overlap_tokens?: number | null;
-
-    /**
-     * A whole number greater than or equal to 1.
-     */
-    size?: number | null;
   }
 }
 
