@@ -274,8 +274,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Span {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -371,8 +379,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -418,8 +434,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -523,8 +547,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -532,8 +564,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Name {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -553,8 +593,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Pinpoint {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -575,8 +623,16 @@ export namespace EnrichmentResponse {
        * code units instead of Unicode code points).
        */
       export interface Heading {
+        /**
+         * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+         * Unicode code points in the input text.
+         */
         end: number;
 
+        /**
+         * The zero-based start index of the half-open span of Unicode code points in the
+         * input text.
+         */
         start: number;
       }
 
@@ -621,8 +677,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -643,8 +707,16 @@ export namespace EnrichmentResponse {
        * code units instead of Unicode code points).
        */
       export interface Junk {
+        /**
+         * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+         * Unicode code points in the input text.
+         */
         end: number;
 
+        /**
+         * The zero-based start index of the half-open span of Unicode code points in the
+         * input text.
+         */
         start: number;
       }
 
@@ -699,8 +771,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -708,8 +788,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Name {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -907,8 +995,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -916,8 +1012,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Name {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -964,8 +1068,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -1009,8 +1121,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Span {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -1218,8 +1338,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Code {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -1227,8 +1355,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Span {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -1248,8 +1384,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Title {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -1269,8 +1413,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface TypeName {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -1291,8 +1443,16 @@ export namespace EnrichmentResponse {
        * code units instead of Unicode code points).
        */
       export interface Subtitle {
+        /**
+         * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+         * Unicode code points in the input text.
+         */
         end: number;
 
+        /**
+         * The zero-based start index of the half-open span of Unicode code points in the
+         * input text.
+         */
         start: number;
       }
 
@@ -1331,8 +1491,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Meaning {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -1352,8 +1520,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
 
@@ -1361,8 +1537,16 @@ export namespace EnrichmentResponse {
          * The span of the segment within the document's text.
          */
         export interface Name {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
@@ -1383,8 +1567,16 @@ export namespace EnrichmentResponse {
        * code units instead of Unicode code points).
        */
       export interface Title {
+        /**
+         * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+         * Unicode code points in the input text.
+         */
         end: number;
 
+        /**
+         * The zero-based start index of the half-open span of Unicode code points in the
+         * input text.
+         */
         start: number;
       }
 
@@ -1430,8 +1622,16 @@ export namespace EnrichmentResponse {
          * code units instead of Unicode code points).
          */
         export interface Mention {
+          /**
+           * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+           * Unicode code points in the input text.
+           */
           end: number;
 
+          /**
+           * The zero-based start index of the half-open span of Unicode code points in the
+           * input text.
+           */
           start: number;
         }
       }
