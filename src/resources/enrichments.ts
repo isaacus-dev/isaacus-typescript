@@ -256,7 +256,19 @@ export namespace EnrichmentResponse {
         end: string;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         span: Crossreference.Span;
 
@@ -271,7 +283,19 @@ export namespace EnrichmentResponse {
 
       export namespace Crossreference {
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Span {
           /**
@@ -480,7 +504,19 @@ export namespace EnrichmentResponse {
         mentions: Array<ExternalDocument.Mention>;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         name: ExternalDocument.Name;
 
@@ -561,7 +597,19 @@ export namespace EnrichmentResponse {
         }
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Name {
           /**
@@ -737,7 +785,19 @@ export namespace EnrichmentResponse {
         mentions: Array<Location.Mention>;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         name: Location.Name;
 
@@ -785,7 +845,19 @@ export namespace EnrichmentResponse {
         }
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Name {
           /**
@@ -819,7 +891,19 @@ export namespace EnrichmentResponse {
         mentions: Array<Person.Mention>;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         name: Person.Name;
 
@@ -1009,7 +1093,19 @@ export namespace EnrichmentResponse {
         }
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Name {
           /**
@@ -1111,14 +1207,38 @@ export namespace EnrichmentResponse {
         source_segment: string | null;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         span: Quote.Span;
       }
 
       export namespace Quote {
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Span {
           /**
@@ -1214,7 +1334,19 @@ export namespace EnrichmentResponse {
         parent: string | null;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         span: Segment.Span;
 
@@ -1352,7 +1484,19 @@ export namespace EnrichmentResponse {
         }
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Span {
           /**
@@ -1467,7 +1611,19 @@ export namespace EnrichmentResponse {
         id: string;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         meaning: Term.Meaning;
 
@@ -1481,14 +1637,38 @@ export namespace EnrichmentResponse {
         mentions: Array<Term.Mention>;
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         name: Term.Name;
       }
 
       export namespace Term {
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Meaning {
           /**
@@ -1534,7 +1714,19 @@ export namespace EnrichmentResponse {
         }
 
         /**
-         * The span of the segment within the document's text.
+         * A zero-based, half-open span into the Unicode code point space of input text.
+         *
+         * All spans are globally laminar and well-nested similar to XML—it is impossible
+         * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+         * wholly nested. Spans of the exact same type (e.g., segments) will never be
+         * duplicated.
+         *
+         * A span cannot be empty and will never start or end at whitespace.
+         *
+         * Note that, when using programming languages other than Python (which uses
+         * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+         * need to be translated accordingly (for example, JavaScript slices into UTF-16
+         * code units instead of Unicode code points).
          */
         export interface Name {
           /**
