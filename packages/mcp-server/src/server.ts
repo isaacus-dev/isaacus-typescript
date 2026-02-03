@@ -21,7 +21,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'isaacus_api',
-      version: '0.11.1',
+      version: '0.12.0',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
