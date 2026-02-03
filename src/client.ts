@@ -17,7 +17,25 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
-import { EnrichmentCreateParams, EnrichmentResponse, Enrichments } from './resources/enrichments';
+import {
+  EnrichmentCreateParams,
+  EnrichmentResponse,
+  Enrichments,
+  IlgsV1Crossreference,
+  IlgsV1Date,
+  IlgsV1Document,
+  IlgsV1Email,
+  IlgsV1ExternalDocument,
+  IlgsV1IDNumber,
+  IlgsV1Location,
+  IlgsV1Person,
+  IlgsV1PhoneNumber,
+  IlgsV1Quote,
+  IlgsV1Segment,
+  IlgsV1Span,
+  IlgsV1Term,
+  IlgsV1Website,
+} from './resources/enrichments';
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -754,6 +772,20 @@ export declare namespace Isaacus {
   export {
     Enrichments as Enrichments,
     type EnrichmentResponse as EnrichmentResponse,
+    type IlgsV1Crossreference as IlgsV1Crossreference,
+    type IlgsV1Date as IlgsV1Date,
+    type IlgsV1Document as IlgsV1Document,
+    type IlgsV1Email as IlgsV1Email,
+    type IlgsV1ExternalDocument as IlgsV1ExternalDocument,
+    type IlgsV1IDNumber as IlgsV1IDNumber,
+    type IlgsV1Location as IlgsV1Location,
+    type IlgsV1Person as IlgsV1Person,
+    type IlgsV1PhoneNumber as IlgsV1PhoneNumber,
+    type IlgsV1Quote as IlgsV1Quote,
+    type IlgsV1Segment as IlgsV1Segment,
+    type IlgsV1Span as IlgsV1Span,
+    type IlgsV1Term as IlgsV1Term,
+    type IlgsV1Website as IlgsV1Website,
     type EnrichmentCreateParams as EnrichmentCreateParams,
   };
 }
