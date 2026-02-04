@@ -4,7 +4,7 @@ import { APIResource } from '../../core/resource';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
-export class QA extends APIResource {
+export class Qa extends APIResource {
   /**
    * Extract answers to questions from legal documents with an Isaacus legal AI
    * answer extractor.
@@ -21,7 +21,7 @@ export class QA extends APIResource {
    *   });
    * ```
    */
-  create(body: QACreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
+  create(body: QaCreateParams, options?: RequestOptions): APIPromise<AnswerExtractionResponse> {
     return this._client.post('/extractions/qa', { body, ...options });
   }
 }
@@ -111,7 +111,7 @@ export namespace AnswerExtractionResponse {
   }
 }
 
-export interface QACreateParams {
+export interface QaCreateParams {
   /**
    * The ID of the
    * [model](https://docs.isaacus.com/models#extractive-question-answering) to use
@@ -159,10 +159,10 @@ export interface QACreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
-  chunking_options?: QACreateParams.ChunkingOptions | null;
+  chunking_options?: QaCreateParams.ChunkingOptions | null;
 }
 
-export namespace QACreateParams {
+export namespace QaCreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
@@ -184,6 +184,6 @@ export namespace QACreateParams {
   }
 }
 
-export declare namespace QA {
-  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QACreateParams as QACreateParams };
+export declare namespace Qa {
+  export { type AnswerExtractionResponse as AnswerExtractionResponse, type QaCreateParams as QaCreateParams };
 }
