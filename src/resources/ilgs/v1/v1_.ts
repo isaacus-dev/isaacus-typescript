@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../core/resource';
+import { APIResource } from '../../../core/resource';
 
-export class ILGSv1 extends APIResource {}
+export class v1 extends APIResource {}
 
 /**
  * A cross-reference within the document pointing to one or more segments.
@@ -120,6 +120,11 @@ export interface Date {
  * The enriched document.
  */
 export interface Document {
+  /**
+   * The text of the document.
+   */
+  text: string;
+
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
@@ -911,6 +916,12 @@ export interface Segment {
   parent: string | null;
 
   /**
+   * The level of the segment within the document's segment hierarchy starting from
+   * `0` for root-level segments.
+   */
+  level: number;
+
+  /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
    * All spans are globally laminar and well-nested similar to XML—it is impossible
@@ -1036,7 +1047,7 @@ export interface Website {
   mentions: Array<Span>;
 }
 
-export declare namespace ILGSv1 {
+export declare namespace v1 {
   export {
     type Crossreference as Crossreference,
     type Date as Date,

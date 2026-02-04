@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.16.0 (2026-02-04)
+
+Full Changelog: [v0.15.0...v0.16.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.15.0...v0.16.0)
+
+### Features
+
+* **api:** add a `text` field ([216e27a](https://github.com/isaacus-dev/isaacus-typescript/commit/216e27a734b40281164aaf23aaa154d58b789059))
+* **api:** add level field to ILGS v1 segments ([763c816](https://github.com/isaacus-dev/isaacus-typescript/commit/763c816c5f4599f67aaa213456be667509bedffd))
+* **sdk:** add ilgs v1 span as a top model ([7cc748f](https://github.com/isaacus-dev/isaacus-typescript/commit/7cc748f30e12b784447c4e6317f0d9f15ce277cc))
+* **sdk:** demote other models ([5b68e42](https://github.com/isaacus-dev/isaacus-typescript/commit/5b68e4241e92b40383a10268d0e1955c7f09683c))
+* **sdk:** move ilgs structs around ([996fbfd](https://github.com/isaacus-dev/isaacus-typescript/commit/996fbfd47cf8432667dbf83f5bf7939793773bf5))
+* **sdk:** move ilgs structs around ([46a61c3](https://github.com/isaacus-dev/isaacus-typescript/commit/46a61c3a33586559c7c225a1b8b5806ac1d89b20))
+* **sdk:** move ilgs structs around ([c9fca40](https://github.com/isaacus-dev/isaacus-typescript/commit/c9fca4099b0fb64040079bd49a6e27f5a6bbdcf9))
+* **sdk:** move ilgs structs around ([5e84913](https://github.com/isaacus-dev/isaacus-typescript/commit/5e84913b2b22689071aa4030fce7916b60ec3c68))
+* **sdk:** move ilgs structs around ([715c411](https://github.com/isaacus-dev/isaacus-typescript/commit/715c411423e853246596bbf75edcf5b06a658c9e))
+
 ## 0.15.0 (2026-02-04)
 
 Full Changelog: [v0.14.0...v0.15.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.14.0...v0.15.0)
