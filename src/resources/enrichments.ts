@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../core/resource';
-import * as v1API from './ilgs/v1/v1_';
+import * as v1API from './ilgs/v1';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
@@ -72,7 +72,7 @@ export namespace EnrichmentResponse {
     /**
      * The enriched document.
      */
-    document: v1API.Document;
+    document: v1API.ILGSv1Document;
   }
 
   /**
