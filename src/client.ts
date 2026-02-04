@@ -21,7 +21,7 @@ import { EnrichmentCreateParams, EnrichmentResponse, Enrichments } from './resou
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
-import { ILGS } from './resources/ilgs/ilgs';
+import { Ilgs } from './resources/ilgs/ilgs';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -725,7 +725,7 @@ export class Isaacus {
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
   enrichments: API.Enrichments = new API.Enrichments(this);
-  ilgs: API.ILGS = new API.ILGS(this);
+  ilgs: API.Ilgs = new API.Ilgs(this);
 }
 
 Isaacus.Embeddings = Embeddings;
@@ -733,7 +733,7 @@ Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
 Isaacus.Enrichments = Enrichments;
-Isaacus.ILGS = ILGS;
+Isaacus.Ilgs = Ilgs;
 
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
@@ -760,5 +760,5 @@ export declare namespace Isaacus {
     type EnrichmentCreateParams as EnrichmentCreateParams,
   };
 
-  export { ILGS as ILGS };
+  export { Ilgs as Ilgs };
 }
