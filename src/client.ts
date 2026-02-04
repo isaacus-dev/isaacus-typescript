@@ -761,6 +761,4 @@ export declare namespace Isaacus {
   };
 
   export { ILGS as ILGS };
-
-  export type ChunkingOptions = API.ChunkingOptions;
 }
