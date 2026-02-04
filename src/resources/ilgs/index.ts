@@ -2,7 +2,7 @@
 
 export { ILGS } from './ilgs';
 export {
-  V1,
+  v1,
   type Crossreference,
   type Date,
   type Document,

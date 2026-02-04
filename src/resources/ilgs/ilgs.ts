@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
-import * as V1API from './v1';
+import * as v1API from './v1';
 import {
   Crossreference,
   Date,
@@ -16,19 +16,19 @@ import {
   Segment,
   Span,
   Term,
-  V1,
   Website,
+  v1,
 } from './v1';
 
 export class ILGS extends APIResource {
-  v1: V1API.V1 = new V1API.V1(this._client);
+  v1: v1API.v1 = new v1API.v1(this._client);
 }
 
-ILGS.V1 = V1;
+ILGS.v1 = v1;
 
 export declare namespace ILGS {
   export {
-    V1 as V1,
+    v1 as v1,
     type Crossreference as Crossreference,
     type Date as Date,
     type Document as Document,
