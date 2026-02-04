@@ -1,9 +1,3 @@
-# Shared
-
-Types:
-
-- <code><a href="./src/resources/shared.ts">ChunkingOptions</a></code>
-
 # Embeddings
 
 Types:

@@ -1,7 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
-import * as Shared from '../shared';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
@@ -160,7 +159,29 @@ export interface QACreateParams {
   /**
    * Options for how to split text into smaller chunks.
    */
-  chunking_options?: Shared.ChunkingOptions | null;
+  chunking_options?: QACreateParams.ChunkingOptions | null;
+}
+
+export namespace QACreateParams {
+  /**
+   * Options for how to split text into smaller chunks.
+   */
+  export interface ChunkingOptions {
+    /**
+     * A whole number greater than or equal to 1.
+     */
+    size?: number | null;
+
+    /**
+     * A number greater than or equal to 0 and less than 1.
+     */
+    overlap_ratio?: number | null;
+
+    /**
+     * A whole number greater than or equal to 0.
+     */
+    overlap_tokens?: number | null;
+  }
 }
 
 export declare namespace QA {
