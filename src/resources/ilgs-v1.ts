@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../core/resource';
+import { APIResource } from '../core/resource';
 
-export class V1 extends APIResource {}
+export class IlgsV1 extends APIResource {}
 
 /**
  * A cross-reference within the document pointing to one or more segments.
@@ -1036,7 +1036,7 @@ export interface Website {
   mentions: Array<Span>;
 }
 
-export declare namespace V1 {
+export declare namespace IlgsV1 {
   export {
     type Crossreference as Crossreference,
     type Date as Date,
