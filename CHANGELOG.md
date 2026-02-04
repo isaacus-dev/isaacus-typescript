@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.15.0 (2026-02-04)
+
+Full Changelog: [v0.14.0...v0.15.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.14.0...v0.15.0)
+
+### Features
+
+* **sdk:** alter v1 pascal casing ([56a3fc8](https://github.com/isaacus-dev/isaacus-typescript/commit/56a3fc86555192016d3372da74047723b873e801))
+* **sdk:** move ilgs models under `ilgs_v1` ([8f9b99a](https://github.com/isaacus-dev/isaacus-typescript/commit/8f9b99adbdd8800b22c6af1669957c1a2634ed50))
+* **sdk:** move ilgs to its own resource ([e8e34af](https://github.com/isaacus-dev/isaacus-typescript/commit/e8e34af8b3ec44ac30999374686a398ac21d372b))
+* **sdk:** move ilgsv1 resources under a subresource ([0775c6e](https://github.com/isaacus-dev/isaacus-typescript/commit/0775c6e98bdcfeb819f017145aa671d72098e4d5))
+* **sdk:** removed chunking options as a shared resource ([898b2b1](https://github.com/isaacus-dev/isaacus-typescript/commit/898b2b18d85d5d4ea3d237ad58658decbe4a279c))
+* **sdk:** revert v1 casing change ([900015c](https://github.com/isaacus-dev/isaacus-typescript/commit/900015c65faf64adb0bd510ed93a3546af25c80d))
+
 ## 0.14.0 (2026-02-03)
 
 Full Changelog: [v0.13.0...v0.14.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.13.0...v0.14.0)

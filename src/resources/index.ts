@@ -2,24 +2,23 @@
 
 export { Classifications } from './classifications/classifications';
 export { Embeddings, type EmbeddingResponse, type EmbeddingCreateParams } from './embeddings';
-export {
-  Enrichments,
-  type EnrichmentResponse,
-  type ILGSv1Crossreference,
-  type ILGSv1Date,
-  type ILGSv1Document,
-  type ILGSv1Email,
-  type ILGSv1ExternalDocument,
-  type ILGSv1IDNumber,
-  type ILGSv1Location,
-  type ILGSv1Person,
-  type ILGSv1PhoneNumber,
-  type ILGSv1Quote,
-  type ILGSv1Segment,
-  type ILGSv1Span,
-  type ILGSv1Term,
-  type ILGSv1Website,
-  type EnrichmentCreateParams,
-} from './enrichments';
+export { Enrichments, type EnrichmentResponse, type EnrichmentCreateParams } from './enrichments';
 export { Extractions } from './extractions/extractions';
+export {
+  ILGSv1,
+  type Crossreference,
+  type Date,
+  type Document,
+  type Email,
+  type ExternalDocument,
+  type IDNumber,
+  type Location,
+  type Person,
+  type PhoneNumber,
+  type Quote,
+  type Segment,
+  type Span,
+  type Term,
+  type Website,
+} from './ilgs-v1';
 export { Rerankings, type RerankingResponse, type RerankingCreateParams } from './rerankings';

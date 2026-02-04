@@ -17,25 +17,24 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
+import { EnrichmentCreateParams, EnrichmentResponse, Enrichments } from './resources/enrichments';
 import {
-  EnrichmentCreateParams,
-  EnrichmentResponse,
-  Enrichments,
-  ILGSv1Crossreference,
-  ILGSv1Date,
-  ILGSv1Document,
-  ILGSv1Email,
-  ILGSv1ExternalDocument,
-  ILGSv1IDNumber,
-  ILGSv1Location,
-  ILGSv1Person,
-  ILGSv1PhoneNumber,
-  ILGSv1Quote,
-  ILGSv1Segment,
-  ILGSv1Span,
-  ILGSv1Term,
-  ILGSv1Website,
-} from './resources/enrichments';
+  Crossreference,
+  Date,
+  Document,
+  Email,
+  ExternalDocument,
+  IDNumber,
+  ILGSv1,
+  Location,
+  Person,
+  PhoneNumber,
+  Quote,
+  Segment,
+  Span,
+  Term,
+  Website,
+} from './resources/ilgs-v1';
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
@@ -742,6 +741,7 @@ export class Isaacus {
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
   enrichments: API.Enrichments = new API.Enrichments(this);
+  ilgsv1: API.ILGSv1 = new API.ILGSv1(this);
 }
 
 Isaacus.Embeddings = Embeddings;
@@ -749,6 +749,7 @@ Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
 Isaacus.Enrichments = Enrichments;
+Isaacus.ILGSv1 = ILGSv1;
 
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
@@ -772,20 +773,24 @@ export declare namespace Isaacus {
   export {
     Enrichments as Enrichments,
     type EnrichmentResponse as EnrichmentResponse,
-    type ILGSv1Crossreference as ILGSv1Crossreference,
-    type ILGSv1Date as ILGSv1Date,
-    type ILGSv1Document as ILGSv1Document,
-    type ILGSv1Email as ILGSv1Email,
-    type ILGSv1ExternalDocument as ILGSv1ExternalDocument,
-    type ILGSv1IDNumber as ILGSv1IDNumber,
-    type ILGSv1Location as ILGSv1Location,
-    type ILGSv1Person as ILGSv1Person,
-    type ILGSv1PhoneNumber as ILGSv1PhoneNumber,
-    type ILGSv1Quote as ILGSv1Quote,
-    type ILGSv1Segment as ILGSv1Segment,
-    type ILGSv1Span as ILGSv1Span,
-    type ILGSv1Term as ILGSv1Term,
-    type ILGSv1Website as ILGSv1Website,
     type EnrichmentCreateParams as EnrichmentCreateParams,
+  };
+
+  export {
+    ILGSv1 as ILGSv1,
+    type Crossreference as Crossreference,
+    type Date as Date,
+    type Document as Document,
+    type Email as Email,
+    type ExternalDocument as ExternalDocument,
+    type IDNumber as IDNumber,
+    type Location as Location,
+    type Person as Person,
+    type PhoneNumber as PhoneNumber,
+    type Quote as Quote,
+    type Segment as Segment,
+    type Span as Span,
+    type Term as Term,
+    type Website as Website,
   };
 }
