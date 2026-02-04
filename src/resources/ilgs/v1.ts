@@ -2,7 +2,7 @@
 
 import { APIResource } from '../../core/resource';
 
-export class Ilgsv1 extends APIResource {}
+export class v1 extends APIResource {}
 
 /**
  * A cross-reference within the document pointing to one or more segments.
@@ -1036,7 +1036,7 @@ export interface Website {
   mentions: Array<Span>;
 }
 
-export declare namespace Ilgsv1 {
+export declare namespace v1 {
   export {
     type Crossreference as Crossreference,
     type Date as Date,
