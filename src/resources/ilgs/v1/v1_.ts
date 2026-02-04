@@ -121,6 +121,11 @@ export interface Date {
  */
 export interface Document {
   /**
+   * The text of the document.
+   */
+  text: string;
+
+  /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
    * All spans are globally laminar and well-nested similar to XML—it is impossible
