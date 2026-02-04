@@ -470,6 +470,12 @@ export interface Location {
   parent: string | null;
 
   /**
+   * The unique identifiers of any 'child' locations having this location as their
+   * immediate parent.
+   */
+  children: Array<string>;
+
+  /**
    * An array of one or more spans within the document's text where the location is
    * mentioned.
    */
@@ -650,6 +656,12 @@ export interface Person {
    * `{index}` is a non-negative incrementing integer starting from zero.
    */
   parent: string | null;
+
+  /**
+   * The unique identifiers of any persons having this person as their immediate
+   * parent.
+   */
+  children: Array<string>;
 
   /**
    * A unique identifier for a location in the format `loc:{index}` where `{index}`
@@ -914,6 +926,12 @@ export interface Segment {
    * a non-negative incrementing integer starting from zero.
    */
   parent: string | null;
+
+  /**
+   * The unique identifiers of any segments having this segment as their immediate
+   * parent.
+   */
+  children: Array<string>;
 
   /**
    * The level of the segment within the document's segment hierarchy starting from
