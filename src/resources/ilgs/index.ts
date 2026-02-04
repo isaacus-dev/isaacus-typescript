@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Enrichments, type EnrichmentResponse, type EnrichmentCreateParams } from './enrichments';
+export { ILGS } from './ilgs';
 export {
-  Ilgsv1,
+  v1,
   type Crossreference,
   type Date,
   type Document,
@@ -17,4 +17,4 @@ export {
   type Span,
   type Term,
   type Website,
-} from './ilgsv1';
+} from './v1';
