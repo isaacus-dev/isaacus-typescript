@@ -1,19 +1,19 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
-import * as QaAPI from './qa';
-import { AnswerExtractionResponse, Qa, QaCreateParams } from './qa';
+import * as QAAPI from './qa';
+import { AnswerExtractionResponse, QA, QACreateParams } from './qa';
 
 export class Extractions extends APIResource {
-  qa: QaAPI.Qa = new QaAPI.Qa(this._client);
+  qa: QAAPI.QA = new QAAPI.QA(this._client);
 }
 
-Extractions.Qa = Qa;
+Extractions.QA = QA;
 
 export declare namespace Extractions {
   export {
-    Qa as Qa,
+    QA as QA,
     type AnswerExtractionResponse as AnswerExtractionResponse,
-    type QaCreateParams as QaCreateParams,
+    type QACreateParams as QACreateParams,
   };
 }
