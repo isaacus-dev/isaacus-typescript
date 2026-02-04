@@ -54,7 +54,7 @@ Methods:
 
 # ILGS
 
-## v1
+## V1
 
 Types:
 
