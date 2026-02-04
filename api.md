@@ -56,21 +56,6 @@ Methods:
 
 ## v1
 
-### v1
-
 Types:
 
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Crossreference</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Date</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Document</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Email</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">ExternalDocument</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">IDNumber</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Location</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Person</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">PhoneNumber</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Quote</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Segment</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Span</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Term</a></code>
-- <code><a href="./src/resources/ilgs/v1/v1_.ts">Website</a></code>
+- <code><a href="./src/resources/ilgs/v1.ts">ILGSv1Document</a></code>
