@@ -1,13 +1,13 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../core/resource';
+import { APIResource } from '../../core/resource';
 
-export class ILGSv1 extends APIResource {}
+export class v1 extends APIResource {}
 
 /**
  * A cross-reference within the document pointing to one or more segments.
  */
-export interface Crossreference {
+export interface ILGSv1Crossreference {
   /**
    * The unique identifier of the earliest segment in the span of segments being
    * cross-referenced with ties broken in favor of the least-nested (i.e., largest)
@@ -39,7 +39,7 @@ export interface Crossreference {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  span: Span;
+  span: ILGSv1Span;
 }
 
 /**
@@ -50,7 +50,7 @@ export interface Crossreference {
  * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
  * one of the supported date types are extractable.
  */
-export interface Date {
+export interface ILGSv1Date {
   /**
    * The date in ISO 8601 format (YYYY-MM-DD).
    */
@@ -113,13 +113,13 @@ export interface Date {
    * An array of one or more spans within the document's text where the date is
    * mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
  * The enriched document.
  */
-export interface Document {
+export interface ILGSv1Document {
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
    *
@@ -135,7 +135,7 @@ export interface Document {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  title: Span | null;
+  title: ILGSv1Span | null;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -152,7 +152,7 @@ export interface Document {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  subtitle: Span | null;
+  subtitle: ILGSv1Span | null;
 
   /**
    * The type of the document, being one of `statute`, `regulation`, `decision`,
@@ -190,23 +190,23 @@ export interface Document {
    * An array of segments within the document representing structurally distinct
    * portions of its content.
    */
-  segments: Array<Segment>;
+  segments: Array<ILGSv1Segment>;
 
   /**
    * An array of cross-references within the document pointing to a single segment or
    * a span of segments.
    */
-  crossreferences: Array<Crossreference>;
+  crossreferences: Array<ILGSv1Crossreference>;
 
   /**
    * An array of locations identified in the document.
    */
-  locations: Array<Location>;
+  locations: Array<ILGSv1Location>;
 
   /**
    * An array of legal persons identified in the document.
    */
-  persons: Array<Person>;
+  persons: Array<ILGSv1Person>;
 
   /**
    * An array of email addresses identified in the document belonging to legal
@@ -215,7 +215,7 @@ export interface Document {
    * Email addresses mentioned in the document that are not attributable to legal
    * persons will not be extracted.
    */
-  emails: Array<Email>;
+  emails: Array<ILGSv1Email>;
 
   /**
    * An array of websites identified in the document belonging to legal persons.
@@ -223,7 +223,7 @@ export interface Document {
    * Websites mentioned in the document that are not attributable to legal persons
    * will not be extracted.
    */
-  websites: Array<Website>;
+  websites: Array<ILGSv1Website>;
 
   /**
    * An array of valid phone numbers identified in the document belonging to legal
@@ -232,7 +232,7 @@ export interface Document {
    * Phone numbers mentioned in the document that are not valid, possible, or
    * attributable to legal persons will not be extracted.
    */
-  phone_numbers: Array<PhoneNumber>;
+  phone_numbers: Array<ILGSv1PhoneNumber>;
 
   /**
    * An array of identification numbers identified in the document belonging to legal
@@ -241,22 +241,22 @@ export interface Document {
    * Identification numbers mentioned in the document that are not attributable to
    * legal persons will not be extracted.
    */
-  id_numbers: Array<IDNumber>;
+  id_numbers: Array<ILGSv1IDNumber>;
 
   /**
    * An array of terms assigned definite meanings within the document.
    */
-  terms: Array<Term>;
+  terms: Array<ILGSv1Term>;
 
   /**
    * An array of documents identified within the document.
    */
-  external_documents: Array<ExternalDocument>;
+  external_documents: Array<ILGSv1ExternalDocument>;
 
   /**
    * An array of quotations within the document.
    */
-  quotes: Array<Quote>;
+  quotes: Array<ILGSv1Quote>;
 
   /**
    * An array of dates identified in the document belonging to one of the following
@@ -266,19 +266,19 @@ export interface Document {
    * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
    * one of the supported date types are extractable.
    */
-  dates: Array<Date>;
+  dates: Array<ILGSv1Date>;
 
   /**
    * An array of spans within the document's text constituting headings.
    */
-  headings: Array<Span>;
+  headings: Array<ILGSv1Span>;
 
   /**
    * An array of spans within the document's text constituting non-operative,
    * non-substantive 'junk' content such as headers, footers, page numbers, and OCR
    * artifacts.
    */
-  junk: Array<Span>;
+  junk: Array<ILGSv1Span>;
 
   version: 'ilgs@1';
 }
@@ -289,7 +289,7 @@ export interface Document {
  * If an email address was mentioned in the document but is not attributable to a
  * legal person, it will not be extracted.
  */
-export interface Email {
+export interface ILGSv1Email {
   /**
    * The normalized email address.
    */
@@ -304,13 +304,13 @@ export interface Email {
    * An array of one or more spans within the document's text where the email address
    * is mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
  * A document identified within another document.
  */
-export interface ExternalDocument {
+export interface ILGSv1ExternalDocument {
   /**
    * The unique identifier of the external document in the format `exd:{index}` where
    * `{index}` is a non-negative incrementing integer starting from zero.
@@ -332,7 +332,7 @@ export interface ExternalDocument {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  name: Span;
+  name: ILGSv1Span;
 
   /**
    * The type of the external document, being one of `statute`, `regulation`,
@@ -391,14 +391,14 @@ export interface ExternalDocument {
    * document is mentioned by name, for example, 'the US Constitution' in 'the Second
    * Amendment to the US Constitution protects freedom of speech'.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 
   /**
    * An array of spans within the document's text where specific parts of the
    * external document are referenced, for example, 'Section 2' in 'as defined in
    * Section 2 of the US Constitution'.
    */
-  pinpoints: Array<Span>;
+  pinpoints: Array<ILGSv1Span>;
 }
 
 /**
@@ -407,7 +407,7 @@ export interface ExternalDocument {
  * If an identification number was mentioned in the document but is not
  * attributable to a legal person, it will not be extracted.
  */
-export interface IDNumber {
+export interface ILGSv1IDNumber {
   /**
    * The identification number.
    */
@@ -422,13 +422,13 @@ export interface IDNumber {
    * An array of one or more spans within the document's text where the
    * identification number is mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
  * A location identified within a document.
  */
-export interface Location {
+export interface ILGSv1Location {
   /**
    * The unique identifier of the location in the format `loc:{index}` where
    * `{index}` is a non-negative incrementing integer starting from zero.
@@ -450,7 +450,7 @@ export interface Location {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  name: Span;
+  name: ILGSv1Span;
 
   /**
    * The type of the location, being one of `country`, `state`, `city`, `address`, or
@@ -468,13 +468,13 @@ export interface Location {
    * An array of one or more spans within the document's text where the location is
    * mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
  * A legal person identified in a document.
  */
-export interface Person {
+export interface ILGSv1Person {
   /**
    * The unique identifier of the person in the format `per:{index}` where `{index}`
    * is a non-negative incrementing integer starting from zero.
@@ -496,7 +496,7 @@ export interface Person {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  name: Span;
+  name: ILGSv1Span;
 
   /**
    * The legal entity type of the person, being one of `natural`, `corporate`, or
@@ -656,7 +656,7 @@ export interface Person {
    * An array of one or more spans within the document's text where the person is
    * mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -665,7 +665,7 @@ export interface Person {
  * If a phone number was mentioned in the document but is not valid, possible, or
  * attributable to a legal person, it will not be extracted.
  */
-export interface PhoneNumber {
+export interface ILGSv1PhoneNumber {
   /**
    * The normalized phone number in E.123 international notation conforming with
    * local conventions on the use of spaces and hyphens as separators.
@@ -681,13 +681,13 @@ export interface PhoneNumber {
    * An array of one or more spans within the document's text where the phone number
    * is mentioned.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
  * A quotation within a document.
  */
-export interface Quote {
+export interface ILGSv1Quote {
   /**
    * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
    * a non-negative incrementing integer starting from zero.
@@ -727,14 +727,14 @@ export interface Quote {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  span: Span;
+  span: ILGSv1Span;
 }
 
 /**
  * A segment within the document representing a structurally distinct portion of
  * the document's content.
  */
-export interface Segment {
+export interface ILGSv1Segment {
   /**
    * The unique identifier of the segment in the format `seg:{index}` where `{index}`
    * is a non-negative incrementing integer starting from zero.
@@ -868,7 +868,7 @@ export interface Segment {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  type_name: Span | null;
+  type_name: ILGSv1Span | null;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -885,7 +885,7 @@ export interface Segment {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  code: Span | null;
+  code: ILGSv1Span | null;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -902,7 +902,7 @@ export interface Segment {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  title: Span | null;
+  title: ILGSv1Span | null;
 
   /**
    * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
@@ -925,7 +925,7 @@ export interface Segment {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  span: Span;
+  span: ILGSv1Span;
 }
 
 /**
@@ -943,7 +943,7 @@ export interface Segment {
  * need to be translated accordingly (for example, JavaScript slices into UTF-16
  * code units instead of Unicode code points).
  */
-export interface Span {
+export interface ILGSv1Span {
   /**
    * The zero-based start index of the half-open span of Unicode code points in the
    * input text.
@@ -960,7 +960,7 @@ export interface Span {
 /**
  * A term assigned a definite meaning within a document.
  */
-export interface Term {
+export interface ILGSv1Term {
   /**
    * The unique identifier of the term in the format `term:{index}` where `{index}`
    * is a non-negative incrementing integer starting from zero.
@@ -982,7 +982,7 @@ export interface Term {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  name: Span;
+  name: ILGSv1Span;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -999,7 +999,7 @@ export interface Term {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  meaning: Span;
+  meaning: ILGSv1Span;
 
   /**
    * An array of spans within the document's text where the term is mentioned outside
@@ -1008,7 +1008,7 @@ export interface Term {
    * It is possible for the term to have no mentions if, outside of its definition,
    * it is never referred to in the document.
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
 /**
@@ -1017,7 +1017,7 @@ export interface Term {
  * If a website was mentioned in the document but is not attributable to a legal
  * person, it will not be extracted.
  */
-export interface Website {
+export interface ILGSv1Website {
   /**
    * The normalized URL of the website in the form `https://{host}/`.
    */
@@ -1033,24 +1033,24 @@ export interface Website {
    * mentioned (including paths and slugs which are not part of the website's
    * normalized URL).
    */
-  mentions: Array<Span>;
+  mentions: Array<ILGSv1Span>;
 }
 
-export declare namespace ILGSv1 {
+export declare namespace v1 {
   export {
-    type Crossreference as Crossreference,
-    type Date as Date,
-    type Document as Document,
-    type Email as Email,
-    type ExternalDocument as ExternalDocument,
-    type IDNumber as IDNumber,
-    type Location as Location,
-    type Person as Person,
-    type PhoneNumber as PhoneNumber,
-    type Quote as Quote,
-    type Segment as Segment,
-    type Span as Span,
-    type Term as Term,
-    type Website as Website,
+    type ILGSv1Crossreference as ILGSv1Crossreference,
+    type ILGSv1Date as ILGSv1Date,
+    type ILGSv1Document as ILGSv1Document,
+    type ILGSv1Email as ILGSv1Email,
+    type ILGSv1ExternalDocument as ILGSv1ExternalDocument,
+    type ILGSv1IDNumber as ILGSv1IDNumber,
+    type ILGSv1Location as ILGSv1Location,
+    type ILGSv1Person as ILGSv1Person,
+    type ILGSv1PhoneNumber as ILGSv1PhoneNumber,
+    type ILGSv1Quote as ILGSv1Quote,
+    type ILGSv1Segment as ILGSv1Segment,
+    type ILGSv1Span as ILGSv1Span,
+    type ILGSv1Term as ILGSv1Term,
+    type ILGSv1Website as ILGSv1Website,
   };
 }
