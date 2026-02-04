@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../core/resource';
+import * as v1API from './v1';
 
 export class v1 extends APIResource {}
 
@@ -23,7 +24,7 @@ export interface ILGSv1Document {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  title: ILGSv1Document.Title | null;
+  title: ILGSv1Span | null;
 
   /**
    * A zero-based, half-open span into the Unicode code point space of input text.
@@ -40,7 +41,7 @@ export interface ILGSv1Document {
    * need to be translated accordingly (for example, JavaScript slices into UTF-16
    * code units instead of Unicode code points).
    */
-  subtitle: ILGSv1Document.Subtitle | null;
+  subtitle: ILGSv1Span | null;
 
   /**
    * The type of the document, being one of `statute`, `regulation`, `decision`,
@@ -159,77 +160,19 @@ export interface ILGSv1Document {
   /**
    * An array of spans within the document's text constituting headings.
    */
-  headings: Array<ILGSv1Document.Heading>;
+  headings: Array<ILGSv1Span>;
 
   /**
    * An array of spans within the document's text constituting non-operative,
    * non-substantive 'junk' content such as headers, footers, page numbers, and OCR
    * artifacts.
    */
-  junk: Array<ILGSv1Document.Junk>;
+  junk: Array<ILGSv1Span>;
 
   version: 'ilgs@1';
 }
 
 export namespace ILGSv1Document {
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  export interface Title {
-    /**
-     * The zero-based start index of the half-open span of Unicode code points in the
-     * input text.
-     */
-    start: number;
-
-    /**
-     * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-     * Unicode code points in the input text.
-     */
-    end: number;
-  }
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  export interface Subtitle {
-    /**
-     * The zero-based start index of the half-open span of Unicode code points in the
-     * input text.
-     */
-    start: number;
-
-    /**
-     * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-     * Unicode code points in the input text.
-     */
-    end: number;
-  }
-
   /**
    * A segment within the document representing a structurally distinct portion of
    * the document's content.
@@ -368,7 +311,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    type_name: Segment.TypeName | null;
+    type_name: v1API.ILGSv1Span | null;
 
     /**
      * A zero-based, half-open span into the Unicode code point space of input text.
@@ -385,7 +328,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    code: Segment.Code | null;
+    code: v1API.ILGSv1Span | null;
 
     /**
      * A zero-based, half-open span into the Unicode code point space of input text.
@@ -402,7 +345,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    title: Segment.Title | null;
+    title: v1API.ILGSv1Span | null;
 
     /**
      * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
@@ -425,125 +368,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    span: Segment.Span;
-  }
-
-  export namespace Segment {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface TypeName {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Code {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Title {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Span {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    span: v1API.ILGSv1Span;
   }
 
   /**
@@ -581,38 +406,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    span: Crossreference.Span;
-  }
-
-  export namespace Crossreference {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Span {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    span: v1API.ILGSv1Span;
   }
 
   /**
@@ -640,7 +434,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    name: Location.Name;
+    name: v1API.ILGSv1Span;
 
     /**
      * The type of the location, being one of `country`, `state`, `city`, `address`, or
@@ -658,67 +452,7 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the location is
      * mentioned.
      */
-    mentions: Array<Location.Mention>;
-  }
-
-  export namespace Location {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Name {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -746,7 +480,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    name: Person.Name;
+    name: v1API.ILGSv1Span;
 
     /**
      * The legal entity type of the person, being one of `natural`, `corporate`, or
@@ -906,67 +640,7 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the person is
      * mentioned.
      */
-    mentions: Array<Person.Mention>;
-  }
-
-  export namespace Person {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Name {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -990,38 +664,7 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the email address
      * is mentioned.
      */
-    mentions: Array<Email.Mention>;
-  }
-
-  export namespace Email {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1046,38 +689,7 @@ export namespace ILGSv1Document {
      * mentioned (including paths and slugs which are not part of the website's
      * normalized URL).
      */
-    mentions: Array<Website.Mention>;
-  }
-
-  export namespace Website {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1102,38 +714,7 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the phone number
      * is mentioned.
      */
-    mentions: Array<PhoneNumber.Mention>;
-  }
-
-  export namespace PhoneNumber {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1157,38 +738,7 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the
      * identification number is mentioned.
      */
-    mentions: Array<IDNumber.Mention>;
-  }
-
-  export namespace IDNumber {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1216,7 +766,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    name: Term.Name;
+    name: v1API.ILGSv1Span;
 
     /**
      * A zero-based, half-open span into the Unicode code point space of input text.
@@ -1233,7 +783,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    meaning: Term.Meaning;
+    meaning: v1API.ILGSv1Span;
 
     /**
      * An array of spans within the document's text where the term is mentioned outside
@@ -1242,96 +792,7 @@ export namespace ILGSv1Document {
      * It is possible for the term to have no mentions if, outside of its definition,
      * it is never referred to in the document.
      */
-    mentions: Array<Term.Mention>;
-  }
-
-  export namespace Term {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Name {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Meaning {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    mentions: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1359,7 +820,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    name: ExternalDocument.Name;
+    name: v1API.ILGSv1Span;
 
     /**
      * The type of the external document, being one of `statute`, `regulation`,
@@ -1418,103 +879,14 @@ export namespace ILGSv1Document {
      * document is mentioned by name, for example, 'the US Constitution' in 'the Second
      * Amendment to the US Constitution protects freedom of speech'.
      */
-    mentions: Array<ExternalDocument.Mention>;
+    mentions: Array<v1API.ILGSv1Span>;
 
     /**
      * An array of spans within the document's text where specific parts of the
      * external document are referenced, for example, 'Section 2' in 'as defined in
      * Section 2 of the US Constitution'.
      */
-    pinpoints: Array<ExternalDocument.Pinpoint>;
-  }
-
-  export namespace ExternalDocument {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Name {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Pinpoint {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    pinpoints: Array<v1API.ILGSv1Span>;
   }
 
   /**
@@ -1560,38 +932,7 @@ export namespace ILGSv1Document {
      * need to be translated accordingly (for example, JavaScript slices into UTF-16
      * code units instead of Unicode code points).
      */
-    span: Quote.Span;
-  }
-
-  export namespace Quote {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Span {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
+    span: v1API.ILGSv1Span;
   }
 
   /**
@@ -1665,99 +1006,39 @@ export namespace ILGSv1Document {
      * An array of one or more spans within the document's text where the date is
      * mentioned.
      */
-    mentions: Array<Date.Mention>;
-  }
-
-  export namespace Date {
-    /**
-     * A zero-based, half-open span into the Unicode code point space of input text.
-     *
-     * All spans are globally laminar and well-nested similar to XML—it is impossible
-     * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-     * wholly nested. Spans of the exact same type (e.g., segments) will never be
-     * duplicated.
-     *
-     * A span cannot be empty and will never start or end at whitespace.
-     *
-     * Note that, when using programming languages other than Python (which uses
-     * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-     * need to be translated accordingly (for example, JavaScript slices into UTF-16
-     * code units instead of Unicode code points).
-     */
-    export interface Mention {
-      /**
-       * The zero-based start index of the half-open span of Unicode code points in the
-       * input text.
-       */
-      start: number;
-
-      /**
-       * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-       * Unicode code points in the input text.
-       */
-      end: number;
-    }
-  }
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  export interface Heading {
-    /**
-     * The zero-based start index of the half-open span of Unicode code points in the
-     * input text.
-     */
-    start: number;
-
-    /**
-     * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-     * Unicode code points in the input text.
-     */
-    end: number;
-  }
-
-  /**
-   * A zero-based, half-open span into the Unicode code point space of input text.
-   *
-   * All spans are globally laminar and well-nested similar to XML—it is impossible
-   * for any two spans to partially overlap; they can only be disjoint, adjacent, or
-   * wholly nested. Spans of the exact same type (e.g., segments) will never be
-   * duplicated.
-   *
-   * A span cannot be empty and will never start or end at whitespace.
-   *
-   * Note that, when using programming languages other than Python (which uses
-   * zero-based, half-open, Unicode code point-spaced string indexing), indices may
-   * need to be translated accordingly (for example, JavaScript slices into UTF-16
-   * code units instead of Unicode code points).
-   */
-  export interface Junk {
-    /**
-     * The zero-based start index of the half-open span of Unicode code points in the
-     * input text.
-     */
-    start: number;
-
-    /**
-     * The zero-based end index of the half-open span (i.e., the end is exclusive) of
-     * Unicode code points in the input text.
-     */
-    end: number;
+    mentions: Array<v1API.ILGSv1Span>;
   }
 }
 
+/**
+ * A zero-based, half-open span into the Unicode code point space of input text.
+ *
+ * All spans are globally laminar and well-nested similar to XML—it is impossible
+ * for any two spans to partially overlap; they can only be disjoint, adjacent, or
+ * wholly nested. Spans of the exact same type (e.g., segments) will never be
+ * duplicated.
+ *
+ * A span cannot be empty and will never start or end at whitespace.
+ *
+ * Note that, when using programming languages other than Python (which uses
+ * zero-based, half-open, Unicode code point-spaced string indexing), indices may
+ * need to be translated accordingly (for example, JavaScript slices into UTF-16
+ * code units instead of Unicode code points).
+ */
+export interface ILGSv1Span {
+  /**
+   * The zero-based start index of the half-open span of Unicode code points in the
+   * input text.
+   */
+  start: number;
+
+  /**
+   * The zero-based end index of the half-open span (i.e., the end is exclusive) of
+   * Unicode code points in the input text.
+   */
+  end: number;
+}
+
 export declare namespace v1 {
-  export { type ILGSv1Document as ILGSv1Document };
+  export { type ILGSv1Document as ILGSv1Document, type ILGSv1Span as ILGSv1Span };
 }
