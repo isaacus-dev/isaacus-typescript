@@ -59,3 +59,4 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/ilgs/v1.ts">ILGSv1Document</a></code>
+- <code><a href="./src/resources/ilgs/v1.ts">ILGSv1Span</a></code>
