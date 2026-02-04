@@ -18,10 +18,26 @@ import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import { EmbeddingCreateParams, EmbeddingResponse, Embeddings } from './resources/embeddings';
 import { EnrichmentCreateParams, EnrichmentResponse, Enrichments } from './resources/enrichments';
+import {
+  Crossreference,
+  Date,
+  Document,
+  Email,
+  ExternalDocument,
+  IDNumber,
+  IlgsV1,
+  Location,
+  Person,
+  PhoneNumber,
+  Quote,
+  Segment,
+  Span,
+  Term,
+  Website,
+} from './resources/ilgs-v1';
 import { RerankingCreateParams, RerankingResponse, Rerankings } from './resources/rerankings';
 import { Classifications } from './resources/classifications/classifications';
 import { Extractions } from './resources/extractions/extractions';
-import { Ilgs } from './resources/ilgs/ilgs';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -725,7 +741,7 @@ export class Isaacus {
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
   enrichments: API.Enrichments = new API.Enrichments(this);
-  ilgs: API.Ilgs = new API.Ilgs(this);
+  ilgsV1: API.IlgsV1 = new API.IlgsV1(this);
 }
 
 Isaacus.Embeddings = Embeddings;
@@ -733,7 +749,7 @@ Isaacus.Classifications = Classifications;
 Isaacus.Rerankings = Rerankings;
 Isaacus.Extractions = Extractions;
 Isaacus.Enrichments = Enrichments;
-Isaacus.Ilgs = Ilgs;
+Isaacus.IlgsV1 = IlgsV1;
 
 export declare namespace Isaacus {
   export type RequestOptions = Opts.RequestOptions;
@@ -760,5 +776,21 @@ export declare namespace Isaacus {
     type EnrichmentCreateParams as EnrichmentCreateParams,
   };
 
-  export { Ilgs as Ilgs };
+  export {
+    IlgsV1 as IlgsV1,
+    type Crossreference as Crossreference,
+    type Date as Date,
+    type Document as Document,
+    type Email as Email,
+    type ExternalDocument as ExternalDocument,
+    type IDNumber as IDNumber,
+    type Location as Location,
+    type Person as Person,
+    type PhoneNumber as PhoneNumber,
+    type Quote as Quote,
+    type Segment as Segment,
+    type Span as Span,
+    type Term as Term,
+    type Website as Website,
+  };
 }
