@@ -354,6 +354,12 @@ export namespace ILGSv1Document {
     parent: string | null;
 
     /**
+     * The level of the segment within the document's segment hierarchy starting from
+     * `0` for root-level segments.
+     */
+    level: number;
+
+    /**
      * A zero-based, half-open span into the Unicode code point space of input text.
      *
      * All spans are globally laminar and well-nested similar to XML—it is impossible
