@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.17.0 (2026-02-04)
+
+Full Changelog: [v0.16.0...v0.17.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.16.0...v0.17.0)
+
+### Features
+
+* **api:** add `children` fields to hierarchical ILGS entities ([da49499](https://github.com/isaacus-dev/isaacus-typescript/commit/da494991a0761ef472af9eb6a1474ca5d1335cad))
+
 ## 0.16.0 (2026-02-04)
 
 Full Changelog: [v0.15.0...v0.16.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.15.0...v0.16.0)
