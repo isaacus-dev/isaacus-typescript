@@ -70,7 +70,8 @@ export namespace EnrichmentResponse {
     index: number;
 
     /**
-     * The enriched document.
+     * The document enriched into version 1.0.0 of the Isaacus Legal Graph Schema
+     * (ILGS).
      */
     document: v1API.Document;
   }
