@@ -62,8 +62,8 @@ export interface Date {
    * mentioned in a document that does not fit into a supported type, it will not be
    * extracted.
    *
-   * `creation` denotes the date the document was created. There may only be one
-   * `creation` date per document.
+   * `creation` denotes the date the document was created or last updated. There may
+   * only be one `creation` date per document.
    *
    * `signature` denotes the date the document was signed.
    *
