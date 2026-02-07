@@ -543,8 +543,8 @@ export interface Person {
    * `corporate` denotes a body corporate such as a company, incorporated
    * partnership, or statutory corporation.
    *
-   * `politic` denotes a body politic such as a court, state, government, or
-   * intergovernmental organization.
+   * `politic` denotes a body politic, political entity, or part thereof such as a
+   * court, state, government, or intergovernmental organization.
    */
   type: 'natural' | 'corporate' | 'politic';
 
