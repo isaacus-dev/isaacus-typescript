@@ -193,6 +193,8 @@ export interface Document {
    * `decision` denotes judicial or quasi-judicial decisions such as court judgments,
    * judicial opinions, and tribunal rulings.
    *
+   * `contract` denotes contracts, covenants, and agreements.
+   *
    * `other` is used for all other types of legal documents that do not fit into any
    * of the predefined types.
    */
