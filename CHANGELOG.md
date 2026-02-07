@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.18.0 (2026-02-07)
+
+Full Changelog: [v0.17.0...v0.18.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.17.0...v0.18.0)
+
+### Features
+
+* **mcp:** add initial server instructions ([4711aa1](https://github.com/isaacus-dev/isaacus-typescript/commit/4711aa1e75483f35b5af28864bcf485a37691d2e))
+* **sdk:** make qa, universal, ilgs standalone apis ([3c85fd3](https://github.com/isaacus-dev/isaacus-typescript/commit/3c85fd30eb6909ad0a123dbf2276191e25c9cdaf))
+
+
+### Bug Fixes
+
+* **client:** avoid removing abort listener too early ([83aed44](https://github.com/isaacus-dev/isaacus-typescript/commit/83aed442fa517d4edd8168d839cab4cd5a1a3d98))
+
+
+### Chores
+
+* **client:** restructure abort controller binding ([2de7b0c](https://github.com/isaacus-dev/isaacus-typescript/commit/2de7b0cdaa11ca1be9dd6f80a225ef4780154235))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([fcf36ab](https://github.com/isaacus-dev/isaacus-typescript/commit/fcf36abffedcc97f6dd969ac52ab86cb7cb2f0ef))
+
+
+### Documentation
+
+* **api:** alter def of politic person type ([3581950](https://github.com/isaacus-dev/isaacus-typescript/commit/35819503debb15806b5ab31309c3a443816722ed))
+* **api:** documented ILGS `contract` type ([3be348e](https://github.com/isaacus-dev/isaacus-typescript/commit/3be348e84128ede748f0ca92aa700f1dafc6f534))
+* **api:** move around attribute comments ([eecad71](https://github.com/isaacus-dev/isaacus-typescript/commit/eecad7198c1574c1e7126443bffae101aa00251a))
+* **api:** note docs are enriched into ilgs v1 ([9c9edd0](https://github.com/isaacus-dev/isaacus-typescript/commit/9c9edd05d9a28c304503a899f67ff09c261d9d41))
+
 ## 0.17.0 (2026-02-04)
 
 Full Changelog: [v0.16.0...v0.17.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.16.0...v0.17.0)

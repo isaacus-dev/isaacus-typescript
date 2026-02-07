@@ -57,7 +57,7 @@ export const newMcpServer = async () =>
   new McpServer(
     {
       name: 'isaacus_api',
-      version: '0.17.0',
+      version: '0.18.0',
     },
     {
       instructions: await getInstructions(),
