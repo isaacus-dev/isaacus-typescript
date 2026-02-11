@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.19.0 (2026-02-11)
+
+Full Changelog: [v0.18.0...v0.19.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.18.0...v0.19.0)
+
+### Features
+
+* **api:** add chunking mode to enrichment ([c23e2b1](https://github.com/isaacus-dev/isaacus-typescript/commit/c23e2b1a8c7a68681eb98cabed366899a420478f))
+
+
+### Chores
+
+* **internal:** add health check to MCP server when running in HTTP mode ([26203bf](https://github.com/isaacus-dev/isaacus-typescript/commit/26203bf5e75676b47a2b31665915b395d153ea4c))
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([aca9764](https://github.com/isaacus-dev/isaacus-typescript/commit/aca976487e874fa1d932073ee7d1a9f1ec8117f4))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([3805d28](https://github.com/isaacus-dev/isaacus-typescript/commit/3805d28a02392d1024b27e654565094ec5cb90cf))
+
+
+### Documentation
+
+* **api:** update `creation` date type definition ([9eca5b5](https://github.com/isaacus-dev/isaacus-typescript/commit/9eca5b5e307058ac5be6815b7d4d5836fba8a492))
+
 ## 0.18.0 (2026-02-07)
 
 Full Changelog: [v0.17.0...v0.18.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.17.0...v0.18.0)
