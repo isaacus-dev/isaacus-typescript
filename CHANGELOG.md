@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.19.1 (2026-02-11)
+
+Full Changelog: [v0.19.0...v0.19.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.19.0...v0.19.1)
+
+### Documentation
+
+* **api:** minor description correction ([01276b0](https://github.com/isaacus-dev/isaacus-typescript/commit/01276b090580218e119d12a689569ccb980297af))
+* **api:** update example overflow strategy for enrichment ([4ea026d](https://github.com/isaacus-dev/isaacus-typescript/commit/4ea026d458e41d0cbee6356de3e26b787a60dbd2))
+
 ## 0.19.0 (2026-02-11)
 
 Full Changelog: [v0.18.0...v0.19.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.18.0...v0.19.0)
