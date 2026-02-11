@@ -28,7 +28,7 @@ describe('resource enrichments', () => {
     const response = await client.enrichments.create({
       model: 'kanon-2-enricher',
       texts: ['1.5 You (the "User") agree to be bound by these Terms.'],
-      overflow_strategy: 'auto',
+      overflow_strategy: null,
     });
   });
 });

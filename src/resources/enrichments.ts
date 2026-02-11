@@ -50,7 +50,7 @@ export namespace EnrichmentResponse {
 
     /**
      * The document enriched into version 1.0.0 of the Isaacus Legal Graph Schema
-     * (IGLS).
+     * (ILGS).
      *
      * All spans in an enriched document graph are indexed into the Unicode code point
      * space of a source document.
@@ -104,15 +104,9 @@ export interface EnrichmentCreateParams {
   /**
    * The strategy for handling content exceeding the model's maximum input length.
    *
-   * `auto`, which is the recommended setting, currently behaves the same as `chunk`,
-   * which intelligently breaks the input up into smaller chunks and then stitches
-   * the results back together into a single prediction. In the future `auto` may
-   * implement even more sophisticated strategies for handling long contexts such as
-   * leveraging chunk overlap and/or a specialized stitching model.
-   *
-   * `chunk` breaks the input up into smaller chunks that fit within the model's
-   * context window and then intelligently merges the results into a single
-   * prediction at the cost of a minor accuracy drop.
+   * `auto` currently behaves the same as `drop_end`, dropping excess tokens from the
+   * end of input. In the future, `auto` may implement more sophisticated strategies
+   * such as chunking and context-aware stitching.
    *
    * `drop_end` drops tokens from the end of input exceeding the model's maximum
    * input length.
@@ -120,7 +114,7 @@ export interface EnrichmentCreateParams {
    * `null`, which is the default setting, raises an error if the input exceeds the
    * model's maximum input length.
    */
-  overflow_strategy?: 'auto' | 'drop_end' | 'chunk' | null;
+  overflow_strategy?: 'auto' | 'drop_end' | null;
 }
 
 export declare namespace Enrichments {
