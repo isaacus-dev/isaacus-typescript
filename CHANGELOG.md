@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.20.0 (2026-02-12)
+
+Full Changelog: [v0.19.1...v0.20.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.19.1...v0.20.0)
+
+### Features
+
+* **api:** revoke ILGS ID consecutive integer promise ([0b43539](https://github.com/isaacus-dev/isaacus-typescript/commit/0b43539d23b8d8ed1ca942f5d29ac869e1bb1500))
+
+
+### Bug Fixes
+
+* **api:** typo in docs ([7134a54](https://github.com/isaacus-dev/isaacus-typescript/commit/7134a543472e7a25a993d179393607b11b6daf98))
+* **api:** typo in docs ([3ac3a8f](https://github.com/isaacus-dev/isaacus-typescript/commit/3ac3a8f6aaeacb297b637aeaac3955f0548a7f1a))
+
 ## 0.19.1 (2026-02-11)
 
 Full Changelog: [v0.19.0...v0.19.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.19.0...v0.19.1)
