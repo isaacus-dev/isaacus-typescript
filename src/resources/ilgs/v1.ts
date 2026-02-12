@@ -104,8 +104,7 @@ export interface Date {
     | 'death';
 
   /**
-   * A unique identifier for a legal person in the format `per:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * A unique identifier for a legal person in the format `per:{identifier}`.
    */
   person: string | null;
 
@@ -340,8 +339,7 @@ export interface Email {
  */
 export interface ExternalDocument {
   /**
-   * The unique identifier of the external document in the format `exd:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * The unique identifier of the external document in the format `exd:{identifier}`.
    */
   id: string;
 
@@ -458,8 +456,7 @@ export interface IDNumber {
  */
 export interface Location {
   /**
-   * The unique identifier of the location in the format `loc:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * The unique identifier of the location in the format `loc:{identifier}`.
    */
   id: string;
 
@@ -487,8 +484,7 @@ export interface Location {
   type: 'country' | 'state' | 'city' | 'address' | 'other';
 
   /**
-   * A unique identifier for a location in the format `loc:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
+   * A unique identifier for a location in the format `loc:{identifier}`.
    */
   parent: string | null;
 
@@ -510,8 +506,7 @@ export interface Location {
  */
 export interface Person {
   /**
-   * The unique identifier of the person in the format `per:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
+   * The unique identifier of the person in the format `per:{identifier}`.
    */
   id: string;
 
@@ -675,8 +670,7 @@ export interface Person {
     | 'non_party';
 
   /**
-   * A unique identifier for a legal person in the format `per:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * A unique identifier for a legal person in the format `per:{identifier}`.
    */
   parent: string | null;
 
@@ -687,8 +681,7 @@ export interface Person {
   children: Array<string>;
 
   /**
-   * A unique identifier for a location in the format `loc:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
+   * A unique identifier for a location in the format `loc:{identifier}`.
    */
   residence: string | null;
 
@@ -729,20 +722,17 @@ export interface PhoneNumber {
  */
 export interface Quote {
   /**
-   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
-   * a non-negative incrementing integer starting from zero.
+   * A unique identifier for a segment in the format `seg:{identifier}`.
    */
   source_segment: string | null;
 
   /**
-   * A unique identifier for an external document in the format `exd:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * A unique identifier for an external document in the format `exd:{identifier}`.
    */
   source_document: string | null;
 
   /**
-   * A unique identifier for a legal person in the format `per:{index}` where
-   * `{index}` is a non-negative incrementing integer starting from zero.
+   * A unique identifier for a legal person in the format `per:{identifier}`.
    */
   source_person: string | null;
 
@@ -776,8 +766,7 @@ export interface Quote {
  */
 export interface Segment {
   /**
-   * The unique identifier of the segment in the format `seg:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
+   * The unique identifier of the segment in the format `seg:{identifier}`.
    */
   id: string;
 
@@ -945,8 +934,7 @@ export interface Segment {
   title: Span | null;
 
   /**
-   * A unique identifier for a segment in the format `seg:{index}` where `{index}` is
-   * a non-negative incrementing integer starting from zero.
+   * A unique identifier for a segment in the format `seg:{identifier}`.
    */
   parent: string | null;
 
@@ -1014,8 +1002,7 @@ export interface Span {
  */
 export interface Term {
   /**
-   * The unique identifier of the term in the format `term:{index}` where `{index}`
-   * is a non-negative incrementing integer starting from zero.
+   * The unique identifier of the term in the format `term:{identifier}`.
    */
   id: string;
 
