@@ -50,7 +50,7 @@ export namespace EnrichmentResponse {
 
     /**
      * The document enriched into version 1.0.0 of the Isaacus Legal Graph Schema
-     * (IGLS).
+     * (ILGS).
      *
      * All spans in an enriched document graph are indexed into the Unicode code point
      * space of a source document.
