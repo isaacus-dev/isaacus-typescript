@@ -43,12 +43,13 @@ export interface Crossreference {
 }
 
 /**
- * A date identified in a document belonging to one of the following types:
- * `creation`, `signature`, `effective`, `expiry`, `delivery`, `renewal`,
+ * An array of dates identified in the document belonging to one of the following
+ * types: `creation`, `signature`, `effective`, `expiry`, `delivery`, `renewal`,
  * `payment`, `birth`, or `death`.
  *
- * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
- * one of the supported date types are extractable.
+ * Only full Gregorian dates (i.e., including a day, month, and year) between the
+ * years 1000 and 9999 (inclusive) fitting into one of the supported date types are
+ * extractable.
  */
 export interface Date {
   /**
@@ -290,8 +291,9 @@ export interface Document {
    * types: `creation`, `signature`, `effective`, `expiry`, `delivery`, `renewal`,
    * `payment`, `birth`, or `death`.
    *
-   * Only Gregorian dates between the years 1000 and 9999 (inclusive) fitting into
-   * one of the supported date types are extractable.
+   * Only full Gregorian dates (i.e., including a day, month, and year) between the
+   * years 1000 and 9999 (inclusive) fitting into one of the supported date types are
+   * extractable.
    */
   dates: Array<Date>;
 
