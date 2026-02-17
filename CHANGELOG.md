@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.20.1 (2026-02-16)
+
+Full Changelog: [v0.20.0...v0.20.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.0...v0.20.1)
+
+### Chores
+
+* format all `api.md` files ([6af750f](https://github.com/isaacus-dev/isaacus-typescript/commit/6af750f39ca84bb2a3b28b202a9a62861a6aa90c))
+* **internal:** avoid type checking errors with ts-reset ([9a6646c](https://github.com/isaacus-dev/isaacus-typescript/commit/9a6646c8b39e117f67c6bf46bef58d54564207b5))
+* **internal:** improve layout of generated MCP server files ([0df08bb](https://github.com/isaacus-dev/isaacus-typescript/commit/0df08bb15010f06695c36516c308042bcbc18d8f))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([045651d](https://github.com/isaacus-dev/isaacus-typescript/commit/045651d80e93d7b4a57f099b30d508c8970cb7ae))
+
+
+### Documentation
+
+* **api:** clarify ilgs span whitespace coverage ([3a41225](https://github.com/isaacus-dev/isaacus-typescript/commit/3a41225c87147d6be32a94842571cd74089fe19f))
+* **api:** improve explanation of extractable dates ([5978bdb](https://github.com/isaacus-dev/isaacus-typescript/commit/5978bdb92eb71e2f099487f677483ae37c08742e))
+
 ## 0.20.0 (2026-02-12)
 
 Full Changelog: [v0.19.1...v0.20.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.19.1...v0.20.0)
