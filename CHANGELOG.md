@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.20.2 (2026-02-18)
+
+Full Changelog: [v0.20.1...v0.20.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.1...v0.20.2)
+
+### Documentation
+
+* **api:** link to ilgs schema ([d82a40a](https://github.com/isaacus-dev/isaacus-typescript/commit/d82a40ab457f558c11fccf153a0ee1542ce83186))
+
 ## 0.20.1 (2026-02-16)
 
 Full Changelog: [v0.20.0...v0.20.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.0...v0.20.1)
