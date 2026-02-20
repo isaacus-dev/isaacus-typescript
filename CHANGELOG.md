@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.20.3 (2026-02-20)
+
+Full Changelog: [v0.20.2...v0.20.3](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.2...v0.20.3)
+
+### Bug Fixes
+
+* **mcp:** initialize SDK lazily to avoid failing the connection on init errors ([875e4fc](https://github.com/isaacus-dev/isaacus-typescript/commit/875e4fc2ac4211278b81cfbf94dee10154d7c56d))
+
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([a1d0fec](https://github.com/isaacus-dev/isaacus-typescript/commit/a1d0fecc8af11202a614786e2dceb2b0928a38ee))
+* **internal:** allow setting x-stainless-api-key header on mcp server requests ([edc6fb5](https://github.com/isaacus-dev/isaacus-typescript/commit/edc6fb5bd091f0183e868c40ce5613db65daa028))
+* **internal:** cache fetch instruction calls in MCP server ([0278e79](https://github.com/isaacus-dev/isaacus-typescript/commit/0278e790e2d7384a9318436103389a578d0cf79f))
+* **internal:** remove mock server code ([73f331b](https://github.com/isaacus-dev/isaacus-typescript/commit/73f331b4dbedeaa77b9fed681f263a9a1505c9a0))
+* **mcp:** correctly update version in sync with sdk ([b8844d4](https://github.com/isaacus-dev/isaacus-typescript/commit/b8844d441f8c7449e0df84da92665af836b833b4))
+* update mock server docs ([8bac25f](https://github.com/isaacus-dev/isaacus-typescript/commit/8bac25f74d58949f1f0c1a5c3e1cdf6dd7a1ca4a))
+
 ## 0.20.2 (2026-02-18)
 
 Full Changelog: [v0.20.1...v0.20.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.1...v0.20.2)
