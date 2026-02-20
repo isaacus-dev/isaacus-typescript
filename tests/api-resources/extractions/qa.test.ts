@@ -8,7 +8,7 @@ const client = new Isaacus({
 });
 
 describe('resource qa', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.extractions.qa.create({
       model: 'kanon-answer-extractor',
@@ -26,7 +26,7 @@ describe('resource qa', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.extractions.qa.create({
       model: 'kanon-answer-extractor',
