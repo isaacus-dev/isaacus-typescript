@@ -60,7 +60,7 @@ $ yarn link isaacus
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global isaacus
+$ pnpm link --global isaacus
 ```
 
 ## Running tests
