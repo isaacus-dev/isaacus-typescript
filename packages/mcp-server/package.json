@@ -1,6 +1,6 @@
 {
   "name": "isaacus-mcp",
-  "version": "0.20.2",
+  "version": "0.21.0",
   "description": "The official MCP Server for the Isaacus API",
   "author": "Isaacus <support@isaacus.com>",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
   "dependencies": {
     "isaacus": "file:../../dist/",
     "@cloudflare/cabidela": "^0.2.4",
-    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "@valtown/deno-http-worker": "^0.0.21",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

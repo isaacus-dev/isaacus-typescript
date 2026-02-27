@@ -8,7 +8,7 @@ const client = new Isaacus({
 });
 
 describe('resource rerankings', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.rerankings.create({
       model: 'kanon-universal-classifier',
@@ -30,7 +30,7 @@ describe('resource rerankings', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.rerankings.create({
       model: 'kanon-universal-classifier',
