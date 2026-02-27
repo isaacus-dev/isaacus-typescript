@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.21.0 (2026-02-27)
+
+Full Changelog: [v0.20.2...v0.21.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.2...v0.21.0)
+
+### Features
+
+* **mcp:** add an option to disable code tool ([b4ec89b](https://github.com/isaacus-dev/isaacus-typescript/commit/b4ec89ba60bf0baa492f407b6a7a2eab50237f67))
+
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([73bfd2a](https://github.com/isaacus-dev/isaacus-typescript/commit/73bfd2abf18103cca4a37898ee2f23c1444ce5bf))
+* **mcp:** initialize SDK lazily to avoid failing the connection on init errors ([875e4fc](https://github.com/isaacus-dev/isaacus-typescript/commit/875e4fc2ac4211278b81cfbf94dee10154d7c56d))
+* **mcp:** update prompt ([5537be5](https://github.com/isaacus-dev/isaacus-typescript/commit/5537be5ec545efbe38de1454b3f855bebe6fa387))
+
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([a1d0fec](https://github.com/isaacus-dev/isaacus-typescript/commit/a1d0fecc8af11202a614786e2dceb2b0928a38ee))
+* **internal:** allow setting x-stainless-api-key header on mcp server requests ([edc6fb5](https://github.com/isaacus-dev/isaacus-typescript/commit/edc6fb5bd091f0183e868c40ce5613db65daa028))
+* **internal:** cache fetch instruction calls in MCP server ([0278e79](https://github.com/isaacus-dev/isaacus-typescript/commit/0278e790e2d7384a9318436103389a578d0cf79f))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([9c22d30](https://github.com/isaacus-dev/isaacus-typescript/commit/9c22d30b32e6e8a303257de8809942606a021717))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([2994023](https://github.com/isaacus-dev/isaacus-typescript/commit/2994023b8e36ac061cea8139025b8421e6c659fd))
+* **internal:** make MCP code execution location configurable via a flag ([0f48e15](https://github.com/isaacus-dev/isaacus-typescript/commit/0f48e15c7296096e24eeecfad6100aa6ca00c2de))
+* **internal:** move stringifyQuery implementation to internal function ([8a830b9](https://github.com/isaacus-dev/isaacus-typescript/commit/8a830b9f2be17ccc102d697da32dd8308d04a3fe))
+* **internal:** remove mock server code ([73f331b](https://github.com/isaacus-dev/isaacus-typescript/commit/73f331b4dbedeaa77b9fed681f263a9a1505c9a0))
+* **internal:** upgrade @modelcontextprotocol/sdk and hono ([56f145c](https://github.com/isaacus-dev/isaacus-typescript/commit/56f145cf805d5c34c0f84c86a200f0b692c62533))
+* **mcp:** correctly update version in sync with sdk ([b8844d4](https://github.com/isaacus-dev/isaacus-typescript/commit/b8844d441f8c7449e0df84da92665af836b833b4))
+* update mock server docs ([8bac25f](https://github.com/isaacus-dev/isaacus-typescript/commit/8bac25f74d58949f1f0c1a5c3e1cdf6dd7a1ca4a))
+
 ## 0.20.2 (2026-02-18)
 
 Full Changelog: [v0.20.1...v0.20.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.1...v0.20.2)
