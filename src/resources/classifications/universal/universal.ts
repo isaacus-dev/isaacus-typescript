@@ -4,6 +4,9 @@ import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Classify legal documents with Isaacus legal AI classifiers.
+ */
 export class Universal extends APIResource {
   /**
    * Classify the relevance of legal documents to a query with an Isaacus universal

@@ -4,6 +4,9 @@ import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Extract information from legal documents with Isaacus legal AI extractors.
+ */
 export class QA extends APIResource {
   /**
    * Extract answers to questions from legal documents with an Isaacus legal AI

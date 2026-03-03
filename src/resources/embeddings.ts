@@ -4,6 +4,9 @@ import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * Embed legal texts with Isaacus legal AI embedders.
+ */
 export class Embeddings extends APIResource {
   /**
    * Embed legal texts with an Isaacus legal AI embedder.
