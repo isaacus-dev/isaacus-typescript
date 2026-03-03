@@ -722,8 +722,14 @@ export class Isaacus {
 
   static toFile = Uploads.toFile;
 
+  /**
+   * Embed legal texts with Isaacus legal AI embedders.
+   */
   embeddings: API.Embeddings = new API.Embeddings(this);
   classifications: API.Classifications = new API.Classifications(this);
+  /**
+   * Rerank legal documents by their relevance to queries with Isaacus legal AI rerankers.
+   */
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
   enrichments: API.Enrichments = new API.Enrichments(this);
