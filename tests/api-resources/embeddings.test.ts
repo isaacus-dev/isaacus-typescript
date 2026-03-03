@@ -8,7 +8,7 @@ const client = new Isaacus({
 });
 
 describe('resource embeddings', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.embeddings.create({
       model: 'kanon-2-embedder',
@@ -23,7 +23,7 @@ describe('resource embeddings', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.embeddings.create({
       model: 'kanon-2-embedder',
