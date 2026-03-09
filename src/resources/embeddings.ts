@@ -5,11 +5,11 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
 /**
- * Embed legal texts with Isaacus legal AI embedders.
+ * Vectorize content with an Isaacus embedding model.
  */
 export class Embeddings extends APIResource {
   /**
-   * Embed legal texts with an Isaacus legal AI embedder.
+   * Vectorize content with an Isaacus embedding model.
    *
    * @example
    * ```ts

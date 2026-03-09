@@ -5,12 +5,11 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
 /**
- * Classify legal documents with Isaacus legal AI classifiers.
+ * Classify documents with an Isaacus classification model.
  */
 export class Universal extends APIResource {
   /**
-   * Classify the relevance of legal documents to a query with an Isaacus universal
-   * legal AI classifier.
+   * Classify documents with an Isaacus universal classification model.
    *
    * @example
    * ```ts
@@ -32,7 +31,7 @@ export class Universal extends APIResource {
 export interface UniversalClassificationResponse {
   /**
    * The classifications of the texts, by relevance to the query, in order from
-   * highest to lowest relevance score.
+   * highest to lowest confidence score.
    */
   classifications: Array<UniversalClassificationResponse.Classification>;
 
