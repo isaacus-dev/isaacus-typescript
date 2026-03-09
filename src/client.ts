@@ -724,15 +724,18 @@ export class Isaacus {
   static toFile = Uploads.toFile;
 
   /**
-   * Embed legal texts with Isaacus legal AI embedders.
+   * Vectorize content with an Isaacus embedding model.
    */
   embeddings: API.Embeddings = new API.Embeddings(this);
   classifications: API.Classifications = new API.Classifications(this);
   /**
-   * Rerank legal documents by their relevance to queries with Isaacus legal AI rerankers.
+   * Score and rank documents by their relevance to queries with an Isaacus reranker.
    */
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
+  /**
+   * Enrich documents with an Isaacus enrichment model.
+   */
   enrichments: API.Enrichments = new API.Enrichments(this);
   ilgs: API.ILGS = new API.ILGS(this);
 }

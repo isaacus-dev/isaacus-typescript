@@ -5,9 +5,12 @@ import * as v1API from './ilgs/v1/v1';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * Enrich documents with an Isaacus enrichment model.
+ */
 export class Enrichments extends APIResource {
   /**
-   * Enrich documents with an Isaacus enricher model.
+   * Enrich documents with an Isaacus enrichment model.
    *
    * @example
    * ```ts

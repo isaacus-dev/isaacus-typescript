@@ -5,12 +5,11 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
 /**
- * Rerank legal documents by their relevance to queries with Isaacus legal AI rerankers.
+ * Score and rank documents by their relevance to queries with an Isaacus reranker.
  */
 export class Rerankings extends APIResource {
   /**
-   * Rank legal documents by their relevance to a query with an Isaacus legal AI
-   * reranker.
+   * Score and rank documents by their relevance to queries with an Isaacus reranker.
    *
    * @example
    * ```ts
