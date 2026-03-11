@@ -252,8 +252,9 @@ export class Isaacus {
       : new URL(baseURL + (baseURL.endsWith('/') && path.startsWith('/') ? path.slice(1) : path));
 
     const defaultQuery = this.defaultQuery();
-    if (!isEmptyObj(defaultQuery)) {
-      query = { ...defaultQuery, ...query };
+    const pathQuery = Object.fromEntries(url.searchParams);
+    if (!isEmptyObj(defaultQuery) || !isEmptyObj(pathQuery)) {
+      query = { ...pathQuery, ...defaultQuery, ...query };
     }
 
     if (typeof query === 'object' && query && !Array.isArray(query)) {
@@ -562,9 +563,9 @@ export class Isaacus {
       }
     }
 
-    // If the API asks us to wait a certain amount of time (and it's a reasonable amount),
-    // just do what it says, but otherwise calculate a default
-    if (!(timeoutMillis && 0 <= timeoutMillis && timeoutMillis < 60 * 1000)) {
+    // If the API asks us to wait a certain amount of time, just do what it
+    // says, but otherwise calculate a default
+    if (timeoutMillis === undefined) {
       const maxRetries = options.maxRetries ?? this.maxRetries;
       timeoutMillis = this.calculateDefaultRetryTimeoutMillis(retriesRemaining, maxRetries);
     }
@@ -722,10 +723,19 @@ export class Isaacus {
 
   static toFile = Uploads.toFile;
 
+  /**
+   * Vectorize content with an Isaacus embedding model.
+   */
   embeddings: API.Embeddings = new API.Embeddings(this);
   classifications: API.Classifications = new API.Classifications(this);
+  /**
+   * Score and rank documents by their relevance to queries with an Isaacus reranker.
+   */
   rerankings: API.Rerankings = new API.Rerankings(this);
   extractions: API.Extractions = new API.Extractions(this);
+  /**
+   * Enrich documents with an Isaacus enrichment model.
+   */
   enrichments: API.Enrichments = new API.Enrichments(this);
   ilgs: API.ILGS = new API.ILGS(this);
 }

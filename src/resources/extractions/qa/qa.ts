@@ -4,10 +4,13 @@ import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Extract information from documents with an Isaacus extraction model.
+ */
 export class QA extends APIResource {
   /**
-   * Extract answers to questions from legal documents with an Isaacus legal AI
-   * answer extractor.
+   * Extract information from documents with an Isaacus extractive question answering
+   * model.
    *
    * @example
    * ```ts
@@ -117,7 +120,7 @@ export interface QACreateParams {
    * [model](https://docs.isaacus.com/models#extractive-question-answering) to use
    * for extractive question answering.
    */
-  model: 'kanon-answer-extractor' | 'kanon-answer-extractor-mini';
+  model: 'kanon-answer-extractor';
 
   /**
    * The query to extract the answer to.

@@ -4,15 +4,17 @@ import { APIResource } from '../core/resource';
 import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 
+/**
+ * Score and rank documents by their relevance to queries with an Isaacus reranker.
+ */
 export class Rerankings extends APIResource {
   /**
-   * Rank legal documents by their relevance to a query with an Isaacus legal AI
-   * reranker.
+   * Score and rank documents by their relevance to queries with an Isaacus reranker.
    *
    * @example
    * ```ts
    * const rerankingResponse = await client.rerankings.create({
-   *   model: 'kanon-universal-classifier',
+   *   model: 'kanon-2-reranker',
    *   query:
    *     'What are the essential elements required to establish a negligence claim?',
    *   texts: [
@@ -32,8 +34,8 @@ export class Rerankings extends APIResource {
 
 export interface RerankingResponse {
   /**
-   * The rerankings of the texts, by relevance to the query, in order from highest to
-   * lowest relevance score.
+   * The texts reranked by relevance to the query, in order from highest to lowest
+   * relevance score.
    */
   results: Array<RerankingResponse.Result>;
 
@@ -71,10 +73,11 @@ export namespace RerankingResponse {
 
 export interface RerankingCreateParams {
   /**
-   * The ID of the [model](https://docs.isaacus.com/models#reranking) to use for
-   * reranking.
+   * The ID of the model to use for reranking, being either a
+   * [reranking model](https://docs.isaacus.com/models/introduction#reranking) or
+   * [universal classification model](https://docs.isaacus.com/models/introduction#universal-classification).
    */
-  model: 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
+  model: 'kanon-2-reranker' | 'kanon-universal-classifier';
 
   /**
    * The query to evaluate the relevance of the texts to.
@@ -112,7 +115,9 @@ export interface RerankingCreateParams {
   is_iql?: boolean;
 
   /**
-   * The method to use for producing an overall relevance score for a text.
+   * The method to use for producing an overall relevance score for a text that
+   * exceeds the model's local context window and has, therefore, been split into
+   * multiple chunks.
    *
    * `auto` is the default scoring method and is recommended for most use cases.
    * Currently, it is equivalent to `chunk_max`. In the future, it will automatically

@@ -11,7 +11,7 @@ describe('resource rerankings', () => {
   // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.rerankings.create({
-      model: 'kanon-universal-classifier',
+      model: 'kanon-2-reranker',
       query: 'What are the essential elements required to establish a negligence claim?',
       texts: [
         'To form a contract, there must be an offer, acceptance, consideration, and mutual intent to be bound.',
@@ -33,7 +33,7 @@ describe('resource rerankings', () => {
   // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.rerankings.create({
-      model: 'kanon-universal-classifier',
+      model: 'kanon-2-reranker',
       query: 'What are the essential elements required to establish a negligence claim?',
       texts: [
         'To form a contract, there must be an offer, acceptance, consideration, and mutual intent to be bound.',

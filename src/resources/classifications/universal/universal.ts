@@ -4,10 +4,12 @@ import { APIResource } from '../../../core/resource';
 import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 
+/**
+ * Classify documents with an Isaacus classification model.
+ */
 export class Universal extends APIResource {
   /**
-   * Classify the relevance of legal documents to a query with an Isaacus universal
-   * legal AI classifier.
+   * Classify documents with an Isaacus universal classification model.
    *
    * @example
    * ```ts
@@ -29,7 +31,7 @@ export class Universal extends APIResource {
 export interface UniversalClassificationResponse {
   /**
    * The classifications of the texts, by relevance to the query, in order from
-   * highest to lowest relevance score.
+   * highest to lowest confidence score.
    */
   classifications: Array<UniversalClassificationResponse.Classification>;
 
@@ -120,7 +122,7 @@ export interface UniversalCreateParams {
    * The ID of the [model](https://docs.isaacus.com/models#universal-classification)
    * to use for universal classification.
    */
-  model: 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
+  model: 'kanon-universal-classifier';
 
   /**
    * The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if
