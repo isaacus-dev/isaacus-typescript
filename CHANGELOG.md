@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.22.0 (2026-03-11)
+
+Full Changelog: [v0.21.0...v0.22.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.21.0...v0.22.0)
+
+### Features
+
+* **api:** add kanon-2-reranker ([6874725](https://github.com/isaacus-dev/isaacus-typescript/commit/68747257c2b6c34baa76d78e9c889d240189a83b))
+* **api:** drop mini models ([f08dc45](https://github.com/isaacus-dev/isaacus-typescript/commit/f08dc4595a60ced58c376960be99d73cfcf1658c))
+
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([2acb447](https://github.com/isaacus-dev/isaacus-typescript/commit/2acb447b0308ed21983f1c8d665016e8bcf802a4))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([ade18ff](https://github.com/isaacus-dev/isaacus-typescript/commit/ade18ffd5cf57d9c38e54665cf418dc54a56fd3c))
+* **internal:** codegen related update ([77a4e10](https://github.com/isaacus-dev/isaacus-typescript/commit/77a4e109763c99585dacdc0e5786f8bf214f173e))
+* **internal:** codegen related update ([61d1a70](https://github.com/isaacus-dev/isaacus-typescript/commit/61d1a70e6af2ff3c1c0f16517bca200f162cf9c1))
+* **internal:** update dependencies to address dependabot vulnerabilities ([625f523](https://github.com/isaacus-dev/isaacus-typescript/commit/625f523f36e1935b253dc3b7258b2f8e5cd866fd))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([e372066](https://github.com/isaacus-dev/isaacus-typescript/commit/e372066ae02d0ffcf5fae210ba027c9b13950141))
+* **mcp-server:** improve instructions ([381ce99](https://github.com/isaacus-dev/isaacus-typescript/commit/381ce99950e4220f5c7ca5f20faabcdc5252ec8a))
+* **mcp-server:** return access instructions for 404 without API key ([8d188e6](https://github.com/isaacus-dev/isaacus-typescript/commit/8d188e6a165648c20580f15c5f4ce8febc7acab1))
+
+
+### Documentation
+
+* **api:** reworded descriptions ([d3924ec](https://github.com/isaacus-dev/isaacus-typescript/commit/d3924ec55f712b7df79847049c7f6e4ea07352a2))
+
 ## 0.21.0 (2026-03-03)
 
 Full Changelog: [v0.20.2...v0.21.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.20.2...v0.21.0)
