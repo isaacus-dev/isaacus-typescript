@@ -120,7 +120,7 @@ export interface QACreateParams {
    * [model](https://docs.isaacus.com/models#extractive-question-answering) to use
    * for extractive question answering.
    */
-  model: 'kanon-answer-extractor' | 'kanon-answer-extractor-mini';
+  model: 'kanon-answer-extractor';
 
   /**
    * The query to extract the answer to.

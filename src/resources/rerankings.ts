@@ -77,7 +77,7 @@ export interface RerankingCreateParams {
    * [reranking model](https://docs.isaacus.com/models/introduction#reranking) or
    * [universal classification model](https://docs.isaacus.com/models/introduction#universal-classification).
    */
-  model: 'kanon-2-reranker' | 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
+  model: 'kanon-2-reranker' | 'kanon-universal-classifier';
 
   /**
    * The query to evaluate the relevance of the texts to.

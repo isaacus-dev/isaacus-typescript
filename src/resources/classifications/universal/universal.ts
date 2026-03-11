@@ -122,7 +122,7 @@ export interface UniversalCreateParams {
    * The ID of the [model](https://docs.isaacus.com/models#universal-classification)
    * to use for universal classification.
    */
-  model: 'kanon-universal-classifier' | 'kanon-universal-classifier-mini';
+  model: 'kanon-universal-classifier';
 
   /**
    * The [Isaacus Query Language (IQL)](https://docs.isaacus.com/iql) query or, if
