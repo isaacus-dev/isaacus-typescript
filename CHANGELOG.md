@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.22.1 (2026-03-28)
+
+Full Changelog: [v0.22.0...v0.22.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.0...v0.22.1)
+
+### Chores
+
+* **ci:** escape input path in publish-npm workflow ([37de3db](https://github.com/isaacus-dev/isaacus-typescript/commit/37de3db4c34147f751a6fa8ae60f8dcc9ad477b7))
+* **ci:** skip lint on metadata-only changes ([03c9e5f](https://github.com/isaacus-dev/isaacus-typescript/commit/03c9e5fc53ddd4c08aa66fd3b93afa067d21e185))
+* **internal:** bump @modelcontextprotocol/sdk, @hono/node-server, and minimatch ([2721387](https://github.com/isaacus-dev/isaacus-typescript/commit/27213877706a51093af4eb15e3ed1eeb71af9e97))
+* **internal:** codegen related update ([dc8c9d9](https://github.com/isaacus-dev/isaacus-typescript/commit/dc8c9d98bbeb42dac7bd9b8166a59097031759e6))
+* **internal:** fix MCP server TS errors that occur with required client options ([c834dba](https://github.com/isaacus-dev/isaacus-typescript/commit/c834dba3466004f1385dabbea908480217988d2b))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([6e1fbb2](https://github.com/isaacus-dev/isaacus-typescript/commit/6e1fbb2ceef03158f8a1b4be24bb30608069faad))
+* **internal:** support custom-instructions-path flag in MCP servers ([9c72691](https://github.com/isaacus-dev/isaacus-typescript/commit/9c726913496aa66da7acac78b5501f95946dcbb2))
+* **internal:** support local docs search in MCP servers ([0f9290d](https://github.com/isaacus-dev/isaacus-typescript/commit/0f9290dac91e2e7c42218e660fb267db751ee19f))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([274f5c2](https://github.com/isaacus-dev/isaacus-typescript/commit/274f5c2620d69c0d97e5933d7b0804b3583570f8))
+* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([aba6116](https://github.com/isaacus-dev/isaacus-typescript/commit/aba6116403bede7f968a37e080b8e6ed52893d51))
+* **internal:** tweak CI branches ([b97f70d](https://github.com/isaacus-dev/isaacus-typescript/commit/b97f70db25ccb1a838a92751ae1384d4220e2ac8))
+* **internal:** update gitignore ([971e5bd](https://github.com/isaacus-dev/isaacus-typescript/commit/971e5bd2076c311e7a90b346f9ea9dca013f2760))
+
 ## 0.22.0 (2026-03-11)
 
 Full Changelog: [v0.21.0...v0.22.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.21.0...v0.22.0)
