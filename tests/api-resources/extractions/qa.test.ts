@@ -37,9 +37,9 @@ describe('resource qa', () => {
       ignore_inextractability: false,
       top_k: 1,
       chunking_options: {
-        size: 512,
-        overlap_ratio: 0.1,
-        overlap_tokens: 10,
+        size: null,
+        overlap_ratio: null,
+        overlap_tokens: null,
       },
     });
   });
