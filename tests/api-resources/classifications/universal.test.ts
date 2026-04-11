@@ -34,8 +34,8 @@ describe('resource universal', () => {
       scoring_method: 'auto',
       chunking_options: {
         size: 512,
-        overlap_ratio: 0.1,
-        overlap_tokens: 10,
+        overlap_ratio: null,
+        overlap_tokens: null,
       },
     });
   });

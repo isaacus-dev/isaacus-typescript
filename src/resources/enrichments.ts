@@ -17,7 +17,7 @@ export class Enrichments extends APIResource {
    * const enrichmentResponse = await client.enrichments.create({
    *   model: 'kanon-2-enricher',
    *   texts: [
-   *     '1.5 You (the "User") agree to be bound by these Terms.',
+   *     '[42] The U.S. Attorney General, Mr. McGill, argued at ¶ 21 of the Filing that "§ 206 of Title 29 of the U.S. Code (the "Labor Title") does not apply to the plaintiff, Ms. Moody, given the definition of an "employee" at §203(e)(4) of the Labor Title does not include volunteers, and, regardless, she lives in Austria."',
    *   ],
    * });
    * ```
