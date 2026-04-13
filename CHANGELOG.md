@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.22.2 (2026-04-13)
+
+Full Changelog: [v0.22.1...v0.22.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.1...v0.22.2)
+
+### Chores
+
+* **internal:** codegen related update ([cd5ec86](https://github.com/isaacus-dev/isaacus-typescript/commit/cd5ec86a820fbac4520158b5fae003a6599fefc0))
+* **internal:** codegen related update ([e862e90](https://github.com/isaacus-dev/isaacus-typescript/commit/e862e90b1f033b392912960f942d40fc383ce105))
+* **internal:** fix MCP docker image builds in yarn projects ([1bae689](https://github.com/isaacus-dev/isaacus-typescript/commit/1bae68900a33b2493aab475da4ab3b2b29df7107))
+* **internal:** fix MCP server import ordering ([f6e97bb](https://github.com/isaacus-dev/isaacus-typescript/commit/f6e97bbf7d651a7de7144059598e81bd625fb592))
+* **internal:** improve local docs search for MCP servers ([a75ecde](https://github.com/isaacus-dev/isaacus-typescript/commit/a75ecdeaa324f978296b0bff15dd1cb025826cea))
+* **internal:** improve local docs search for MCP servers ([04d3e6d](https://github.com/isaacus-dev/isaacus-typescript/commit/04d3e6d50fb40450008b888f47c0337a964bee83))
+* **internal:** show error causes in MCP servers when running in local mode ([fa77f22](https://github.com/isaacus-dev/isaacus-typescript/commit/fa77f220e93b435a3b7ad0ad37b9f5158e4e7bba))
+* **internal:** support type annotations when running MCP in local execution mode ([54d9001](https://github.com/isaacus-dev/isaacus-typescript/commit/54d90010c7f02e93aebbbb0d577d47f8557f5933))
+* **internal:** use link instead of file in MCP server package.json files ([670add9](https://github.com/isaacus-dev/isaacus-typescript/commit/670add93de484bd49d49dcd03c3d5bc3581d2021))
+* **mcp-server:** add support for session id, forward client info ([113e23c](https://github.com/isaacus-dev/isaacus-typescript/commit/113e23c3565fd8f4c39dc54e5ccb77216b3230f5))
+* **mcp-server:** increase local docs search result count from 5 to 10 ([2e69ea0](https://github.com/isaacus-dev/isaacus-typescript/commit/2e69ea055862bde72ba63d47eb769a9a7750e079))
+* **mcp-server:** log client info ([823adba](https://github.com/isaacus-dev/isaacus-typescript/commit/823adbac413f484a67e00354e5284e89479b71da))
+
+
+### Documentation
+
+* update examples ([e668eb8](https://github.com/isaacus-dev/isaacus-typescript/commit/e668eb823f4bcd59c96bc62a232f1d608a7ff9f3))
+
 ## 0.22.1 (2026-03-28)
 
 Full Changelog: [v0.22.0...v0.22.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.0...v0.22.1)
