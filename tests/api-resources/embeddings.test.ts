@@ -30,7 +30,7 @@ describe('resource embeddings', () => {
       texts: ['Are restraints of trade enforceable under English law?', 'What is a non-compete clause?'],
       task: 'retrieval/query',
       overflow_strategy: 'drop_end',
-      dimensions: 1,
+      dimensions: 1792,
     });
   });
 });
