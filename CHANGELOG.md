@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.22.3 (2026-04-22)
+
+Full Changelog: [v0.22.2...v0.22.3](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.2...v0.22.3)
+
+### Chores
+
+* update SDK settings ([8d11048](https://github.com/isaacus-dev/isaacus-typescript/commit/8d11048b3fd5d405b3457f3a7a8d75d9f136d479))
+
 ## 0.22.2 (2026-04-13)
 
 Full Changelog: [v0.22.1...v0.22.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.1...v0.22.2)
