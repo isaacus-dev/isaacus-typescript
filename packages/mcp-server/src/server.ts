@@ -28,7 +28,7 @@ export const newMcpServer = async ({
   new McpServer(
     {
       name: 'isaacus_api',
-      version: '0.22.4',
+      version: '0.22.5',
     },
     {
       instructions: await getInstructions({ stainlessApiKey, customInstructionsPath }),

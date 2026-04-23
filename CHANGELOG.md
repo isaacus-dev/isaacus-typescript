@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.22.5 (2026-04-23)
+
+Full Changelog: [v0.22.4...v0.22.5](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.4...v0.22.5)
+
+### Chores
+
+* **internal:** more robust bootstrap script ([32259bd](https://github.com/isaacus-dev/isaacus-typescript/commit/32259bd667f736fb8f8da16a424f71c6f5242b09))
+
 ## 0.22.4 (2026-04-23)
 
 Full Changelog: [v0.22.3...v0.22.4](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.3...v0.22.4)
