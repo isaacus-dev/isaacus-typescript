@@ -81,7 +81,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       },
       http: {
         example:
-          'curl https://api.isaacus.com/v1/embeddings \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-embedder",\n          "texts": [\n            "Are restraints of trade enforceable under English law?",\n            "What is a non-compete clause?"\n          ]\n        }\'',
+          'curl https://api.isaacus.com/v1/embeddings \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-embedder",\n          "texts": [\n            "Are restraints of trade enforceable under English law?",\n            "What is a non-compete clause?"\n          ],\n          "task": "retrieval/query",\n          "overflow_strategy": "drop_end",\n          "dimensions": 1792\n        }\'',
       },
     },
   },
@@ -118,7 +118,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       },
       http: {
         example:
-          'curl https://api.isaacus.com/v1/classifications/universal \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-universal-classifier",\n          "query": "This is a confidentiality clause.",\n          "texts": [\n            "I agree not to tell anyone about the document."\n          ]\n        }\'',
+          'curl https://api.isaacus.com/v1/classifications/universal \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-universal-classifier",\n          "query": "This is a confidentiality clause.",\n          "texts": [\n            "I agree not to tell anyone about the document."\n          ],\n          "is_iql": true,\n          "scoring_method": "auto",\n          "chunking_options": {\n            "size": 512,\n            "overlap_ratio": null,\n            "overlap_tokens": null\n          }\n        }\'',
       },
     },
   },
@@ -155,7 +155,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       },
       http: {
         example:
-          'curl https://api.isaacus.com/v1/rerankings \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-reranker",\n          "query": "What are the essential elements required to establish a negligence claim?",\n          "texts": [\n            "To form a contract, there must be an offer, acceptance, consideration, and mutual intent to be bound.",\n            "Criminal cases involve a completely different standard, requiring proof beyond a reasonable doubt.",\n            "In a negligence claim, the plaintiff must prove duty, breach, causation, and damages.",\n            "Negligence in tort law requires establishing a duty of care that the defendant owed to the plaintiff.",\n            "The concept of negligence is central to tort law, with courts assessing whether a breach of duty caused harm."\n          ]\n        }\'',
+          'curl https://api.isaacus.com/v1/rerankings \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-reranker",\n          "query": "What are the essential elements required to establish a negligence claim?",\n          "texts": [\n            "To form a contract, there must be an offer, acceptance, consideration, and mutual intent to be bound.",\n            "Criminal cases involve a completely different standard, requiring proof beyond a reasonable doubt.",\n            "In a negligence claim, the plaintiff must prove duty, breach, causation, and damages.",\n            "Negligence in tort law requires establishing a duty of care that the defendant owed to the plaintiff.",\n            "The concept of negligence is central to tort law, with courts assessing whether a breach of duty caused harm."\n          ],\n          "top_n": null,\n          "is_iql": false,\n          "scoring_method": "auto",\n          "chunking_options": {\n            "size": null,\n            "overlap_ratio": null,\n            "overlap_tokens": null\n          }\n        }\'',
       },
     },
   },
@@ -192,7 +192,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       },
       http: {
         example:
-          'curl https://api.isaacus.com/v1/extractions/qa \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-answer-extractor",\n          "query": "What is the punishment for murder in Victoria?",\n          "texts": [\n            "The standard sentence for murder in the State of Victoria is 30 years if the person murdered was a police officer and 25 years in any other case."\n          ]\n        }\'',
+          'curl https://api.isaacus.com/v1/extractions/qa \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-answer-extractor",\n          "query": "What is the punishment for murder in Victoria?",\n          "texts": [\n            "The standard sentence for murder in the State of Victoria is 30 years if the person murdered was a police officer and 25 years in any other case."\n          ],\n          "ignore_inextractability": false,\n          "top_k": 1,\n          "chunking_options": {\n            "size": null,\n            "overlap_ratio": null,\n            "overlap_tokens": null\n          }\n        }\'',
       },
     },
   },
@@ -225,7 +225,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       },
       http: {
         example:
-          'curl https://api.isaacus.com/v1/enrichments \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-enricher",\n          "texts": [\n            "[42] The U.S. Attorney General, Mr. McGill, argued at ¶ 21 of the Filing that \\\\"§ 206 of Title 29 of the U.S. Code (the \\\\"Labor Title\\\\") does not apply to the plaintiff, Ms. Moody, given the definition of an \\\\"employee\\\\" at §203(e)(4) of the Labor Title does not include volunteers, and, regardless, she lives in Austria.\\\\""\n          ]\n        }\'',
+          'curl https://api.isaacus.com/v1/enrichments \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $ISAACUS_API_KEY" \\\n    -d \'{\n          "model": "kanon-2-enricher",\n          "texts": [\n            "[42] The U.S. Attorney General, Mr. McGill, argued at ¶ 21 of the Filing that \\\\"§ 206 of Title 29 of the U.S. Code (the \\\\"Labor Title\\\\") does not apply to the plaintiff, Ms. Moody, given the definition of an \\\\"employee\\\\" at §203(e)(4) of the Labor Title does not include volunteers, and, regardless, she lives in Austria.\\\\""\n          ],\n          "overflow_strategy": "auto"\n        }\'',
       },
     },
   },
