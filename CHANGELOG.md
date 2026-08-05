@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.23.0 (2026-06-17)
+
+Full Changelog: [v0.22.4...v0.23.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.4...v0.23.0)
+
+### Features
+
+* support setting headers via env ([05c6abd](https://github.com/isaacus-dev/isaacus-typescript/commit/05c6abd544a0ecd87ddb3b635929018598aac5f4))
+
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([da63216](https://github.com/isaacus-dev/isaacus-typescript/commit/da6321679d71b33d3c58d3aacbf2ee4ad59596a4))
+* **mcp:** use `pure-lockfile` when building mcp server ([e738d97](https://github.com/isaacus-dev/isaacus-typescript/commit/e738d97b7431f1353aaaf460727266de2eb6a96b))
+* **typescript:** upgrade tsc-multi so that it works with Node 26 ([4430b91](https://github.com/isaacus-dev/isaacus-typescript/commit/4430b91fafc8fb07474b11aef0a36755ed24f1eb))
+
+
+### Chores
+
+* avoid formatting file that gets changed during releases ([ec88aef](https://github.com/isaacus-dev/isaacus-typescript/commit/ec88aef38af1f4b559e51184bb7d838edaff4f50))
+* **format:** run eslint and prettier separately ([8b0b6f7](https://github.com/isaacus-dev/isaacus-typescript/commit/8b0b6f764ce8c34b9e25ceabfb0557fad33e07db))
+* **internal:** codegen related update ([36d1802](https://github.com/isaacus-dev/isaacus-typescript/commit/36d18023d8bf4c886d1aec14504cb70d793f9a28))
+* **internal:** codegen related update ([9b13b88](https://github.com/isaacus-dev/isaacus-typescript/commit/9b13b888121581e04c3ce13aba2c6d10a23fa55a))
+* **internal:** more robust bootstrap script ([32259bd](https://github.com/isaacus-dev/isaacus-typescript/commit/32259bd667f736fb8f8da16a424f71c6f5242b09))
+* redact api-key headers in debug logs ([9767ee7](https://github.com/isaacus-dev/isaacus-typescript/commit/9767ee7e62f113d5483d22f36851ff9c3ece6aaf))
+* restructure docs search code ([e1919fe](https://github.com/isaacus-dev/isaacus-typescript/commit/e1919fee72c32029b6b87608e7ad6c3db30082e1))
+* **tests:** remove redundant File import ([b9de8d5](https://github.com/isaacus-dev/isaacus-typescript/commit/b9de8d58a97c963a739494c31951ac6015537cd7))
+
+
+### Documentation
+
+* **api:** rename ILGS to ILDGS in description without breaking API ([72621a2](https://github.com/isaacus-dev/isaacus-typescript/commit/72621a2bd148e982895b4d309db3dbd16e752ac2))
+* update http mcp docs ([3c73de3](https://github.com/isaacus-dev/isaacus-typescript/commit/3c73de3e01c16dd31ec03ac7ddff05a325f79bb4))
+
 ## 0.22.4 (2026-04-23)
 
 Full Changelog: [v0.22.3...v0.22.4](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.3...v0.22.4)
