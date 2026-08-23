@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.23.1 (2026-08-23)
+
+Full Changelog: [v0.23.0...v0.23.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.23.0...v0.23.1)
+
+### Chores
+
+* migrate to stlc ([8cc0c02](https://github.com/isaacus-dev/isaacus-typescript/commit/8cc0c0220d25897c18283b78078b12791c91109e))
+
 ## 0.23.0 (2026-06-17)
 
 Full Changelog: [v0.22.4...v0.23.0](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.22.4...v0.23.0)
