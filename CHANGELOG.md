@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.23.2 (2026-08-24)
+
+Full Changelog: [v0.23.1...v0.23.2](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.23.1...v0.23.2)
+
 ## 0.23.1 (2026-08-23)
 
 Full Changelog: [v0.23.0...v0.23.1](https://github.com/isaacus-dev/isaacus-typescript/compare/v0.23.0...v0.23.1)
