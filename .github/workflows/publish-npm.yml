@@ -7,7 +7,8 @@ on:
     inputs:
       path:
         description: The path to run the release in, e.g. '.' or 'packages/mcp-server'
-        required: true
+        required: false
+        default: ''
 
   release:
     types: [published]
@@ -34,11 +35,12 @@ jobs:
       - name: Publish to NPM
         run: |
           if [ -n "$INPUT_PATH" ]; then
-            PATHS_RELEASED="[\"$INPUT_PATH\"]"
+            PATHS_JSON=$(jq -nc --arg p "$INPUT_PATH" '[ $p ]')
           else
-            PATHS_RELEASED='[\".\", \"packages/mcp-server\"]'
+            PATHS_JSON=$(jq -nc '[".", "packages/mcp-server"]')
           fi
-          yarn tsn scripts/publish-packages.ts "{ \"paths_released\": \"$PATHS_RELEASED\" }"
+          DATA=$(jq -nc --argjson paths "$PATHS_JSON" '{paths_released: ($paths | tojson)}')
+          yarn tsn scripts/publish-packages.ts "$DATA"
         env:
           INPUT_PATH: ${{ github.event.inputs.path }}
           NPM_TOKEN: ${{ secrets.ISAACUS_NPM_TOKEN || secrets.NPM_TOKEN }}
