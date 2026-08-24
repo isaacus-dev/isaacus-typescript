@@ -3,6 +3,7 @@
 set -eux
 
 npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
+yarn config set registry https://registry.npmjs.org/
 
 yarn build
 cd dist
